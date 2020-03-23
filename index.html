@@ -8522,10 +8522,23 @@ aside .latest-post li figure {width: 75px;}
 .social_icon{
   filter: contrast(0.5) !important;
 }
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+}
   </style>
         </head>
   
         <body class="width-100 overflow-hidden">
+          <!-- The video -->
+<video autoplay muted loop id="myVideo">
+  <source src="/assets/video/back.mp4" type="video/mp4">
+</video>
+
           <div class="bg-black position-absolute left-0 top-0 width-100 height-100">
   
   <!-- start slider section -->
