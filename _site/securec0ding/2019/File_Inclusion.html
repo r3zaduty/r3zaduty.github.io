@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/File_Inclusion.html">File Inclusion Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/File_Inclusion.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/File_Inclusion.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/File_Inclusion.html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/File_Inclusion.html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/File_Inclusion.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-file-inclusion-">What is File Inclusion ?</h1>
+
+<p>File inclusions are part of every advanced server side scripting language on the web. They are needed to keep web applications’ code tidy and maintainable. They also allow web applications to read files from the file system, provide download functionality, parse configuration files and do other similar tasks. Though if not implemented properly, attackers can exploit them and craft a LFI attack which may lead to information disclosure, cross-site-Scripting (XSS) and remote code execution (RFI) vulnerabilities.</p>
+
+<p>To keep a website’s code readable and modular the code is usually split into multiple files and directories, ideally separated into logical pieces. To tell the interpreter where those files are you have to specify a correct file path and pass it to a function. This function will open the file and include it inside the document. This way the parser sees it as valid code and interprets it accordingly.</p>
+
+<h3 id="usage-example">Usage Example</h3>
+
+<p>You create several different modules for one page and to include them you use the GET parameter with the filename of the respective function, such as:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">https</span><span class="o">://</span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/?</span><span class="nx">module</span><span class="o">=</span><span class="nx">contact</span><span class="o">.</span><span class="nx">php</span></code></pre></figure>
+
+<p>The Risks of Introducing a Local File Inclusion Vulnerability</p>
+
+<p>If the developer fails to implement sufficient filtering an attacker could exploit the local file inclusion vulnerability by replacing contact.php with the path of a sensitive file such as the passwd file, where passwords are stored on a Unix system, allowing the attacker to see its content:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">https</span><span class="o">://</span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/?</span><span class="nx">module</span><span class="o">=/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">passwd</span></code></pre></figure>
+
+<p>In such a scenario the malicious hacker could also inject code from somewhere else on the web server and let the parser interpret it as instructions to exploit the LFI vulnerability. A good way to do that is a picture upload functionality with an image containing malicious code in its source, such as:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">https</span><span class="o">://</span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/?</span><span class="nx">module</span><span class="o">=</span><span class="nx">uploads</span><span class="o">/</span><span class="nx">avatar102</span><span class="o">.</span><span class="nx">gif</span></code></pre></figure>
+
+<h1 id="prevention">Prevention</h1>
+
+<ul>
+  <li>Save the file paths in a database and assign an ID to each of them. BY doing so users can only see the ID and are not able to view or change the path.</li>
+  <li>Use a whitelist of files and ignore every other filename and path.</li>
+  <li>Instead of including files on the web server, store their content in databases where possible.</li>
+  <li>Instruct the server to automatically send download headers and not execute files in a specific directory such as /download/. That way you can point the user directly to the file on the server without having to write additional code for the download. An example link could look like https://example.com/downloads/brochure2.pdf</li>
+</ul>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">"filename"</span><span class="p">];</span>
+<span class="k">include</span> <span class="nv">$filename</span> <span class="o">.</span> <span class="s2">".php"</span><span class="p">;</span>
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$allowedPages</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s1">'go.php'</span><span class="p">,</span> <span class="s1">'stop.php'</span><span class="p">,</span> <span class="s1">'file.php'</span><span class="p">);</span>
+  <span class="nv">$filename</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'page'</span><span class="p">];</span>
+
+  <span class="k">if</span><span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$filename</span><span class="p">,</span> <span class="nv">$allowedPages</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">file_exists</span><span class="p">(</span><span class="nv">$filename</span><span class="p">)){</span>
+    <span class="k">include</span> <span class="p">(</span><span class="nv">$filename</span><span class="p">);</span>
+  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="c1">//output error</span>
+  <span class="p">}</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="n">http</span><span class="p">:</span><span class="c1">//abcd.com/&lt;vuln.page&gt;?&lt;vuln query string&gt;</span>
+
+<span class="n">Consider</span> <span class="n">the</span> <span class="n">below</span> <span class="n">code</span><span class="p">:</span>
+
+<span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">Downloads_Download</span> <span class="p">:</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">UI</span><span class="p">.</span><span class="n">Page</span>
+<span class="p">{</span>
+  <span class="kt">string</span> <span class="n">sBasePath</span><span class="p">=</span><span class="s">""</span><span class="p">;</span>
+  <span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+  <span class="p">{</span>
+
+    <span class="k">try</span>
+    <span class="p">{</span>
+      <span class="kt">string</span> <span class="n">filename</span> <span class="p">=</span> <span class="n">Request</span><span class="p">.</span><span class="n">QueryString</span><span class="p">[</span><span class="s">"fname"</span><span class="p">];</span>
+      <span class="kt">string</span> <span class="n">sBasePath</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Web</span><span class="p">.</span><span class="n">HttpContext</span><span class="p">.</span><span class="n">Current</span><span class="p">.</span><span class="n">Request</span><span class="p">.</span><span class="n">ServerVariables</span><span class="p">[</span><span class="s">"APPL_PHYSICAL_PATH"</span><span class="p">];</span>
+      <span class="k">if</span> <span class="p">(</span><span class="n">sBasePath</span><span class="p">.</span><span class="nf">EndsWith</span><span class="p">(</span><span class="s">"\\"</span><span class="p">))</span>
+        <span class="n">sBasePath</span> <span class="p">=</span> <span class="n">sBasePath</span><span class="p">.</span><span class="nf">Substring</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="n">sBasePath</span><span class="p">.</span><span class="n">Length</span> <span class="p">-</span> <span class="m">1</span><span class="p">);</span>
+      <span class="n">sBasePath</span> <span class="p">=</span> <span class="n">sBasePath</span> <span class="p">+</span> <span class="s">"\\"</span> <span class="p">+</span> <span class="n">ConfigurationManager</span><span class="p">.</span><span class="n">AppSettings</span><span class="p">[</span><span class="s">"FilesPath"</span><span class="p">]</span> <span class="p">+</span> <span class="s">"\\"</span> <span class="p">+</span> <span class="n">filename</span><span class="p">;</span> 
+      <span class="n">Response</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"content-disposition"</span><span class="p">,</span> <span class="n">String</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"attachment;filename={0}"</span><span class="p">,</span> <span class="n">filename</span><span class="p">));</span>
+      <span class="n">Response</span><span class="p">.</span><span class="nf">WriteFile</span><span class="p">(</span><span class="n">sBasePath</span><span class="p">);</span>
+    <span class="p">}</span>
+    <span class="k">catch</span> <span class="p">(</span><span class="n">Exception</span> <span class="n">ex</span><span class="p">)</span>
+    <span class="p">{</span>
+<span class="n">Response</span><span class="p">.</span><span class="nf">Redirect</span><span class="p">(</span><span class="s">"~/Error.aspx?message="</span> <span class="p">+</span> <span class="n">ex</span><span class="p">.</span><span class="n">Message</span><span class="p">.</span><span class="nf">ToString</span><span class="p">()</span> <span class="p">+</span> <span class="s">" path="</span> <span class="p">+</span> <span class="n">sBasePath</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+  <span class="p">{</span>
+    <span class="c1">//string file = Server.MapPath(HttpUtility.UrlEncode(functions.RF("file")));</span>
+    <span class="kt">string</span> <span class="n">file</span> <span class="p">=</span> <span class="n">Server</span><span class="p">.</span><span class="nf">MapPath</span><span class="p">(</span><span class="n">functions</span><span class="p">.</span><span class="nf">RQ</span><span class="p">(</span><span class="s">"file"</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">File</span><span class="p">.</span><span class="nf">Exists</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
+    <span class="p">{</span>
+      <span class="n">Regex</span> <span class="n">reg</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">Regex</span><span class="p">(</span><span class="s">@"\.(\w+)$"</span><span class="p">);</span>
+      <span class="kt">string</span> <span class="n">ext</span> <span class="p">=</span> <span class="n">reg</span><span class="p">.</span><span class="nf">Match</span><span class="p">(</span><span class="n">file</span><span class="p">).</span><span class="n">Groups</span><span class="p">[</span><span class="m">1</span><span class="p">].</span><span class="n">Value</span><span class="p">;</span>
+      <span class="k">switch</span> <span class="p">(</span><span class="n">ext</span><span class="p">)</span>
+      <span class="p">{</span>
+        <span class="k">case</span> <span class="s">"xls"</span><span class="p">:</span>
+          <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/vnd.ms-excel"</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"xlsx"</span><span class="p">:</span>
+          <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"ppt"</span><span class="p">:</span>
+          <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/vnd.ms-powerpoint"</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">case</span> <span class="s">"pptx"</span><span class="p">:</span>
+          <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">"application/vnd.openxmlformats-officedocument.presentationml.presentation"</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+        <span class="k">default</span><span class="p">:</span>
+      <span class="n">Response</span><span class="p">.</span><span class="n">ContentType</span> <span class="p">=</span> <span class="s">" application/pdf "</span><span class="p">;</span>
+          <span class="k">break</span><span class="p">;</span>
+      <span class="p">}</span>
+      <span class="kt">byte</span><span class="p">[]</span> <span class="n">buffer</span> <span class="p">=</span> <span class="n">File</span><span class="p">.</span><span class="nf">ReadAllBytes</span><span class="p">(</span><span class="n">file</span><span class="p">);</span>
+      <span class="n">Response</span><span class="p">.</span><span class="n">OutputStream</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="n">buffer</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="n">buffer</span><span class="p">.</span><span class="n">Length</span><span class="p">);</span>
+      <span class="n">Response</span><span class="p">.</span><span class="nf">AddHeader</span><span class="p">(</span><span class="s">"Content-Disposition"</span><span class="p">,</span> <span class="s">"attachment;filename="</span> <span class="p">+</span> <span class="n">Path</span><span class="p">.</span><span class="nf">GetFileName</span><span class="p">(</span><span class="n">file</span><span class="p">));</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>      
+      <span class="n">Response</span><span class="p">.</span><span class="nf">Write</span><span class="p">(</span><span class="s">"This file Extension is not allowed"</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;%</span><span class="err">@</span> <span class="n">page</span> <span class="n">pageEncoding</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="err">@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">"c"</span> <span class="n">uri</span><span class="o">=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="err">@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">"fmt"</span> <span class="n">uri</span><span class="o">=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="err">@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">"fn"</span> <span class="n">uri</span><span class="o">=</span><span class="s">"http://java.sun.com/jsp/jstl/functions"</span><span class="o">%&gt;</span>
+<span class="o">&lt;</span><span class="nl">c:</span><span class="n">set</span> <span class="kt">var</span><span class="o">=</span><span class="s">"language"</span> <span class="n">value</span><span class="o">=</span><span class="s">"${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"</span> <span class="n">scope</span><span class="o">=</span><span class="s">"session"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nl">fmt:</span><span class="n">setLocale</span> <span class="n">value</span><span class="o">=</span><span class="s">"${language}"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nl">fmt:</span><span class="n">setBundle</span> <span class="n">basename</span><span class="o">=</span><span class="s">"messages"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;!</span><span class="no">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;</span><span class="nl">fmt:</span><span class="n">message</span> <span class="n">key</span><span class="o">=</span><span class="s">"title.design.test.page"</span> <span class="o">/&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"icon"</span> <span class="n">type</span><span class="o">=</span><span class="s">"image/vnd.microsoft.icon"</span> <span class="n">href</span><span class="o">=</span><span class="s">"${pageContext.request.contextPath}/images/favicon.ico"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nl">c:</span><span class="k">catch</span> <span class="kt">var</span><span class="o">=</span><span class="s">"ex"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nl">c:</span><span class="k">if</span> <span class="n">test</span><span class="o">=</span><span class="s">"${param.template != null &amp;&amp; !fn:contains(param.template,'../') &amp;&amp; !fn:startsWith(param.template,'/')}"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nl">c:</span><span class="kn">import</span> <span class="nn">url</span><span class="o">=</span><span class="s">"&lt;%=request.getParameter(\"template\")%&gt;"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="nl">c:</span><span class="k">if</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nl">c:</span><span class="k">catch</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span> <span class="n">style</span><span class="o">=</span><span class="s">"margin-left: 20px; margin-right: 20px;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">table</span> <span class="n">style</span><span class="o">=</span><span class="s">"width: 100%;"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">span</span> <span class="kd">class</span><span class="err">="</span><span class="nc">glyphicon</span> <span class="n">glyphicon</span><span class="o">-</span><span class="n">globe</span><span class="s">"&gt;&lt;/span&gt;&amp;nbsp;
+                    &lt;fmt:message key="</span><span class="n">title</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">page</span><span class="s">" /&gt;
+                &lt;/h2&gt;
+            &lt;/td&gt;
+            &lt;td align="</span><span class="n">right</span><span class="s">"&gt;&lt;a href="</span><span class="err">$</span><span class="o">{</span><span class="n">pageContext</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">contextPath</span><span class="o">}/</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">label</span><span class="o">.</span><span class="na">go</span><span class="o">.</span><span class="na">to</span><span class="o">.</span><span class="na">main</span><span class="s">" /&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;hr style="</span><span class="n">margin</span><span class="o">-</span><span class="nl">top:</span> <span class="mi">0</span><span class="s">" /&gt;
+    &lt;header&gt;
+        &lt;table style="</span><span class="nl">width:</span> <span class="mi">720</span><span class="n">px</span><span class="o">;</span><span class="s">"&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;img src="</span><span class="err">$</span><span class="o">{</span><span class="n">pageContext</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">contextPath</span><span class="o">}/</span><span class="n">images</span><span class="o">/</span><span class="n">easybuggy</span><span class="o">.</span><span class="na">png</span><span class="s">"&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;fmt:message key="</span><span class="n">description</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">page</span><span class="s">" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/header&gt;
+    &lt;hr style="</span><span class="n">margin</span><span class="o">-</span><span class="nl">top:</span> <span class="mi">10</span><span class="n">px</span><span class="s">" /&gt;
+    &lt;p&gt;
+        &lt;fmt:message key="</span><span class="n">description</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">test</span><span class="s">" /&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">nonstyle</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">nonstyle</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="o">?</span><span class="n">template</span><span class="o">=</span><span class="n">style_bootstrap</span><span class="o">.</span><span class="na">html</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">bootstrap</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">bootstrap</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="o">?</span><span class="n">template</span><span class="o">=</span><span class="n">style_google_mdl</span><span class="o">.</span><span class="na">html</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">mdl</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">mdl</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="o">?</span><span class="n">template</span><span class="o">=</span><span class="n">style_materialize</span><span class="o">.</span><span class="na">html</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">materialize</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">materialize</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;br&gt;
+    &lt;div class="</span><span class="n">alert</span> <span class="n">alert</span><span class="o">-</span><span class="n">info</span><span class="s">" role="</span><span class="n">alert</span><span class="s">"&gt;
+        &lt;span class="</span><span class="n">glyphicon</span> <span class="n">glyphicon</span><span class="o">-</span><span class="n">info</span><span class="o">-</span><span class="n">sign</span><span class="s">"&gt;&lt;/span&gt;&amp;nbsp;
+        &lt;fmt:message key="</span><span class="n">msg</span><span class="o">.</span><span class="na">note</span><span class="o">.</span><span class="na">dangerous</span><span class="o">.</span><span class="na">file</span><span class="o">.</span><span class="na">inclusion</span><span class="s">" /&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;footer&gt;
+        &lt;img src="</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">easybuggyL</span><span class="o">.</span><span class="na">png</span><span class="err">"</span><span class="o">&gt;</span><span class="nc">Copyright</span> <span class="o">&amp;</span><span class="n">copy</span><span class="o">;</span> <span class="mi">2017</span> <span class="no">T246</span> <span class="no">OSS</span> <span class="nc">Lab</span><span class="o">,</span> <span class="n">all</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
+    <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+<h2 id="solution-1">Solution</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;%</span><span class="err">@</span> <span class="n">page</span> <span class="n">pageEncoding</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="err">@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">"c"</span> <span class="n">uri</span><span class="o">=</span><span class="s">"http://java.sun.com/jsp/jstl/core"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="err">@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">"fmt"</span> <span class="n">uri</span><span class="o">=</span><span class="s">"http://java.sun.com/jsp/jstl/fmt"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span><span class="err">@</span> <span class="n">taglib</span> <span class="n">prefix</span><span class="o">=</span><span class="s">"fn"</span> <span class="n">uri</span><span class="o">=</span><span class="s">"http://java.sun.com/jsp/jstl/functions"</span><span class="o">%&gt;</span>
+<span class="o">&lt;%</span>
+    <span class="c1">// host will typically equal: uk.domain.com or fr.domain.com</span>
+    <span class="nc">String</span> <span class="n">host</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getServerName</span><span class="o">();</span>
+    <span class="c1">// cc is attempting to become the country code for the domain</span>
+    <span class="nc">String</span> <span class="n">cc</span> <span class="o">=</span> <span class="n">host</span><span class="o">.</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="n">host</span><span class="o">.</span><span class="na">indexOf</span><span class="o">(</span><span class="s">"."</span><span class="o">));</span>
+<span class="o">%&gt;</span>
+<span class="o">&lt;</span><span class="nl">c:</span><span class="n">set</span> <span class="kt">var</span><span class="o">=</span><span class="s">"language"</span> <span class="n">value</span><span class="o">=</span><span class="s">"${not empty param.language ? param.language : not empty language ? language : pageContext.request.locale}"</span> <span class="n">scope</span><span class="o">=</span><span class="s">"session"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nl">fmt:</span><span class="n">setLocale</span> <span class="n">value</span><span class="o">=</span><span class="s">"${language}"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="nl">fmt:</span><span class="n">setBundle</span> <span class="n">basename</span><span class="o">=</span><span class="s">"messages"</span> <span class="o">/&gt;</span>
+<span class="o">&lt;!</span><span class="no">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;&lt;</span><span class="nl">fmt:</span><span class="n">message</span> <span class="n">key</span><span class="o">=</span><span class="s">"title.design.test.page"</span> <span class="o">/&gt;&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"icon"</span> <span class="n">type</span><span class="o">=</span><span class="s">"image/vnd.microsoft.icon"</span> <span class="n">href</span><span class="o">=</span><span class="s">"${pageContext.request.contextPath}/images/favicon.ico"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nl">c:</span><span class="k">catch</span> <span class="kt">var</span><span class="o">=</span><span class="s">"ex"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nl">c:</span><span class="k">if</span> <span class="n">test</span><span class="o">=</span><span class="s">"${param.template != null &amp;&amp; !fn:contains(param.template,'../') &amp;&amp; !fn:startsWith(param.template,'/')}"</span><span class="o">&gt;</span>
+        
+        <span class="o">&lt;</span><span class="nl">c:</span><span class="kn">import</span> <span class="nn">url</span><span class="o">=</span><span class="s">"http://assets.domain.com/${cc}/includes/&lt;%=request.getParameter(\"template\")%&gt;.jsp"</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;/</span><span class="nl">c:</span><span class="k">if</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nl">c:</span><span class="k">catch</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span> <span class="n">style</span><span class="o">=</span><span class="s">"margin-left: 20px; margin-right: 20px;"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">table</span> <span class="n">style</span><span class="o">=</span><span class="s">"width: 100%;"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">tr</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">td</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">h2</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="n">span</span> <span class="kd">class</span><span class="err">="</span><span class="nc">glyphicon</span> <span class="n">glyphicon</span><span class="o">-</span><span class="n">globe</span><span class="s">"&gt;&lt;/span&gt;&amp;nbsp;
+                    &lt;fmt:message key="</span><span class="n">title</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">test</span><span class="o">.</span><span class="na">page</span><span class="s">" /&gt;
+                &lt;/h2&gt;
+            &lt;/td&gt;
+            &lt;td align="</span><span class="n">right</span><span class="s">"&gt;&lt;a href="</span><span class="err">$</span><span class="o">{</span><span class="n">pageContext</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">contextPath</span><span class="o">}/</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">label</span><span class="o">.</span><span class="na">go</span><span class="o">.</span><span class="na">to</span><span class="o">.</span><span class="na">main</span><span class="s">" /&gt;&lt;/a&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    &lt;hr style="</span><span class="n">margin</span><span class="o">-</span><span class="nl">top:</span> <span class="mi">0</span><span class="s">" /&gt;
+    &lt;header&gt;
+        &lt;table style="</span><span class="nl">width:</span> <span class="mi">720</span><span class="n">px</span><span class="o">;</span><span class="s">"&gt;
+            &lt;tr&gt;
+                &lt;td&gt;&lt;img src="</span><span class="err">$</span><span class="o">{</span><span class="n">pageContext</span><span class="o">.</span><span class="na">request</span><span class="o">.</span><span class="na">contextPath</span><span class="o">}/</span><span class="n">images</span><span class="o">/</span><span class="n">easybuggy</span><span class="o">.</span><span class="na">png</span><span class="s">"&gt;&lt;/td&gt;
+                &lt;td&gt;&lt;fmt:message key="</span><span class="n">description</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">page</span><span class="s">" /&gt;&lt;/td&gt;
+            &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/header&gt;
+    &lt;hr style="</span><span class="n">margin</span><span class="o">-</span><span class="nl">top:</span> <span class="mi">10</span><span class="n">px</span><span class="s">" /&gt;
+    &lt;p&gt;
+        &lt;fmt:message key="</span><span class="n">description</span><span class="o">.</span><span class="na">design</span><span class="o">.</span><span class="na">test</span><span class="s">" /&gt;
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">nonstyle</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">nonstyle</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="o">?</span><span class="n">template</span><span class="o">=</span><span class="n">style_bootstrap</span><span class="o">.</span><span class="na">html</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">bootstrap</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">bootstrap</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="o">?</span><span class="n">template</span><span class="o">=</span><span class="n">style_google_mdl</span><span class="o">.</span><span class="na">html</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">mdl</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">google</span><span class="o">.</span><span class="na">mdl</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;p&gt;
+                &lt;a href="</span><span class="n">includable</span><span class="o">.</span><span class="na">jsp</span><span class="o">?</span><span class="n">template</span><span class="o">=</span><span class="n">style_materialize</span><span class="o">.</span><span class="na">html</span><span class="s">"&gt;&lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">name</span><span class="o">.</span><span class="na">materialize</span><span class="s">" /&gt;&lt;/a&gt;:
+                &lt;fmt:message key="</span><span class="n">style</span><span class="o">.</span><span class="na">description</span><span class="o">.</span><span class="na">materialize</span><span class="s">" /&gt;
+            &lt;/p&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;br&gt;
+    &lt;div class="</span><span class="n">alert</span> <span class="n">alert</span><span class="o">-</span><span class="n">info</span><span class="s">" role="</span><span class="n">alert</span><span class="s">"&gt;
+        &lt;span class="</span><span class="n">glyphicon</span> <span class="n">glyphicon</span><span class="o">-</span><span class="n">info</span><span class="o">-</span><span class="n">sign</span><span class="s">"&gt;&lt;/span&gt;&amp;nbsp;
+        &lt;fmt:message key="</span><span class="n">msg</span><span class="o">.</span><span class="na">note</span><span class="o">.</span><span class="na">dangerous</span><span class="o">.</span><span class="na">file</span><span class="o">.</span><span class="na">inclusion</span><span class="s">" /&gt;
+    &lt;/div&gt;
+    &lt;hr&gt;
+    &lt;footer&gt;
+        &lt;img src="</span><span class="o">/</span><span class="n">images</span><span class="o">/</span><span class="n">easybuggyL</span><span class="o">.</span><span class="na">png</span><span class="err">"</span><span class="o">&gt;</span><span class="nc">Copyright</span> <span class="o">&amp;</span><span class="n">copy</span><span class="o">;</span> <span class="mi">2017</span> <span class="no">T246</span> <span class="no">OSS</span> <span class="nc">Lab</span><span class="o">,</span> <span class="n">all</span> <span class="n">rights</span> <span class="n">reserved</span><span class="o">.</span>
+    <span class="o">&lt;/</span><span class="n">footer</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                request <span>(4)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                inclusion <span>(1)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                include <span>(1)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                lfi <span>(1)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                rfi <span>(1)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Improper-Access-Control.html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Cross_Site_Scripting(XSS).html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+

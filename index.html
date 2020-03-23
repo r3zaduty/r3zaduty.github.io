@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+  <head>
+    <!-- Charset -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Page title -->
+    <title>This is my personal page.</title>
+    <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/f4a227e864.js"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha256-rByPlHULObEjJ6XQxW/flG2r+22R5dKiAoef+aXWfik=" crossorigin="anonymous" />
+        <!-- Scripts -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha256-KM512VNnjElC30ehFwehXjx1YCHPiQkOPmqnrWtpccM=" crossorigin="anonymous"></script>
+  <style type="text/css">
+    * {
+      position: relative;
+      box-sizing: border-box;
+    }
+    
+    html {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-weight: 400;
+      font-size: 12pt;
+      font-family: Karla;
+    }
+    
+    .container {
+      margin: 0;
+      padding: 0;
+    }
+    
+    .wrapper {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 30px;
+      box-sizing: content-box;
+    }
+    
+    .wrapper.full {
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    
+    .flex {
+        display: flex;
+    }
+    
+    .flex.row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .flex.row.nowrap {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .flex.row.reverse {
+        flex-direction: row-reverse;
+    }
+    
+    .flex.column {
+        flex-direction: column;
+    }
+    
+    .flex.column.reverse {
+        flex-direction: column-reverse;
+    }
+    
+    .flex.between {
+        justify-content: space-between;
+    }
+    
+    .flex.around {
+        justify-content: space-around;
+    }
+    
+    .flex.center {
+        justify-content: center;
+    }
+    
+    .flex.alignstart {
+        align-items: flex-start;
+    }
+    
+    .flex.alignend {
+        align-items: flex-end;
+    }
+    
+    .flex.aligncenter {
+        align-items: center;
+    }
+    
+    .flex.alignstretch {
+        align-items: stretch;
+    }
+    
+    .flex.alignbaseline {
+        align-items: baseline;
+    }
+    
+    /* Headings, paragraphs, a, ... */
+    
+    h1 {
+      margin: 0 0 40px 0;
+      font-weight: 900;
+      font-size: 40.5pt;
+      font-family: 'Fira Sans';
+      color: #fff;
+    }
+    
+    h2 {
+      margin: 0 0 40px 0;
+      font-weight: 900;
+      font-size: 24.5pt;
+      font-family: Karla;
+      color: #333;
+    }
+    
+    h3 {
+      margin: 0 0 20px 0;
+      font-weight: 900;
+      font-size: 17pt;
+      color: #444;
+      
+    }
+    
+    h4 {
+      margin: 0 0 20px 0;
+      font-weight: 500;
+      font-size: 13pt;
+      font-family: 'Fira Sans';
+      text-transform: uppercase;
+      color: #999;
+    }
+    
+    p {
+      font-weight: 400;
+      font-size: 13.6pt;
+      font-family: Karla;
+      line-height: 22pt;
+      color: #666;
+    }
+    
+    a {
+      text-decoration: none;
+      color: #ea5455;
+    }
+    
+    .button {
+      display: inline-block;
+      height: 50px;
+      padding: 0 35px;
+      font-weight: 600;
+      font-size: 14pt;
+      font-family: Karla;
+      line-height: 50px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 25px;
+      outline: 0;
+      cursor: pointer;
+      background: linear-gradient( 333deg, #f07b3f, #EC604E );
+      color: #fff;
+      transition: background-color 456ms, transform 456ms, box-shadow 456ms;
+    }
+    
+    .button.main {
+      height: 64px;
+      line-height: 64px;
+      border-radius: 35px;
+      padding: 0 45px;
+    }
+    
+    .button.secondary {
+      background: none;
+      padding: 0;
+      text-transform: none;
+      font-weight: 600;
+      font-size: 13pt;
+      background: linear-gradient( to right, #f07b3f, #ea5455 );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-decoration: underline !important;
+    }
+    
+    .button.secondary:after {
+      content: '\f30b';
+      font-family: 'Font Awesome 5 Free';
+      margin-left: 17px;
+      transition: transform 456ms;
+    }
+    
+    #hero-cta .button.secondary {
+      margin-left: 30px;
+    }
+    
+    .button.main:hover {
+      background-color: #f07b3f;
+      transform: translateY( -2px );
+    }
+    
+    /* Hero section */
+    
+    #hero {
+      padding: 100px 0 100px 0;
+      background: linear-gradient( 245deg, #0E151E, #000 );
+    }
+    
+    #subheadline {
+      font-size: 11pt;
+      margin-bottom: 20px;
+      background: linear-gradient( to right, #f07b3f, #ea5455 );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    #introduction {
+      width: 100%;
+      max-width: 440px;
+      color: rgba( 255, 255, 255, 0.6 );
+    }
+    
+    #hero-cta {
+      margin-top: 60px;
+    }
+    
+    #hero-creative-container {
+      flex: 0 1 35%;
+    }
+    
+    #hero-creative img {
+      max-width: 100%;
+      box-shadow: 0 0 20px 10px rgba( 255, 255, 255, 0.03 );
+    }
+    
+    #hero-creative small a {
+      color: #ffffff40;
+    }
+    
+    #hero-creative-loader {
+      height: 3px;
+      background: linear-gradient( to right, #f07b3f, #ea5455 );
+      animation: animate_loader 7s linear infinite;
+    }
+    
+    .blink {
+      animation: text_blinking 2s linear infinite;
+    }
+    
+    /* Sections */
+    
+    section,
+    section.wrapper {
+      padding: 100px 0;
+    }
+    
+    section h2 {
+      margin-bottom: 80px;
+    }
+    
+    .centered {
+      text-align: center;
+    }
+    
+    .nomargin {
+      margin: 0 auto;
+    }
+    
+    /* Quick intro */
+    
+    .quick-intro-col {
+      flex: 0 0 300px;
+    }
+    
+    .quick-intro-col p {
+      text-align: center;
+    }
+    
+    .quick-intro-col strong {
+      color: #333;
+      font-size: 120%;
+    }
+    
+    .quick-intro-col img {
+      max-height: 50px;
+      margin-bottom: 25px;
+    }
+    
+    /* Popups */
+    
+    #popup-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba( 0, 0, 0, 0.6 );
+    }
+    
+    #popup {
+      background-color: #fff;
+    }
+    
+    /* About */
+    
+    #about-container {
+      background-color: #f5f8fc;
+    }
+    
+    /* Specs */
+    
+    #specs {
+      position: relative;
+    }
+    
+    #specs-colors div {
+      margin-right: 25px;
+    }
+    
+    #specs-colors label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 9pt;
+      color: #999;
+    }
+    
+    #specs-colors span {
+      display: inline-block;
+      width: 100px;
+      height: 35px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 15px 3px rgba( 0, 0, 0, 0.07 );
+    }
+    
+    .separator {
+      width: 100%;
+      height: 1px;
+      background: #eee;
+      margin: 30px 0;
+    }
+    
+    .scndry {
+      color: #888;
+      line-height: 16pt;
+    }
+    
+    #countdown {
+      position: relative;
+      margin: 40px 0;
+      background: #f5f8fc40;
+    }
+    
+    .countdown-item {
+      width: 90px;
+      height: 96px;
+      font-weight: 900;
+      font-size: 36pt;
+      font-family: 'Fira Sans';
+      text-align: center;
+      line-height: 80px;
+      color: #ea5455;
+    }
+    
+    .countdown-item:after {
+      content: attr(data-name);
+      display: block;
+      position: relative;
+      bottom: 14pt;
+      width: 100%;
+      font-weight: 600;
+      font-size: 10pt;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 12pt;
+      color: #ea5455;
+    }
+    
+    /* Keyframes */
+    
+    @keyframes animate_loader {
+      from {
+        width: 0px;
+      }
+      to {
+        width: 50%;
+      }
+    }
+    
+    @keyframes text_blinking {
+      from {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.3;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    
+    @keyframes infiniteRotation {
+      from {
+        transform: rotate(0deg);
+      }
+      50% {
+        transform: rotate(360deg);
+      }
+    }
+    /* Mini drone */
+    
+    #drone {
+      position: relative;
+      background-size: 200px;
+      background-repeat: repeat;
+      background-position: left top;
+      transition: background-color 456ms;
+    }
+    
+    #drone.flying {
+      background-image: url(https://media1.giphy.com/headers/emmadarvick/uwy8qT6ytZsV.gif);
+    }
+    
+    #drone.flying:before {
+      content: ' ';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient( to bottom, rgba( 255, 255, 255, 0.85 ), rgba( 255, 255, 255, 1 ) 55% );
+    }
+    
+    #mini-drone-container {
+        position: relative;
+      flex: 0 0 320px;
+        width: 320px;
+        height: 315px;
+        background: url( "http://test.samuelalsd.com/public/resources/media/img/Asset 5.png" );
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+      transition: transform 2.5s;
+    }
+    
+    .wing {
+        position: absolute;
+        width: 88px;
+        height: 88px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        animation-duration: 3s;
+        animation-timing-function: ease-out;
+        animation-name: slowWing;
+    }
+    
+    #mini-drone-container:hover .wing {
+        animation-duration: 234ms;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-name: rotateWing;
+    }
+    
+    #mini-drone-container:hover {
+      transform: translateY(-20px) scale(1.15,1.15);
+    }
+    
+    .wing#left-top {
+        top: 37px;
+        left: 36px;
+        background-image: url( "http://test.samuelalsd.com/public/resources/media/img/Asset 3.png" );
+    }
+    
+    .wing#right-top {
+        top: 36px;
+        right: 36px;
+        background-image: url( "http://test.samuelalsd.com/public/resources/media/img/Asset 4.png" );
+    }
+    
+    .wing#left-bottom {
+        bottom: 36px;
+        left: 36px;
+        background-image: url( "http://test.samuelalsd.com/public/resources/media/img/Asset 3.png" );
+    }
+    
+    .wing#right-bottom {
+        bottom: 36px;
+        right: 36px;
+        background-image: url( "http://test.samuelalsd.com/public/resources/media/img/Asset 4.png" );
+    }
+    
+    #mini-drone-presentation {
+      width: 100%;
+      max-width: 400px;
+      margin-left: 150px;
+    }
+    
+    #presentation {
+      display: none;
+    }
+    
+    @keyframes rotateWing {
+    
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    
+    }
+    
+    @keyframes slowWing {
+    
+        100% {
+            transform: rotate(720deg);
+        }
+    
+    }
+  </style>
+        </head>
+  
+  <body>
+    
+    <div id="container">
+      
+      <!-- Hero section -->
+      <div class="container" id="hero">
+        <div class="wrapper">
+          <!-- Background picture -->
+          <div id="hero-bg"></div>
+          <!-- Nice gradient overlay -->
+          <div id="hero-overlay"></div>
+          <!-- And the text -->
+          <div class="flex row between alignstart" id="hero-content">
+            <div id="hero-main">
+              <h4 id="subheadline">Web Coding · Prototyping with Fab</h4>
+              <h1 id="headline">Hello world!<br>I'm <span>Samuel Ali Saïd</span>.</h1>
+              <p id="introduction">
+                This hero section features Dribbblers work.<br>Every 7 seconds, a random creative is displayed<br>with credits & a link to the artist's page.
+              </p>
+            </div>
+            <div id="hero-creative-container" class="flex column center aligncenter">
+              <div class="flex column aligncenter" id="hero-creative">
+                <p><span class="blink">Loading creatives...</span></p>
+            </div>
+            <div id="hero-creative-loader"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+        
+    </div>
+      <script type="text/javascript">
+        ( function ($) {
+  
+          /**
+           * Smooth scrolling to anchor
+           * From https://css-tricks.com/snippets/jquery/smooth-scrolling/
+           */
+          $('a[href*="#"]')
+            // Remove links that don't actually link to anything
+            .not('[href="#"]')
+            .not('[href="#0"]')
+            .click(function(event) {
+              // On-page links
+              if (
+                location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+                && 
+                location.hostname == this.hostname
+              ) {
+                // Figure out element to scroll to
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                // Does a scroll target exist?
+                if (target.length) {
+                  // Only prevent default if animation is actually gonna happen
+                  event.preventDefault();
+                  $('html, body').animate({
+                    scrollTop: target.offset().top
+                  }, 1000, function() {
+                    // Callback after animation
+                    // Must change focus!
+                    var $target = $(target);
+                    $target.focus();
+                    if ($target.is(":focus")) { // Checking if the target was focused
+                      return false;
+                    } else {
+                      $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+                      $target.focus(); // Set focus again
+                    };
+                  });
+                }
+              }
+            });
+          
+          /* Display images in orginial size */
+          $( 'img' ).click( function () {
+            var img = $( this ).clone();
+            var container = $( '<div>', { id: 'popup-container' } ),
+                popup = $( '<div>', { id: 'popup' } );
+            
+            popup.append( img );
+            container.append( popup );
+            
+            $( 'body' ).append( container );
+            
+            container.click( function (e) {
+              $( '#popup-container' ).remove();
+            } );
+            
+            popup.click( function (e) {
+              e.stopPropagation();
+            } );
+            
+          } );
+          
+          /* Choose a creative randomly */
+          function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max));
+          }
+          
+          var creas = {
+        
+            0: {
+              'url': 'https://cdn.dribbble.com/users/1390/screenshots/5341235/vaporwave.gif',
+              'artist_name': 'clᴧy',
+              'artist_profile':'https://dribbble.com/clayglobal'
+            },
+        
+            1: {
+              'url': 'https://cdn.dribbble.com/users/43342/screenshots/5306026/merge.gif',
+              'artist_name': 'MadeByStudioJQ',
+              'artist_profile': 'https://dribbble.com/STUDIOJQ'
+            },
+            
+            2: {
+              'url': 'https://cdn.dribbble.com/users/32512/screenshots/5276094/smile_loader_by_gleb.gif',
+              'artist_name': 'Gleb Kuznetsov✈',
+              'artist_profile': 'https://dribbble.com/glebich'
+            },
+            
+            3: {
+              'url': 'https://cdn.dribbble.com/users/536/screenshots/5247884/artboard_2x_4x.png',
+              'artist_name': 'james',
+              'artist_profile': 'https://dribbble.com/james'
+            },
+            
+            4: {
+              'url': 'https://cdn.dribbble.com/users/14268/screenshots/5320393/ar.gif',
+              'artist_name': 'Eddie Lobanovskiy',
+              'artist_profile': 'https://dribbble.com/lobanovskiy'
+            },
+            
+            5: {
+              'url': 'https://cdn.dribbble.com/users/59947/screenshots/5312080/muti-1.jpg',
+              'artist_name': 'MUTI',
+              'artist_profile': 'https://dribbble.com/studioMUTI'
+            },
+            
+            6: {
+              'url': 'https://cdn.dribbble.com/users/2738/screenshots/5289991/nope.jpg',
+              'artist_name': 'Adam Grason',
+              'artist_profile': 'https://dribbble.com/adamgrason'
+            },
+            
+            7: {
+              'url': 'https://cdn.dribbble.com/users/2523284/screenshots/5344415/grow.gif',
+              'artist_name': 'Avgust Ruslan',
+              'artist_profile': 'https://dribbble.com/avgustruslan'
+            }
+        
+          };
+         
+           function displayCrea() {
+              // DOM Objects
+              var img = $( '<img>', { class: 'generated' } );
+              var txt = $( '<p>', { class: 'generated' } );
+              // Get total number of creatives and select one randomly
+              var creasNb = Object.keys( creas ).length;
+              var i = getRandomInt( creasNb );
+              // Add 
+              img.attr( 'src', creas[i]['url'] );
+              txt.html( '<p><small>From <a href="https://dribbble.com">dribbble.com</a> by <a href="' + creas[i]['artist_profile'] + '">' + creas[i]['artist_name'] + '</a></small></p>' );
+              
+              $( '#hero-creative' ).html( '' );
+              $( '#hero-creative' ).append( img );
+              $( '#hero-creative' ).append( txt );
+          }
+          
+          var creas_loop = setInterval( displayCrea, 7000 );
+          
+        }( jQuery ) );
+      </script>
+  </body>
+    
+</html>

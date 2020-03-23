@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/XML_External_Entity(XXE).html">XML External Entity (XXE) Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/XML_External_Entity(XXE).html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/XML_External_Entity(XXE).html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/XML_External_Entity(XXE).html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/XML_External_Entity(XXE).html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/XML_External_Entity(XXE).html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-xml-external-entity-xxe-">What is XML External Entity (XXE) ?</h1>
+
+<p>XML external entity injection (also known as XXE) is a web security vulnerability that allows an attacker to interfere with an application’s processing of XML data. It often allows an attacker to view files on the application server filesystem, and to interact with any backend or external systems that the application itself can access.</p>
+
+<p><img src="/images/xxe.png" alt="sql injection" /></p>
+
+<p>o perform an XXE injection attack that retrieves an arbitrary file from the server’s filesystem, you need to modify the submitted XML in two ways:</p>
+
+<ul>
+  <li>Introduce (or edit) a DOCTYPE element that defines an external entity containing the path to the file.</li>
+  <li>Edit a data value in the XML that is returned in the application’s response, to make use of the defined external entity.</li>
+</ul>
+
+<p>For example, suppose a shopping application checks for the stock level of a product by submitting the following XML to the server:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;stockCheck&gt;&lt;productId&gt;</span>381<span class="nt">&lt;/productId&gt;&lt;/stockCheck&gt;</span></code></pre></figure>
+
+<p>The application performs no particular defenses against XXE attacks, so you can exploit the XXE vulnerability to retrieve the /etc/passwd file by submitting the following XXE payload:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="cp">&lt;!DOCTYPE foo [ &lt;!ENTITY xxe SYSTEM "file:///etc/passwd"&gt;</span> ]&gt;
+<span class="nt">&lt;stockCheck&gt;&lt;productId&gt;</span><span class="ni">&amp;xxe;</span><span class="nt">&lt;/productId&gt;&lt;/stockCheck&gt;</span></code></pre></figure>
+
+<p>This XXE payload defines an external entity &amp;xxe; whose value is the contents of the /etc/passwd file and uses the entity within the productId value. This causes the application’s response to include the contents of the file:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Invalid</span> <span class="nx">product</span> <span class="nx">ID</span><span class="o">:</span> <span class="nx">root</span><span class="o">:</span><span class="nx">x</span><span class="o">:</span><span class="mi">0</span><span class="o">:</span><span class="mi">0</span><span class="o">:</span><span class="nx">root</span><span class="o">:/</span><span class="nx">root</span><span class="o">:/</span><span class="nx">bin</span><span class="o">/</span><span class="nx">bash</span>
+<span class="nx">daemon</span><span class="o">:</span><span class="nx">x</span><span class="o">:</span><span class="mi">1</span><span class="o">:</span><span class="mi">1</span><span class="o">:</span><span class="nx">daemon</span><span class="o">:/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">sbin</span><span class="o">:/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">sbin</span><span class="o">/</span><span class="nx">nologin</span>
+<span class="nx">bin</span><span class="o">:</span><span class="nx">x</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="mi">2</span><span class="o">:</span><span class="nx">bin</span><span class="o">:/</span><span class="nx">bin</span><span class="o">:/</span><span class="nx">usr</span><span class="o">/</span><span class="nx">sbin</span><span class="o">/</span><span class="nx">nologin</span>
+<span class="o">...</span></code></pre></figure>
+
+<h1 id="prevention">Prevention</h1>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> 
+<span class="nv">$goodXML</span> <span class="o">=</span> <span class="s1">'&lt;test&gt;&lt;testing&gt;my value&lt;/testing&gt;&lt;/test&gt;'</span><span class="p">;</span> 
+<span class="nv">$badXml</span> <span class="o">=</span> <span class="s1">'&lt;!DOCTYPE root [ &lt;!ENTITY foo SYSTEM "http://test.localhost:8080/contents.txt"&gt; ]&gt; &lt;test&gt;&lt;testing&gt;&amp;foo;&lt;/testing&gt;&lt;/test&gt;'</span><span class="p">;</span>
+<span class="nv">$doc</span> <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span><span class="nv">$badXml</span> <span class="p">);</span> 
+<span class="k">echo</span> <span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">testing</span><span class="p">;</span> 
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h3 id="example-2">Example #2</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// In XML processors based on libxml2, dangerous LIBXML constants include: LIBXML_DTDLOAD, LIBXML_DTDVALID, LIBXML_NOENT, LIBXML_XINCLUDE</span>
+
+<span class="nv">$xml</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">"xml"</span><span class="p">];</span>
+
+<span class="nv">$doc</span> <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span><span class="nv">$xml</span><span class="p">,</span> <span class="s2">"SimpleXMLElement"</span><span class="p">,</span> <span class="nx">LIBXML_NOENT</span><span class="p">);</span> <span class="c1">// Noncompliant</span>
+
+<span class="nv">$doc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+<span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">loadXML</span><span class="p">(</span><span class="nv">$xml</span><span class="p">,</span> <span class="nx">LIBXML_NOENT</span><span class="p">);</span> <span class="c1">// Noncompliant</span>
+
+<span class="nv">$reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLReader</span><span class="p">();</span>
+<span class="nv">$reader</span><span class="o">-&gt;</span><span class="na">XML</span><span class="p">(</span><span class="nv">$xml</span><span class="p">,</span> <span class="k">NULL</span><span class="p">,</span> <span class="nx">LIBXML_NOENT</span><span class="p">);</span> <span class="c1">// Noncompliant</span></code></pre></figure>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> 
+<span class="nv">$goodXML</span> <span class="o">=</span> <span class="s1">'&lt;test&gt;&lt;testing&gt;my value&lt;/testing&gt;&lt;/test&gt;'</span><span class="p">;</span> 
+<span class="nv">$badXml</span> <span class="o">=</span> <span class="s1">'&lt;!DOCTYPE root [ &lt;!ENTITY foo SYSTEM "http://test.localhost:8080/contents.txt"&gt; ]&gt; &lt;test&gt;&lt;testing&gt;&amp;foo;&lt;/testing&gt;&lt;/test&gt;'</span><span class="p">;</span>
+<span class="nb">libxml_disable_entity_loader</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$doc</span> <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span><span class="nv">$badXml</span><span class="p">);</span> 
+<span class="k">echo</span> <span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">testing</span><span class="p">;</span> 
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h3 id="method-2">Method #2</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// Starting with libxml2 version 2.9, dangerous functionality is disabled by default</span>
+
+<span class="nv">$xml</span> <span class="o">=</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s2">"xml"</span><span class="p">];</span>
+
+<span class="nv">$doc</span> <span class="o">=</span> <span class="nb">simplexml_load_string</span><span class="p">(</span><span class="nv">$xml</span><span class="p">);</span>
+
+<span class="nv">$doc</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+<span class="nv">$doc</span><span class="o">-&gt;</span><span class="na">loadXML</span><span class="p">(</span><span class="nv">$xml</span><span class="p">);</span>
+
+<span class="nv">$reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">XMLReader</span><span class="p">();</span>
+<span class="nv">$reader</span><span class="o">-&gt;</span><span class="na">XML</span><span class="p">(</span><span class="nv">$xml</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="n">StreamReader</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="n">XmlReaderSettings</span> <span class="n">settings</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XmlReaderSettings</span><span class="p">();</span>
+<span class="n">settings</span><span class="p">.</span><span class="n">DtdProcessing</span> <span class="p">=</span> <span class="n">DtdProcessing</span><span class="p">.</span><span class="n">Parse</span><span class="p">;</span>
+<span class="n">XmlReader</span> <span class="n">xmlReader</span> <span class="p">=</span> <span class="n">XmlReader</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">settings</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="n">StreamReader</span> <span class="n">stream</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StreamReader</span><span class="p">(</span><span class="n">data</span><span class="p">);</span>
+<span class="n">XmlReaderSettings</span> <span class="n">settings</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XmlReaderSettings</span><span class="p">();</span>
+<span class="n">settings</span><span class="p">.</span><span class="n">DtdProcessing</span> <span class="p">=</span> <span class="n">DtdProcessing</span><span class="p">.</span><span class="n">Ignore</span><span class="p">;</span>
+<span class="n">XmlReader</span> <span class="n">xmlReader</span> <span class="p">=</span> <span class="n">XmlReader</span><span class="p">.</span><span class="nf">Create</span><span class="p">(</span><span class="n">stream</span><span class="p">,</span> <span class="n">settings</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+ 
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.ParserConfigurationException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParserFactory</span><span class="o">;</span>
+ 
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.helpers.DefaultHandler</span><span class="o">;</span>
+ 
+<span class="kd">class</span> <span class="nc">XXE</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">receiveXMLStream</span><span class="o">(</span><span class="nc">InputStream</span> <span class="n">inStream</span><span class="o">,</span>
+                                       <span class="nc">DefaultHandler</span> <span class="n">defaultHandler</span><span class="o">)</span>
+      <span class="kd">throws</span> <span class="nc">ParserConfigurationException</span><span class="o">,</span> <span class="nc">SAXException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="nc">SAXParserFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="nc">SAXParserFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+    <span class="nc">SAXParser</span> <span class="n">saxParser</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newSAXParser</span><span class="o">();</span>
+    <span class="n">saxParser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">inStream</span><span class="o">,</span> <span class="n">defaultHandler</span><span class="o">);</span>
+  <span class="o">}</span>
+ 
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ParserConfigurationException</span><span class="o">,</span>
+      <span class="nc">SAXException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">receiveXMLStream</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="s">"evil.xml"</span><span class="o">),</span> <span class="k">new</span> <span class="nc">DefaultHandler</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">net</span><span class="o">.</span><span class="na">MalformedURLException</span> <span class="n">mue</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Malformed URL Exception: "</span> <span class="o">+</span> <span class="n">mue</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="solution-1">Solution</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.FileInputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.InputStream</span><span class="o">;</span>
+ 
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.ParserConfigurationException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParserFactory</span><span class="o">;</span>
+ 
+<span class="kn">import</span> <span class="nn">org.xml.sax.InputSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.XMLReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.helpers.DefaultHandler</span><span class="o">;</span>
+ 
+<span class="kd">class</span> <span class="nc">XXE</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">receiveXMLStream</span><span class="o">(</span><span class="nc">InputStream</span> <span class="n">inStream</span><span class="o">,</span>
+      <span class="nc">DefaultHandler</span> <span class="n">defaultHandler</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ParserConfigurationException</span><span class="o">,</span>
+      <span class="nc">SAXException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="nc">SAXParserFactory</span> <span class="n">factory</span> <span class="o">=</span> <span class="nc">SAXParserFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+    <span class="nc">SAXParser</span> <span class="n">saxParser</span> <span class="o">=</span> <span class="n">factory</span><span class="o">.</span><span class="na">newSAXParser</span><span class="o">();</span>
+ 
+    <span class="c1">// Create an XML reader to set the entity resolver.</span>
+    <span class="nc">XMLReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">saxParser</span><span class="o">.</span><span class="na">getXMLReader</span><span class="o">();</span>
+    <span class="n">reader</span><span class="o">.</span><span class="na">setEntityResolver</span><span class="o">(</span><span class="k">new</span> <span class="nc">CustomResolver</span><span class="o">());</span>
+    <span class="n">reader</span><span class="o">.</span><span class="na">setContentHandler</span><span class="o">(</span><span class="n">defaultHandler</span><span class="o">);</span>
+ 
+    <span class="nc">InputSource</span> <span class="n">is</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InputSource</span><span class="o">(</span><span class="n">inStream</span><span class="o">);</span>
+    <span class="n">reader</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">is</span><span class="o">);</span>
+  <span class="o">}</span>
+ 
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ParserConfigurationException</span><span class="o">,</span>
+      <span class="nc">SAXException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="n">receiveXMLStream</span><span class="o">(</span><span class="k">new</span> <span class="nc">FileInputStream</span><span class="o">(</span><span class="s">"evil.xml"</span><span class="o">),</span> <span class="k">new</span> <span class="nc">DefaultHandler</span><span class="o">());</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">java</span><span class="o">.</span><span class="na">net</span><span class="o">.</span><span class="na">MalformedURLException</span> <span class="n">mue</span><span class="o">)</span> <span class="o">{</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">err</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Malformed URL Exception: "</span> <span class="o">+</span> <span class="n">mue</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                xml <span>(2)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/securec0ding/2019/XML_Injection.html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Unvalidated_Redirects_and_Forwards.html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+

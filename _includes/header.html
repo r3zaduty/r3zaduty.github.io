@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ site.name }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ site.baseurl }}/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
+    <script src="{{ site.baseurl }}/assets/js/bootstrap.min.js"></script>
+    <link href="{{ site.baseurl }}/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="{{ site.baseurl }}/assets/css/styles.css" rel="stylesheet" type="text/css">
+{% include isso-comments.html %}
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ site.baseurl }}/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    {% assign current = page.url | split: '/' %}
+                    {% if current[1] == "web" or current[1] == "web.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a link="rel no-openner" href="{{ site.baseurl }}/web">Web</a></li>
+                    {% if current[1] == "mobile" or current[1] == "mobile.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a href="{{ site.baseurl }}/mobile">Mobile</a></li>
+                    {% if current[1] == "network" or current[1] == "network.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a href="{{ site.baseurl }}/network">Network</a></li>
+                    {% if current[1] == "os" or current[1] == "os.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a href="{{ site.baseurl }}/os">OS</a></li>
+                    {% if current[1] == "hardware" or current[1] == "hardware.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a href="{{ site.baseurl }}/hardware">Hardware</a></li>
+                    {% if current[1] == "securec0ding" or current[1] == "securec0ding.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a href="{{ site.baseurl }}/securec0ding">Secure C0ding</a></li>
+                    {% if current[1] == "projects" or current[1] == "projects.html" %} 
+                    <li class="top-meenu activee">
+                    {% else %}
+                    <li class="top-menu">
+                    {% endif %}
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+

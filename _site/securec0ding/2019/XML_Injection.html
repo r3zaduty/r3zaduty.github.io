@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/XML_Injection.html">XML Injection Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/XML_Injection.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/XML_Injection.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/XML_Injection.html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/XML_Injection.html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/XML_Injection.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-xml-injection-">What is XML injection ?</h1>
+
+<p>XML or SOAP injection vulnerabilities arise when user input is inserted into a server-side XML document or SOAP message in an unsafe way. It may be possible to use XML metacharacters to modify the structure of the resulting XML. Depending on the function in which the XML is used, it may be possible to interfere with the application’s logic, to perform unauthorized actions or access sensitive data.</p>
+
+<p>This kind of vulnerability can be difficult to detect and exploit remotely; you should review the application’s response, and the purpose that the relevant input performs within the application’s functionality, to determine whether it is indeed vulnerable.</p>
+
+<p>Let’s suppose there is a web application using an XML style communication in order to perform user registration.</p>
+
+<p>This is done by creating and adding a new <user> node in an xmlDb file.</user></p>
+
+<p>Let’s suppose the xmlDB file is like the following:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span> 
+<span class="nt">&lt;users&gt;</span> 
+	<span class="nt">&lt;user&gt;</span> 
+		<span class="nt">&lt;username&gt;</span>gandalf<span class="nt">&lt;/username&gt;</span> 
+		<span class="nt">&lt;password&gt;</span>!c3<span class="nt">&lt;/password&gt;</span> 
+		<span class="nt">&lt;userid&gt;</span>0<span class="nt">&lt;/userid&gt;</span>
+		<span class="nt">&lt;mail&gt;</span>gandalf@middleearth.com<span class="nt">&lt;/mail&gt;</span>
+	<span class="nt">&lt;/user&gt;</span> 
+	<span class="nt">&lt;user&gt;</span> 
+		<span class="nt">&lt;username&gt;</span>Stefan0<span class="nt">&lt;/username&gt;</span> 
+		<span class="nt">&lt;password&gt;</span>w1s3c<span class="nt">&lt;/password&gt;</span> 
+		<span class="nt">&lt;userid&gt;</span>500<span class="nt">&lt;/userid&gt;</span>
+		<span class="nt">&lt;mail&gt;</span>Stefan0@whysec.hmm<span class="nt">&lt;/mail&gt;</span>
+	<span class="nt">&lt;/user&gt;</span> 
+<span class="nt">&lt;/users&gt;</span></code></pre></figure>
+
+<p>When a user registers himself by filling an HTML form, the application receives the user’s data in a standard request, which, for the sake of simplicity, will be supposed to be sent as a GET request.</p>
+
+<p>For example, the following values:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Username</span><span class="o">:</span> <span class="nx">tony</span>
+<span class="nx">Password</span><span class="o">:</span> <span class="nx">Un6R34kb</span><span class="o">!</span><span class="nx">e</span>
+<span class="nx">E</span><span class="o">-</span><span class="nb">mail</span><span class="o">:</span> <span class="nx">s4tan</span><span class="o">@</span><span class="nx">hell</span><span class="o">.</span><span class="nx">com</span></code></pre></figure>
+
+<p>will produce the request:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">www</span><span class="o">.</span><span class="nx">example</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">addUser</span><span class="o">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">username</span><span class="o">=</span><span class="nx">tony</span><span class="o">&amp;</span><span class="nx">password</span><span class="o">=</span><span class="nx">Un6R34kb</span><span class="o">!</span><span class="nx">e</span><span class="o">&amp;</span><span class="nx">email</span><span class="o">=</span><span class="nx">s4tan</span><span class="o">@</span><span class="nx">hell</span><span class="o">.</span><span class="nx">com</span></code></pre></figure>
+
+<p>The application, then, builds the following node:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;user&gt;</span> 
+	<span class="nt">&lt;username&gt;</span>tony<span class="nt">&lt;/username&gt;</span> 
+	<span class="nt">&lt;password&gt;</span>Un6R34kb!e<span class="nt">&lt;/password&gt;</span> 
+	<span class="nt">&lt;userid&gt;</span>500<span class="nt">&lt;/userid&gt;</span>
+	<span class="nt">&lt;mail&gt;</span>s4tan@hell.com<span class="nt">&lt;/mail&gt;</span>
+<span class="nt">&lt;/user&gt;</span></code></pre></figure>
+
+<p>which will be added to the xmlDB:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version="1.0" encoding="ISO-8859-1"?&gt;</span> 
+<span class="nt">&lt;users&gt;</span> 
+	<span class="nt">&lt;user&gt;</span> 
+		<span class="nt">&lt;username&gt;</span>gandalf<span class="nt">&lt;/username&gt;</span> 
+		<span class="nt">&lt;password&gt;</span>!c3<span class="nt">&lt;/password&gt;</span> 
+		<span class="nt">&lt;userid&gt;</span>0<span class="nt">&lt;/userid&gt;</span>
+		<span class="nt">&lt;mail&gt;</span>gandalf@middleearth.com<span class="nt">&lt;/mail&gt;</span>
+	<span class="nt">&lt;/user&gt;</span> 
+	<span class="nt">&lt;user&gt;</span> 
+		<span class="nt">&lt;username&gt;</span>Stefan0<span class="nt">&lt;/username&gt;</span> 
+		<span class="nt">&lt;password&gt;</span>w1s3c<span class="nt">&lt;/password&gt;</span> 
+		<span class="nt">&lt;userid&gt;</span>500<span class="nt">&lt;/userid&gt;</span>
+		<span class="nt">&lt;mail&gt;</span>Stefan0@whysec.hmm<span class="nt">&lt;/mail&gt;</span>
+	<span class="nt">&lt;/user&gt;</span> 
+	<span class="nt">&lt;user&gt;</span> 
+		<span class="nt">&lt;username&gt;</span>tony<span class="nt">&lt;/username&gt;</span> 
+		<span class="nt">&lt;password&gt;</span>Un6R34kb!e<span class="nt">&lt;/password&gt;</span> 
+		<span class="nt">&lt;userid&gt;</span>500<span class="nt">&lt;/userid&gt;</span>
+		<span class="nt">&lt;mail&gt;</span>s4tan@hell.com<span class="nt">&lt;/mail&gt;</span>
+	<span class="nt">&lt;/user&gt;</span> 
+<span class="nt">&lt;/users&gt;</span></code></pre></figure>
+
+<h1 id="prevention">Prevention</h1>
+
+<p>The injections we referred to in the last article are based on object injection: if the attacker is able to have an object injected where a string is expected he can be able to forge a malicious MongoDB query.</p>
+
+<ul>
+  <li>Manual Data validation</li>
+  <li>Using a library</li>
+</ul>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<test>example</test>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+
+	<span class="nt">&lt;head&gt;</span>
+
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+
+		<span class="nt">&lt;title&gt;</span>XML Bomb Denial-of-Service<span class="nt">&lt;/title&gt;</span>
+
+		<span class="cp">&lt;?php</span> <span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s2">"../../../bootstrap.php"</span><span class="p">)</span> <span class="cp">?&gt;</span>
+
+	<span class="nt">&lt;/head&gt;</span>
+	 <span class="nt">&lt;body&gt;</span>
+
+
+		 <span class="c">&lt;!-- Sidebar --&gt;</span>
+	 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+		 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3"</span><span class="nt">&gt;</span>
+		 <span class="cp">&lt;?php</span> <span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s2">"../../../sidebar.php"</span><span class="p">)</span> <span class="cp">?&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+
+			<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"page-content-wrapper"</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+								<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+										<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+
+
+    <span class="nt">&lt;/html&gt;</span>
+<span class="cp">&lt;?php</span>
+	<span class="nv">$simple</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'name'</span><span class="p">];</span>
+	<span class="nv">$p</span> <span class="o">=</span> <span class="nb">xml_parser_create</span><span class="p">();</span>
+	<span class="nb">xml_parse_into_struct</span><span class="p">(</span><span class="nv">$p</span><span class="p">,</span> <span class="nv">$simple</span><span class="p">,</span> <span class="nv">$vals</span><span class="p">,</span> <span class="nv">$index</span><span class="p">);</span>
+	<span class="nb">xml_parser_free</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;&lt;br&gt;The following array was created from your XML data</span><span class="se">\n</span><span class="s2"> &lt;br&gt;&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nb">print_r</span><span class="p">(</span><span class="nv">$index</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Vals array</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="nb">print_r</span><span class="p">(</span><span class="nv">$vals</span><span class="p">);</span>
+	 <span class="nx">get_server_memory_usage</span><span class="p">();</span>
+	 <span class="nx">get_server_cpu_usage</span><span class="p">();</span>
+<span class="k">function</span> <span class="nf">get_server_memory_usage</span><span class="p">(){</span>
+    <span class="c1">//shows server memory usage</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">stristr</span><span class="p">(</span><span class="k">PHP_OS</span><span class="p">,</span> <span class="s1">'Linux'</span><span class="p">))</span>
+    <span class="p">{</span>
+		<span class="nv">$free</span> <span class="o">=</span> <span class="nb">shell_exec</span><span class="p">(</span><span class="s1">'free'</span><span class="p">);</span>
+		<span class="nv">$free</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$free</span><span class="p">);</span>
+		<span class="nv">$free_arr</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$free</span><span class="p">);</span>
+		<span class="nv">$mem</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="nv">$free_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+		<span class="nv">$mem</span> <span class="o">=</span> <span class="nb">array_filter</span><span class="p">(</span><span class="nv">$mem</span><span class="p">);</span>
+		<span class="nv">$mem</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$mem</span><span class="p">);</span>
+		<span class="nv">$memory_usage</span> <span class="o">=</span> <span class="nv">$mem</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="nv">$mem</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+		<span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;&lt;br&gt; The server memory usage is "</span><span class="o">.</span><span class="nv">$memory_usage</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+	<span class="nv">$cmd</span> <span class="o">=</span> <span class="s1">'typeperf  -sc 1  "\Processor(_Total)\% Processor Time"'</span><span class="p">;</span>
+	<span class="nb">exec</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span> <span class="nv">$lines</span><span class="p">,</span> <span class="nv">$retval</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="nv">$retval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nv">$values</span> <span class="o">=</span> <span class="nb">str_getcsv</span><span class="p">(</span><span class="nv">$lines</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+		<span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;&lt;br&gt; The server memory usage is "</span><span class="o">.</span><span class="nb">floatval</span><span class="p">(</span><span class="nv">$values</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">function</span> <span class="nf">get_server_cpu_usage</span><span class="p">(){</span>
+    <span class="c1">//shows server CPU Usage</span>
+<span class="p">{</span>
+    <span class="nv">$load</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">stristr</span><span class="p">(</span><span class="k">PHP_OS</span><span class="p">,</span> <span class="s1">'win'</span><span class="p">))</span>
+    <span class="p">{</span>
+    <span class="nv">$output</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+    <span class="nb">exec</span><span class="p">(</span> <span class="s1">'tasklist '</span><span class="p">,</span> <span class="nv">$output</span> <span class="p">);</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$output</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$ex</span><span class="o">=</span><span class="nb">explode</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="nv">$value</span><span class="p">);</span>
+        <span class="nv">$count_ex</span><span class="o">=</span><span class="nb">count</span><span class="p">(</span><span class="nv">$ex</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">eregi</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="nb">getmypid</span><span class="p">()</span><span class="o">.</span><span class="s2">" Console"</span><span class="p">,</span><span class="nv">$value</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="nv">$memory_size</span><span class="o">=</span><span class="nv">$ex</span><span class="p">[</span><span class="nv">$count_ex</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">" Kb"</span><span class="p">;</span>
+            <span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;The server CPU usage is "</span><span class="o">.</span><span class="nv">$memory_size</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="nv">$load</span> <span class="o">=</span> <span class="nb">sys_getloadavg</span><span class="p">();</span>
+        <span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;The server CPU usage is "</span><span class="o">.</span><span class="nv">$load</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$load</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<p>with addslashes function</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+
+
+	<span class="nt">&lt;head&gt;</span>
+
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"X-UA-Compatible"</span> <span class="na">content=</span><span class="s">"IE=edge"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">""</span><span class="nt">&gt;</span>
+
+		<span class="nt">&lt;title&gt;</span>XML Bomb Denial-of-Service<span class="nt">&lt;/title&gt;</span>
+
+		<span class="cp">&lt;?php</span> <span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s2">"../../../bootstrap.php"</span><span class="p">)</span> <span class="cp">?&gt;</span>
+
+	<span class="nt">&lt;/head&gt;</span>
+	 <span class="nt">&lt;body&gt;</span>
+
+
+		 <span class="c">&lt;!-- Sidebar --&gt;</span>
+	 <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"wrapper"</span><span class="nt">&gt;</span>
+
+		 <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-3"</span><span class="nt">&gt;</span>
+		 <span class="cp">&lt;?php</span> <span class="k">require</span><span class="p">(</span><span class="nb">dirname</span><span class="p">(</span><span class="k">__FILE__</span><span class="p">)</span><span class="o">.</span><span class="s2">"../../../sidebar.php"</span><span class="p">)</span> <span class="cp">?&gt;</span>
+	<span class="nt">&lt;/div&gt;</span>
+
+			<span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"page-content-wrapper"</span><span class="nt">&gt;</span>
+						<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+								<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"row"</span><span class="nt">&gt;</span>
+										<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-lg-12"</span><span class="nt">&gt;</span>
+
+
+    <span class="nt">&lt;/html&gt;</span>
+<span class="cp">&lt;?php</span>
+	<span class="nv">$simple</span> <span class="o">=</span> <span class="nb">addslashes</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'name'</span><span class="p">]);</span>
+	<span class="nv">$p</span> <span class="o">=</span> <span class="nb">xml_parser_create</span><span class="p">();</span>
+	<span class="nb">xml_parse_into_struct</span><span class="p">(</span><span class="nv">$p</span><span class="p">,</span> <span class="nv">$simple</span><span class="p">,</span> <span class="nv">$vals</span><span class="p">,</span> <span class="nv">$index</span><span class="p">);</span>
+	<span class="nb">xml_parser_free</span><span class="p">(</span><span class="nv">$p</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"&lt;br&gt;&lt;br&gt;The following array was created from your XML data</span><span class="se">\n</span><span class="s2"> &lt;br&gt;&lt;br&gt;"</span><span class="p">;</span>
+	<span class="nb">print_r</span><span class="p">(</span><span class="nv">$index</span><span class="p">);</span>
+	<span class="k">echo</span> <span class="s2">"</span><span class="se">\n</span><span class="s2">Vals array</span><span class="se">\n</span><span class="s2">"</span><span class="p">;</span>
+	<span class="nb">print_r</span><span class="p">(</span><span class="nv">$vals</span><span class="p">);</span>
+	 <span class="nx">get_server_memory_usage</span><span class="p">();</span>
+	 <span class="nx">get_server_cpu_usage</span><span class="p">();</span>
+<span class="k">function</span> <span class="nf">get_server_memory_usage</span><span class="p">(){</span>
+    <span class="c1">//shows server memory usage</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">stristr</span><span class="p">(</span><span class="k">PHP_OS</span><span class="p">,</span> <span class="s1">'Linux'</span><span class="p">))</span>
+    <span class="p">{</span>
+		<span class="nv">$free</span> <span class="o">=</span> <span class="nb">shell_exec</span><span class="p">(</span><span class="s1">'free'</span><span class="p">);</span>
+		<span class="nv">$free</span> <span class="o">=</span> <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nb">trim</span><span class="p">(</span><span class="nv">$free</span><span class="p">);</span>
+		<span class="nv">$free_arr</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">,</span> <span class="nv">$free</span><span class="p">);</span>
+		<span class="nv">$mem</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span> <span class="nv">$free_arr</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+		<span class="nv">$mem</span> <span class="o">=</span> <span class="nb">array_filter</span><span class="p">(</span><span class="nv">$mem</span><span class="p">);</span>
+		<span class="nv">$mem</span> <span class="o">=</span> <span class="nb">array_merge</span><span class="p">(</span><span class="nv">$mem</span><span class="p">);</span>
+		<span class="nv">$memory_usage</span> <span class="o">=</span> <span class="nv">$mem</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">/</span><span class="nv">$mem</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="mi">100</span><span class="p">;</span>
+		<span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;&lt;br&gt; The server memory usage is "</span><span class="o">.</span><span class="nv">$memory_usage</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+	<span class="nv">$cmd</span> <span class="o">=</span> <span class="s1">'typeperf  -sc 1  "\Processor(_Total)\% Processor Time"'</span><span class="p">;</span>
+	<span class="nb">exec</span><span class="p">(</span><span class="nv">$cmd</span><span class="p">,</span> <span class="nv">$lines</span><span class="p">,</span> <span class="nv">$retval</span><span class="p">);</span>
+	<span class="k">if</span><span class="p">(</span><span class="nv">$retval</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+		<span class="nv">$values</span> <span class="o">=</span> <span class="nb">str_getcsv</span><span class="p">(</span><span class="nv">$lines</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+		<span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;&lt;br&gt; The server memory usage is "</span><span class="o">.</span><span class="nb">floatval</span><span class="p">(</span><span class="nv">$values</span><span class="p">[</span><span class="mi">1</span><span class="p">]);</span>
+	<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+		<span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="p">}</span>
+<span class="p">}</span>
+<span class="k">function</span> <span class="nf">get_server_cpu_usage</span><span class="p">(){</span>
+    <span class="c1">//shows server CPU Usage</span>
+<span class="p">{</span>
+    <span class="nv">$load</span><span class="o">=</span><span class="k">array</span><span class="p">();</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nb">stristr</span><span class="p">(</span><span class="k">PHP_OS</span><span class="p">,</span> <span class="s1">'win'</span><span class="p">))</span>
+    <span class="p">{</span>
+    <span class="nv">$output</span> <span class="o">=</span> <span class="k">array</span><span class="p">();</span>
+    <span class="nb">exec</span><span class="p">(</span> <span class="s1">'tasklist '</span><span class="p">,</span> <span class="nv">$output</span> <span class="p">);</span>
+    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$output</span> <span class="k">as</span> <span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$ex</span><span class="o">=</span><span class="nb">explode</span><span class="p">(</span><span class="s2">" "</span><span class="p">,</span><span class="nv">$value</span><span class="p">);</span>
+        <span class="nv">$count_ex</span><span class="o">=</span><span class="nb">count</span><span class="p">(</span><span class="nv">$ex</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">eregi</span><span class="p">(</span><span class="s2">" "</span><span class="o">.</span><span class="nb">getmypid</span><span class="p">()</span><span class="o">.</span><span class="s2">" Console"</span><span class="p">,</span><span class="nv">$value</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="nv">$memory_size</span><span class="o">=</span><span class="nv">$ex</span><span class="p">[</span><span class="nv">$count_ex</span><span class="o">-</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="s2">" Kb"</span><span class="p">;</span>
+            <span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;The server CPU usage is "</span><span class="o">.</span><span class="nv">$memory_size</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="nv">$load</span> <span class="o">=</span> <span class="nb">sys_getloadavg</span><span class="p">();</span>
+        <span class="k">print</span> <span class="s2">"&lt;br&gt;&lt;br&gt;The server CPU usage is "</span><span class="o">.</span><span class="nv">$load</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="nv">$load</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="n">XmlDocument</span> <span class="n">doc</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XmlDocument</span><span class="p">();</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">LoadXml</span><span class="p">(</span><span class="n">template</span><span class="p">);</span>
+<span class="n">XmlElement</span> <span class="n">list</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">CreateElement</span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">XmlListTagName</span><span class="p">);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="n">EaiItem</span> <span class="n">updateItem</span> <span class="k">in</span> <span class="n">itemList</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">XmlElement</span> <span class="n">item</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">CreateElement</span><span class="p">(</span> <span class="n">conn</span><span class="p">.</span><span class="n">XmlItemTagName</span> <span class="p">);</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="n">String</span> <span class="n">itemAttrib</span> <span class="k">in</span> <span class="n">updateItem</span><span class="p">.</span><span class="n">ItemAttributes</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">item</span><span class="p">.</span><span class="nf">SetAttribute</span><span class="p">(</span><span class="n">itemAttrib</span><span class="p">,</span> <span class="n">updateItem</span><span class="p">.</span><span class="n">ItemAttributes</span><span class="p">[</span><span class="n">itemAttrib</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="n">item</span><span class="p">.</span><span class="n">InnerXml</span> <span class="p">=</span> <span class="n">updateItem</span><span class="p">.</span><span class="n">ItemFieldXml</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="nf">AppendChild</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">doc</span><span class="p">.</span><span class="n">LastChild</span><span class="p">.</span><span class="nf">AppendChild</span><span class="p">(</span><span class="n">list</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="solution-1">Solution</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="n">XmlDocument</span> <span class="n">doc</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">XmlDocument</span><span class="p">();</span>
+<span class="n">doc</span><span class="p">.</span><span class="nf">LoadXml</span><span class="p">(</span><span class="n">template</span><span class="p">);</span>
+<span class="n">XmlElement</span> <span class="n">list</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">CreateElement</span><span class="p">(</span><span class="n">conn</span><span class="p">.</span><span class="n">XmlListTagName</span><span class="p">);</span>
+<span class="k">foreach</span> <span class="p">(</span><span class="n">EaiItem</span> <span class="n">updateItem</span> <span class="k">in</span> <span class="n">itemList</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">XmlElement</span> <span class="n">item</span> <span class="p">=</span> <span class="n">doc</span><span class="p">.</span><span class="nf">CreateElement</span><span class="p">(</span> <span class="n">conn</span><span class="p">.</span><span class="n">XmlItemTagName</span> <span class="p">);</span>
+    <span class="k">foreach</span><span class="p">(</span><span class="n">String</span> <span class="n">itemAttrib</span> <span class="k">in</span> <span class="n">updateItem</span><span class="p">.</span><span class="n">ItemAttributes</span><span class="p">.</span><span class="n">Keys</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">item</span><span class="p">.</span><span class="nf">SetAttribute</span><span class="p">(</span><span class="n">itemAttrib</span><span class="p">,</span> <span class="n">updateItem</span><span class="p">.</span><span class="n">ItemAttributes</span><span class="p">[</span><span class="n">itemAttrib</span><span class="p">]);</span>
+    <span class="p">}</span>
+    <span class="n">item</span><span class="p">.</span><span class="n">InnerText</span> <span class="p">=</span> <span class="n">updateItem</span><span class="p">.</span><span class="n">ItemFieldXml</span><span class="p">;</span>
+    <span class="n">list</span><span class="p">.</span><span class="nf">AppendChild</span><span class="p">(</span><span class="n">item</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="n">doc</span><span class="p">.</span><span class="n">LastChild</span><span class="p">.</span><span class="nf">AppendChild</span><span class="p">(</span><span class="n">list</span><span class="p">);</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ByteArrayOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OnlineStore</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">createXMLStreamBad</span><span class="o">(</span><span class="kd">final</span> <span class="nc">BufferedOutputStream</span> <span class="n">outStream</span><span class="o">,</span>
+      <span class="kd">final</span> <span class="nc">String</span> <span class="n">quantity</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">xmlString</span> <span class="o">=</span> <span class="s">"&lt;item&gt;\n&lt;description&gt;Widget&lt;/description&gt;\n"</span>
+        <span class="o">+</span> <span class="s">"&lt;price&gt;500&lt;/price&gt;\n"</span> <span class="o">+</span> <span class="s">"&lt;quantity&gt;"</span> <span class="o">+</span> <span class="n">quantity</span>
+        <span class="o">+</span> <span class="s">"&lt;/quantity&gt;&lt;/item&gt;"</span><span class="o">;</span>
+    <span class="n">outStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">xmlString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+    <span class="n">outStream</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ByteArrayOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OnlineStore</span> <span class="o">{</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">createXMLStream</span><span class="o">(</span><span class="kd">final</span> <span class="nc">BufferedOutputStream</span> <span class="n">outStream</span><span class="o">,</span>
+      <span class="kd">final</span> <span class="nc">String</span> <span class="n">quantity</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">NumberFormatException</span> <span class="o">{</span>
+    <span class="c1">// Write XML string only if quantity is an unsigned integer (count).</span>
+    <span class="kt">int</span> <span class="n">count</span> <span class="o">=</span> <span class="nc">Integer</span><span class="o">.</span><span class="na">parseUnsignedInt</span><span class="o">(</span><span class="n">quantity</span><span class="o">);</span>
+    <span class="nc">String</span> <span class="n">xmlString</span> <span class="o">=</span> <span class="s">"&lt;item&gt;\n&lt;description&gt;Widget&lt;/description&gt;\n"</span>
+        <span class="o">+</span> <span class="s">"&lt;price&gt;500&lt;/price&gt;\n"</span> <span class="o">+</span> <span class="s">"&lt;quantity&gt;"</span> <span class="o">+</span> <span class="n">count</span> <span class="o">+</span> <span class="s">"&lt;/quantity&gt;&lt;/item&gt;"</span><span class="o">;</span>
+    <span class="n">outStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">xmlString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+    <span class="n">outStream</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h3 id="method-2">Method #2</h3>
+
+<p>general mechanism for checking XML for attempted injection is to validate it using a Document Type Definition (DTD) or schema. The schema must be rigidly defined to prevent injections from being mistaken for valid XML. Here is a suitable schema for validating our XML snippet:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;xs:schema</span> <span class="na">xmlns:xs=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"item"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;xs:complexType&gt;</span>
+    <span class="nt">&lt;xs:sequence&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">type=</span><span class="s">"xs:string"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"price"</span> <span class="na">type=</span><span class="s">"xs:decimal"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;xs:element</span> <span class="na">name=</span><span class="s">"quantity"</span> <span class="na">type=</span><span class="s">"xs:nonNegativeInteger"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/xs:sequence&gt;</span>
+  <span class="nt">&lt;/xs:complexType&gt;</span>
+<span class="nt">&lt;/xs:element&gt;</span>
+<span class="nt">&lt;/xs:schema&gt;</span></code></pre></figure>
+
+<p>The schema is available as the file schema.xsd. This compliant solution employs this schema to prevent XML injection from succeeding.</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.BufferedOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.ByteArrayOutputStream</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.File</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.StringReader</span><span class="o">;</span>
+ 
+<span class="kn">import</span> <span class="nn">javax.xml.XMLConstants</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.ParserConfigurationException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParser</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.parsers.SAXParserFactory</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.transform.stream.StreamSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.validation.Schema</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.validation.SchemaFactory</span><span class="o">;</span>
+ 
+<span class="kn">import</span> <span class="nn">org.xml.sax.InputSource</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.SAXParseException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.XMLReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.xml.sax.helpers.DefaultHandler</span><span class="o">;</span>
+ 
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">OnlineStore</span> <span class="o">{</span>
+ 
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">createXMLStream</span><span class="o">(</span><span class="kd">final</span> <span class="nc">BufferedOutputStream</span> <span class="n">outStream</span><span class="o">,</span>
+      <span class="kd">final</span> <span class="nc">String</span> <span class="n">quantity</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span> <span class="o">{</span>
+    <span class="nc">String</span> <span class="n">xmlString</span><span class="o">;</span>
+    <span class="n">xmlString</span> <span class="o">=</span> <span class="s">"&lt;item&gt;\n&lt;description&gt;Widget&lt;/description&gt;\n"</span>
+        <span class="o">+</span> <span class="s">"&lt;price&gt;500.0&lt;/price&gt;\n"</span> <span class="o">+</span> <span class="s">"&lt;quantity&gt;"</span> <span class="o">+</span> <span class="n">quantity</span>
+        <span class="o">+</span> <span class="s">"&lt;/quantity&gt;&lt;/item&gt;"</span><span class="o">;</span>
+    <span class="nc">InputSource</span> <span class="n">xmlStream</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InputSource</span><span class="o">(</span><span class="k">new</span> <span class="nc">StringReader</span><span class="o">(</span><span class="n">xmlString</span><span class="o">));</span>
+    <span class="c1">// Build a validating SAX parser using our schema</span>
+    <span class="nc">SchemaFactory</span> <span class="n">sf</span> <span class="o">=</span> <span class="nc">SchemaFactory</span>
+        <span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="nc">XMLConstants</span><span class="o">.</span><span class="na">W3C_XML_SCHEMA_NS_URI</span><span class="o">);</span>
+    <span class="nc">DefaultHandler</span> <span class="n">defHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DefaultHandler</span><span class="o">()</span> <span class="o">{</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">warning</span><span class="o">(</span><span class="nc">SAXParseException</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SAXParseException</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="n">s</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">error</span><span class="o">(</span><span class="nc">SAXParseException</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SAXParseException</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="n">s</span><span class="o">;</span>
+      <span class="o">}</span>
+      <span class="kd">public</span> <span class="kt">void</span> <span class="nf">fatalError</span><span class="o">(</span><span class="nc">SAXParseException</span> <span class="n">s</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SAXParseException</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="n">s</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">};</span>
+    <span class="nc">StreamSource</span> <span class="n">ss</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StreamSource</span><span class="o">(</span><span class="k">new</span> <span class="nc">File</span><span class="o">(</span><span class="s">"schema.xsd"</span><span class="o">));</span>
+    <span class="k">try</span> <span class="o">{</span>
+      <span class="nc">Schema</span> <span class="n">schema</span> <span class="o">=</span> <span class="n">sf</span><span class="o">.</span><span class="na">newSchema</span><span class="o">(</span><span class="n">ss</span><span class="o">);</span>
+      <span class="nc">SAXParserFactory</span> <span class="n">spf</span> <span class="o">=</span> <span class="nc">SAXParserFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+      <span class="n">spf</span><span class="o">.</span><span class="na">setSchema</span><span class="o">(</span><span class="n">schema</span><span class="o">);</span>
+      <span class="nc">SAXParser</span> <span class="n">saxParser</span> <span class="o">=</span> <span class="n">spf</span><span class="o">.</span><span class="na">newSAXParser</span><span class="o">();</span>
+      <span class="c1">// To set the custom entity resolver,</span>
+      <span class="c1">// an XML reader needs to be created</span>
+      <span class="nc">XMLReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="n">saxParser</span><span class="o">.</span><span class="na">getXMLReader</span><span class="o">();</span>
+      <span class="n">reader</span><span class="o">.</span><span class="na">setEntityResolver</span><span class="o">(</span><span class="k">new</span> <span class="nc">CustomResolver</span><span class="o">());</span>
+      <span class="n">saxParser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">xmlStream</span><span class="o">,</span> <span class="n">defHandler</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">ParserConfigurationException</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">IOException</span><span class="o">(</span><span class="s">"Unable to validate XML"</span><span class="o">,</span> <span class="n">x</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">SAXException</span> <span class="n">x</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">throw</span> <span class="k">new</span> <span class="nf">IOException</span><span class="o">(</span><span class="s">"Invalid quantity"</span><span class="o">,</span> <span class="n">x</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="c1">// Our XML is valid, proceed</span>
+    <span class="n">outStream</span><span class="o">.</span><span class="na">write</span><span class="o">(</span><span class="n">xmlString</span><span class="o">.</span><span class="na">getBytes</span><span class="o">());</span>
+    <span class="n">outStream</span><span class="o">.</span><span class="na">flush</span><span class="o">();</span>
+  <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                xml <span>(2)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                injection <span>(4)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/web/2020/Complete-Web-Application-Firewall-Guide.html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/XML_External_Entity(XXE).html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+

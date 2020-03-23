@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/Session_Fixation.html">Session Fixation Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/Session_Fixation.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/Session_Fixation.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/Session_Fixation.html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/Session_Fixation.html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/Session_Fixation.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-session-fixation-">What is Session Fixation ?</h1>
+
+<p><img src="/images/session_fixation.jpg" alt="sql injection" /></p>
+
+<p>Session Fixation is an attack that permits an attacker to hijack a valid user session. The attack explores a limitation in the way the web application manages the session ID, more specifically the vulnerable web application. When authenticating a user, it doesn’t assign a new session ID, making it possible to use an existent session ID. The attack consists of obtaining a valid session ID (e.g. by connecting to the application), inducing a user to authenticate himself with that session ID, and then hijacking the user-validated session by the knowledge of the used session ID. The attacker has to provide a legitimate Web application session ID and try to make the victim’s browser use it.</p>
+
+<p>The session fixation attack is a class of Session Hijacking, which steals the established session between the client and the Web Server after the user logs in. Instead, the Session Fixation attack fixes an established session on the victim’s browser, so the attack starts before the user logs in.</p>
+
+<p>There are several techniques to execute the attack; it depends on how the Web application deals with session tokens. Below are some of the most common techniques:</p>
+
+<ul>
+  <li>Session token in the URL argument: The Session ID is sent to the victim in a hyperlink and the victim accesses the site through the malicious URL.</li>
+  <li>Session token in a hidden form field: In this method, the victim must be tricked to authenticate in the target Web Server, using a login form developed for the attacker. The form could be hosted in the evil web server or directly in html formatted e-mail.</li>
+  <li>Session ID in a cookie
+-Client-side script
+-meta tag
+-HTTP header response</li>
+</ul>
+
+<h1 id="prevention">Prevention</h1>
+
+<p>Web applications must ignore any session ID provided by the user’s browser at login and must always generate a new session to which the user will log in if successfully authenticated.</p>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// https://gist.github.com/markjames/516977</span>
+<span class="c1">// Demo for session fixation</span>
+<span class="c1">// </span>
+<span class="c1">// Attacker creates a session by visiting the page: http://famfamfam.com/sessionfixation.php</span>
+<span class="c1">// Attacker gets their session ID out of the cookie (or in this case from the page)</span>
+<span class="c1">// Attacker creates a URL such as http://famfamfam.com/sessionfixation.php?PHPSESSID=attackerssessionid and sends it to victim</span>
+<span class="c1">// Victim clicks the URL (now both the attacker and victim are using the same session)</span>
+<span class="c1">// Victim logs in</span>
+<span class="c1">// Now the attacker is logged in to the victim's account too (same session!)</span>
+
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'password'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'blissfulignorance'</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in_as'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Mark J.'</span><span class="p">;</span>
+	
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in'</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
+
+	<span class="k">echo</span> <span class="s2">"You are logged in as "</span><span class="p">,</span> <span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in_as'</span><span class="p">],</span><span class="nx">ENT_QUOTES</span><span class="p">,</span><span class="s1">'UTF-8'</span><span class="p">);</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
+	<span class="k">echo</span> <span class="s2">"You are not logged in"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">,</span> <span class="s2">"Your session ID is "</span> <span class="o">.</span> <span class="nb">session_id</span><span class="p">();</span> 
+
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">//https://gist.github.com/markjames/516977</span>
+<span class="c1">// Demo for session fixation</span>
+<span class="c1">// </span>
+<span class="c1">// Attacker creates a session by visiting the page: http://famfamfam.com/sessionfixation.php</span>
+<span class="c1">// Attacker gets their session ID out of the cookie (or in this case from the page)</span>
+<span class="c1">// Attacker creates a URL such as http://famfamfam.com/sessionfixation.php?PHPSESSID=attackerssessionid and sends it to victim</span>
+<span class="c1">// Victim clicks the URL (now both the attacker and victim are using the same session)</span>
+<span class="c1">// Victim logs in</span>
+<span class="c1">// Now the attacker is logged in to the victim's account too (same session!)</span>
+
+<span class="nb">session_start</span><span class="p">();</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">'password'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'blissfulignorance'</span> <span class="p">)</span> <span class="p">{</span>
+	<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in'</span><span class="p">]</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+	<span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in_as'</span><span class="p">]</span> <span class="o">=</span> <span class="s1">'Mark J.'</span><span class="p">;</span>
+	
+	<span class="nb">session_regenerate_id</span><span class="p">()</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="p">(</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in'</span><span class="p">]</span> <span class="p">)</span> <span class="p">{</span>
+
+	<span class="k">echo</span> <span class="s2">"You are logged in as "</span><span class="p">,</span> <span class="nb">htmlentities</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'logged_in_as'</span><span class="p">],</span><span class="nx">ENT_QUOTES</span><span class="p">,</span><span class="s1">'UTF-8'</span><span class="p">);</span>
+
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+
+	<span class="k">echo</span> <span class="s2">"You are not logged in"</span><span class="p">;</span>
+
+<span class="p">}</span>
+
+<span class="k">echo</span> <span class="s2">"&lt;br&gt;"</span><span class="p">,</span> <span class="s2">"Your session ID is "</span> <span class="o">.</span> <span class="nb">session_id</span><span class="p">();</span> 
+
+<span class="cp">?&gt;</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="cm">/*
+* https://www.codeproject.com/Articles/210993/Session-Fixation-vulnerability-in-ASP-NET
+*/</span>
+<span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Session</span><span class="p">[</span><span class="s">"LoggedIn"</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Congratulations !, you are logged in."</span><span class="p">;</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">Green</span><span class="p">;</span>
+        <span class="n">btnLogout</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"You are not logged in."</span><span class="p">;</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">protected</span> <span class="k">void</span> <span class="nf">LoginMe</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Check for Username and password (hard coded for this demo)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">txtU</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Trim</span><span class="p">().</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"u"</span><span class="p">)</span> <span class="p">&amp;&amp;</span> <span class="n">txtP</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Trim</span><span class="p">().</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"p"</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Session</span><span class="p">[</span><span class="s">"LoggedIn"</span><span class="p">]</span> <span class="p">=</span> <span class="n">txtU</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Trim</span><span class="p">();</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Wrong username or password"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">protected</span> <span class="k">void</span> <span class="nf">LogoutMe</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Session</span><span class="p">.</span><span class="nf">Clear</span><span class="p">();</span>
+    <span class="n">Session</span><span class="p">.</span><span class="nf">Abandon</span><span class="p">();</span>
+    <span class="n">Session</span><span class="p">.</span><span class="nf">RemoveAll</span><span class="p">();</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="solution-1">Solution</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="cm">/*
+* https://www.codeproject.com/Articles/210993/Session-Fixation-vulnerability-in-ASP-NET
+*/</span>
+<span class="k">protected</span> <span class="k">void</span> <span class="nf">Page_Load</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">//NOTE: Keep this Session and Auth Cookie check</span>
+    <span class="c1">//condition in your Master Page Page_Load event</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">Session</span><span class="p">[</span><span class="s">"LoggedIn"</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">Session</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span> 
+           <span class="p">&amp;&amp;</span> <span class="n">Request</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(!</span><span class="n">Session</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">].</span><span class="nf">ToString</span><span class="p">().</span><span class="nf">Equals</span><span class="p">(</span>
+                   <span class="n">Request</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">].</span><span class="n">Value</span><span class="p">))</span>
+        <span class="p">{</span>
+            <span class="c1">// redirect to the login page in real application</span>
+            <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"You are not logged in."</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">else</span>
+        <span class="p">{</span>
+            <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Congratulations !, you are logged in."</span><span class="p">;</span>
+            <span class="n">lblMessage</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">Green</span><span class="p">;</span>
+            <span class="n">btnLogout</span><span class="p">.</span><span class="n">Visible</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"You are not logged in."</span><span class="p">;</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">ForeColor</span> <span class="p">=</span> <span class="n">System</span><span class="p">.</span><span class="n">Drawing</span><span class="p">.</span><span class="n">Color</span><span class="p">.</span><span class="n">Red</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">protected</span> <span class="k">void</span> <span class="nf">LoginMe</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="c1">// Check for Username and password (hard coded for this demo)</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">txtU</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Trim</span><span class="p">().</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"u"</span><span class="p">)</span> <span class="p">&amp;&amp;</span> 
+                  <span class="n">txtP</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Trim</span><span class="p">().</span><span class="nf">Equals</span><span class="p">(</span><span class="s">"p"</span><span class="p">))</span>
+    <span class="p">{</span>
+        <span class="n">Session</span><span class="p">[</span><span class="s">"LoggedIn"</span><span class="p">]</span> <span class="p">=</span> <span class="n">txtU</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Trim</span><span class="p">();</span>
+        <span class="c1">// createa a new GUID and save into the session</span>
+        <span class="kt">string</span> <span class="n">guid</span> <span class="p">=</span> <span class="n">Guid</span><span class="p">.</span><span class="nf">NewGuid</span><span class="p">().</span><span class="nf">ToString</span><span class="p">();</span>
+        <span class="n">Session</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">]</span> <span class="p">=</span> <span class="n">guid</span><span class="p">;</span>
+        <span class="c1">// now create a new cookie with this guid value</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">.</span><span class="nf">Add</span><span class="p">(</span><span class="k">new</span> <span class="nf">HttpCookie</span><span class="p">(</span><span class="s">"AuthToken"</span><span class="p">,</span> <span class="n">guid</span><span class="p">));</span>
+
+    <span class="p">}</span>
+    <span class="k">else</span>
+    <span class="p">{</span>
+        <span class="n">lblMessage</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="s">"Wrong username or password"</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">protected</span> <span class="k">void</span> <span class="nf">LogoutMe</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">Session</span><span class="p">.</span><span class="nf">Clear</span><span class="p">();</span>
+    <span class="n">Session</span><span class="p">.</span><span class="nf">Abandon</span><span class="p">();</span>
+    <span class="n">Session</span><span class="p">.</span><span class="nf">RemoveAll</span><span class="p">();</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">Request</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"ASP.NET_SessionId"</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"ASP.NET_SessionId"</span><span class="p">].</span><span class="n">Value</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"ASP.NET_SessionId"</span><span class="p">].</span><span class="n">Expires</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="nf">AddMonths</span><span class="p">(-</span><span class="m">20</span><span class="p">);</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">Request</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">]</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">].</span><span class="n">Value</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="n">Empty</span><span class="p">;</span>
+        <span class="n">Response</span><span class="p">.</span><span class="n">Cookies</span><span class="p">[</span><span class="s">"AuthToken"</span><span class="p">].</span><span class="n">Expires</span> <span class="p">=</span> <span class="n">DateTime</span><span class="p">.</span><span class="n">Now</span><span class="p">.</span><span class="nf">AddMonths</span><span class="p">(-</span><span class="m">20</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;%</span><span class="nd">@page</span> <span class="kn">import</span><span class="err">="</span><span class="nn">java.sql.*</span><span class="s">"%&gt;
+&lt;%@ page language="</span><span class="n">java</span><span class="s">" contentType="</span><span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="o">;</span> <span class="n">charset</span><span class="o">=</span><span class="no">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span><span class="s">" pageEncoding="</span><span class="no">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span><span class="s">"%&gt;
+&lt;!DOCTYPE html PUBLIC "</span><span class="o">-</span><span class="c1">//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s">"Content-Type"</span> <span class="n">content</span><span class="o">=</span><span class="s">"text/html; charset=ISO-8859-1"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;%</span>
+	<span class="nc">String</span> <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"user"</span><span class="o">);</span>
+	<span class="nc">String</span> <span class="n">pass</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"pass"</span><span class="o">);</span>
+	<span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+	<span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Connection</span><span class="o">)</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="s">"jdbc:mysql://localhost:3306/mydb"</span><span class="o">,</span> <span class="s">"root"</span> <span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+	<span class="nc">PreparedStatement</span> <span class="n">ps</span><span class="o">=(</span><span class="nc">PreparedStatement</span><span class="o">)</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"select * from users where username=? and password=? limit 0,1"</span><span class="o">);</span>
+	<span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="n">user</span><span class="o">);</span>
+	<span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="n">pass</span><span class="o">);</span>
+	<span class="nc">ResultSet</span> <span class="n">rs</span><span class="o">=</span><span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span>
+	<span class="o">{</span>
+		<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"useracc"</span><span class="o">,</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"user"</span><span class="o">));</span>
+		<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Login success"</span><span class="o">);</span>
+	<span class="o">}</span>
+	<span class="k">else</span>
+	<span class="o">{</span>
+		<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Login failed"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">%&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+<h2 id="solution-2">Solution</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;%</span><span class="nd">@page</span> <span class="kn">import</span><span class="err">="</span><span class="nn">java.sql.*</span><span class="s">"%&gt;
+&lt;%@ page language="</span><span class="n">java</span><span class="s">" contentType="</span><span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="o">;</span> <span class="n">charset</span><span class="o">=</span><span class="no">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span><span class="s">" pageEncoding="</span><span class="no">ISO</span><span class="o">-</span><span class="mi">8859</span><span class="o">-</span><span class="mi">1</span><span class="s">"%&gt;
+&lt;!DOCTYPE html PUBLIC "</span><span class="o">-</span><span class="c1">//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">meta</span> <span class="n">http</span><span class="o">-</span><span class="n">equiv</span><span class="o">=</span><span class="s">"Content-Type"</span> <span class="n">content</span><span class="o">=</span><span class="s">"text/html; charset=ISO-8859-1"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;%</span>
+	<span class="nc">String</span> <span class="n">user</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"user"</span><span class="o">);</span>
+	<span class="nc">String</span> <span class="n">pass</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"pass"</span><span class="o">);</span>
+	<span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">"com.mysql.jdbc.Driver"</span><span class="o">);</span>
+	<span class="nc">Connection</span> <span class="n">con</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Connection</span><span class="o">)</span> <span class="nc">DriverManager</span><span class="o">.</span><span class="na">getConnection</span><span class="o">(</span><span class="s">"jdbc:mysql://localhost:3306/userdb"</span><span class="o">,</span> <span class="s">"root"</span> <span class="o">,</span> <span class="s">""</span><span class="o">);</span>
+	<span class="nc">PreparedStatement</span> <span class="n">ps</span><span class="o">=(</span><span class="nc">PreparedStatement</span><span class="o">)</span> <span class="n">con</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="s">"select * from users where username=? and password=? limit 0,1"</span><span class="o">);</span>
+	<span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span><span class="n">user</span><span class="o">);</span>
+	<span class="n">ps</span><span class="o">.</span><span class="na">setString</span><span class="o">(</span><span class="mi">2</span><span class="o">,</span><span class="n">pass</span><span class="o">);</span>
+	<span class="nc">ResultSet</span> <span class="n">rs</span><span class="o">=</span><span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
+	<span class="k">if</span><span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">())</span>
+	<span class="o">{</span>
+		<span class="n">session</span><span class="o">.</span><span class="na">invalidate</span><span class="o">();</span>
+		<span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+		<span class="n">session</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"useracc"</span><span class="o">,</span> <span class="n">rs</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"user"</span><span class="o">));</span>
+		<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Login success"</span><span class="o">);</span>
+	<span class="o">}</span>
+	<span class="k">else</span>
+	<span class="o">{</span>
+		<span class="n">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Login failed"</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">%&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                session <span>(1)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                access <span>(2)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                authentication <span>(2)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Sql_Injection.html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Server_Side_Request_Forgery(SSRF).html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+

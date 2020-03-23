@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/Improper-Access-Control.html">Improper Access Control Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/Improper-Access-Control.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/Improper-Access-Control.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/Improper-Access-Control.html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/Improper-Access-Control.html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/Improper-Access-Control.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-improper-access-control-">What is Improper Access Control ?</h1>
+
+<p>Your web application is vulnerable to such a flaw if users can access data that should not be accessible to them. In order to determine if your web application is vulnerable, you could simply log in to your web application, visit pages that require authentication in order to be accessed, log out, and pay a visit to those pages once again. If you can access those pages when logged out, you have got a problem – your website is vulnerable to broken access control.</p>
+
+<p>Access control involves the use of several protection mechanisms such as:</p>
+
+<ul>
+  <li>Authentication (proving the identity of an actor)</li>
+  <li>Authorization (ensuring that a given actor can access a resource), and</li>
+  <li>Accountability (tracking of activities that were performed)</li>
+</ul>
+
+<p>When any mechanism is not applied or otherwise fails, attackers can compromise the security of the software by gaining privileges, reading sensitive information, executing commands, evading detection, etc.</p>
+
+<p>There are two distinct behaviors that can introduce access control weaknesses:</p>
+
+<ul>
+  <li>
+    <p>Specification: incorrect privileges, permissions, ownership, etc. are explicitly specified for either the user or the resource (for example, setting a password file to be world-writable, or giving administrator capabilities to a guest user). This action could be performed by the program or the administrator.</p>
+  </li>
+  <li>
+    <p>Enforcement: the mechanism contains errors that prevent it from properly enforcing the specified access control requirements (e.g., allowing the user to specify their own privileges, or allowing a syntactically-incorrect ACL to produce insecure settings). This problem occurs within the program itself, in that it does not actually enforce the intended security policy that the administrator specifies.</p>
+  </li>
+</ul>
+
+<h1 id="prevention">Prevention</h1>
+
+<ul>
+  <li>With the exception of public resources, deny by default.</li>
+  <li>Model access controls should enforce record ownership, rather than accepting that the user can create, read, update, or delete any record.</li>
+</ul>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> 
+<span class="k">include</span><span class="p">(</span><span class="s2">"inc/css.php"</span><span class="p">);</span> 
+<span class="nb">session_start</span><span class="p">();</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"member-page"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h4&gt;</span>Member's Area<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dashboard"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h6&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=account"</span><span class="nt">&gt;</span>My Account<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=download"</span><span class="nt">&gt;</span>Download Software<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=tickets"</span><span class="nt">&gt;</span>Create a Support Ticket<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=resources"</span><span class="nt">&gt;</span>Member Resources<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=logout.php"</span><span class="nt">&gt;</span>Log Out<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">"inc/js.php"</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> 
+<span class="k">include</span><span class="p">(</span><span class="s2">"inc/css.php"</span><span class="p">);</span> 
+<span class="nb">session_start</span><span class="p">();</span>
+<span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'user'</span><span class="p">])){</span>
+   <span class="nb">header</span><span class="p">(</span><span class="s2">"Location:login.php"</span><span class="p">);</span>
+   <span class="k">exit</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">""</span> <span class="na">method=</span><span class="s">"post"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"member-page"</span><span class="nt">&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h4&gt;</span>Member's Area<span class="nt">&lt;/h4&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"dashboard"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h6&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=account"</span><span class="nt">&gt;</span>My Account<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=download"</span><span class="nt">&gt;</span>Download Software<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=tickets"</span><span class="nt">&gt;</span>Create a Support Ticket<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=resources"</span><span class="nt">&gt;</span>Member Resources<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"form-group"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"?action=logout.php"</span><span class="nt">&gt;</span>Log Out<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+
+<span class="cp">&lt;?php</span> <span class="k">include</span><span class="p">(</span><span class="s2">"inc/js.php"</span><span class="p">);</span> <span class="cp">?&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="p">&lt;%</span><span class="err">@</span> <span class="n">Page</span> <span class="n">Language</span><span class="p">=</span><span class="s">"C#"</span> <span class="n">AutoEventWireup</span><span class="p">=</span><span class="s">"true"</span>  <span class="p">%&gt;</span>
+<span class="p">&lt;%</span><span class="err">@</span> <span class="n">Register</span> <span class="n">Namespace</span><span class="p">=</span><span class="s">"Active.Web.UI.Controls"</span> <span class="n">Assembly</span><span class="p">=</span><span class="s">"Active.Web.UI.Controls"</span> <span class="n">TagPrefix</span><span class="p">=</span><span class="s">"active"</span> <span class="p">%&gt;</span>
+<span class="p">&lt;!</span><span class="n">DOCTYPE</span> <span class="n">html</span> <span class="n">PUBLIC</span> <span class="s">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="s">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">html</span> <span class="n">xmlns</span><span class="p">=</span><span class="s">"http://www.w3.org/1999/xhtml"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">head</span> <span class="n">id</span><span class="p">=</span><span class="s">"Head1"</span> <span class="n">runat</span><span class="p">=</span><span class="s">"server"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">title</span><span class="p">&gt;</span><span class="n">Dashboard</span> <span class="n">Page</span><span class="p">&lt;/</span><span class="n">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="p">=</span><span class="s">""</span> <span class="n">method</span><span class="p">=</span><span class="s">"post"</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">member</span><span class="p">-</span><span class="n">page</span><span class="s">"&gt;
+</span>
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">h4</span><span class="p">&gt;</span><span class="n">Member</span><span class="err">'</span><span class="n">s</span> <span class="n">Area</span><span class="p">&lt;/</span><span class="n">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">dashboard</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">h6</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=account"</span><span class="p">&gt;</span><span class="n">My</span> <span class="n">Account</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=download"</span><span class="p">&gt;</span><span class="n">Download</span> <span class="n">Software</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=tickets"</span><span class="p">&gt;</span><span class="n">Create</span> <span class="n">a</span> <span class="n">Support</span> <span class="n">Ticket</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=resources"</span><span class="p">&gt;</span><span class="n">Member</span> <span class="n">Resources</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=logout.jsp"</span><span class="p">&gt;</span><span class="n">Log</span> <span class="n">Out</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">html</span><span class="p">&gt;</span></code></pre></figure>
+
+<h2 id="solution-1">Solution</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="p">&lt;!</span><span class="n">DOCTYPE</span> <span class="n">html</span> <span class="n">PUBLIC</span> <span class="s">"-//W3C//DTD XHTML 1.0 Transitional//EN"</span> <span class="s">"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">html</span> <span class="n">xmlns</span><span class="p">=</span><span class="s">"http://www.w3.org/1999/xhtml"</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">head</span> <span class="n">id</span><span class="p">=</span><span class="s">"Head1"</span> <span class="n">runat</span><span class="p">=</span><span class="s">"server"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">title</span><span class="p">&gt;</span><span class="n">Dashboard</span> <span class="n">Page</span><span class="p">&lt;/</span><span class="n">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">script</span> <span class="n">runat</span><span class="p">=</span><span class="s">"server"</span><span class="p">&gt;</span>
+        <span class="k">protected</span> <span class="k">override</span> <span class="k">void</span> <span class="nf">OnLoad</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">Session</span><span class="p">[</span><span class="s">"User_ID"</span><span class="p">])==</span><span class="k">null</span><span class="p">)</span>
+             <span class="p">{</span>
+                <span class="n">Response</span><span class="p">.</span><span class="nf">Redirect</span><span class="p">(</span><span class="s">"login.aspx"</span><span class="p">);</span>
+             <span class="p">}</span> 
+        <span class="p">}</span>
+    <span class="p">&lt;/</span><span class="n">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">body</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="p">=</span><span class="s">""</span> <span class="n">method</span><span class="p">=</span><span class="s">"post"</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">member</span><span class="p">-</span><span class="n">page</span><span class="s">"&gt;
+</span>
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">h4</span><span class="p">&gt;</span><span class="n">Member</span><span class="err">'</span><span class="n">s</span> <span class="n">Area</span><span class="p">&lt;/</span><span class="n">h4</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">dashboard</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">h6</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=account"</span><span class="p">&gt;</span><span class="n">My</span> <span class="n">Account</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=download"</span><span class="p">&gt;</span><span class="n">Download</span> <span class="n">Software</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=tickets"</span><span class="p">&gt;</span><span class="n">Create</span> <span class="n">a</span> <span class="n">Support</span> <span class="n">Ticket</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=resources"</span><span class="p">&gt;</span><span class="n">Member</span> <span class="n">Resources</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="err">="</span><span class="nc">form</span><span class="p">-</span><span class="k">group</span><span class="s">"&gt;
+</span><span class="p">&lt;</span><span class="n">li</span><span class="p">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="p">=</span><span class="s">"?action=logout.jsp"</span><span class="p">&gt;</span><span class="n">Log</span> <span class="n">Out</span><span class="p">&lt;/</span><span class="n">a</span><span class="p">&gt;&lt;/</span><span class="n">li</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+
+<span class="p">&lt;/</span><span class="n">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="n">html</span><span class="p">&gt;</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s">""</span> <span class="n">method</span><span class="o">=</span><span class="s">"post"</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="kd">class</span><span class="err">="</span><span class="nc">member</span><span class="o">-</span><span class="n">page</span><span class="s">"&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;h4&gt;Member's Area&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">dashboard</span><span class="s">"&gt;
+&lt;h6&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">account</span><span class="s">"&gt;My Account&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">download</span><span class="s">"&gt;Download Software&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">tickets</span><span class="s">"&gt;Create a Support Ticket&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">resources</span><span class="s">"&gt;Member Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">logout</span><span class="o">.</span><span class="na">jsp</span><span class="err">"</span><span class="o">&gt;</span><span class="nc">Log</span> <span class="nc">Out</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+<h2 id="solution-2">Solution</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java">    <span class="n">session</span><span class="o">=</span><span class="n">request</span><span class="o">.</span><span class="na">getSession</span><span class="o">(</span><span class="kc">false</span><span class="o">);</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"User_ID"</span><span class="o">)==</span><span class="kc">null</span><span class="o">)</span>
+    <span class="o">{</span>
+        <span class="n">response</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="s">"login.jsp"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+
+
+<span class="o">&lt;</span><span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s">""</span> <span class="n">method</span><span class="o">=</span><span class="s">"post"</span><span class="o">&gt;</span>
+
+<span class="o">&lt;</span><span class="n">div</span> <span class="kd">class</span><span class="err">="</span><span class="nc">member</span><span class="o">-</span><span class="n">page</span><span class="s">"&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;h4&gt;Member's Area&lt;/h4&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">dashboard</span><span class="s">"&gt;
+&lt;h6&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">account</span><span class="s">"&gt;My Account&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">download</span><span class="s">"&gt;Download Software&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">tickets</span><span class="s">"&gt;Create a Support Ticket&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">resources</span><span class="s">"&gt;Member Resources&lt;/a&gt;&lt;/li&gt;
+&lt;/div&gt;
+
+&lt;div class="</span><span class="n">form</span><span class="o">-</span><span class="n">group</span><span class="s">"&gt;
+&lt;li&gt;&lt;a href="</span><span class="o">?</span><span class="n">action</span><span class="o">=</span><span class="n">logout</span><span class="o">.</span><span class="na">jsp</span><span class="err">"</span><span class="o">&gt;</span><span class="nc">Log</span> <span class="nc">Out</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                access <span>(2)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                authentication <span>(2)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                broken <span>(1)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Insecure_Deserialization.html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/File_Inclusion.html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+

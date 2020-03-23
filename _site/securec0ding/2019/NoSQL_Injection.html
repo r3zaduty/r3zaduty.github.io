@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/NoSQL_Injection.html">NoSQL Injection Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/NoSQL_Injection.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/NoSQL_Injection.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/NoSQL_Injection.html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/NoSQL_Injection.html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/NoSQL_Injection.html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-nosql-injection-">What is NoSQL injection ?</h1>
+
+<p>NoSQL (not only SQL) is a trending term in modern data stores; it refers to nonrelational databases that rely on different storage mechanisms such as document store, key-value store, and graph.</p>
+
+<p>The wide adoption of these databases has been facilitated by the new requirements of modern large-scale applications, such as Facebook, Amazon, and Twitter,which need to distribute data across a huge number of servers.</p>
+
+<p>Traditional relational databases don’t meet these scalability requirements; they require a single database node to execute all operations of the same transaction.</p>
+
+<p>Web applications and services commonly use NoSQL databases to store customer data. Figure 2 illustrates a typical architecture in which a NoSQL database is used to store the data accessed via a Web application.</p>
+
+<p>Access to the database is performed via a driver—an access protocol wrapper that provides libraries for database clients in multiple programming languages. Although the drivers themselves might not be vulnerable, sometimes they present unsafe APIs that, when used incorrectly by the application developer, could introduce vulnerabilities in the application that allow arbitrary operations on the database.</p>
+
+<p>As Figure 2 shows, attackers can craft a Web access request with an injection that, when processed by the database client/protocol wrapper, will allow the desired illegal database operation.</p>
+
+<p><img src="/images/nosql1.jpg" alt="nosql injection" /></p>
+
+<p>Let’s examine the architecture depicted in Figure 3, where a Web application is implemented with a PHP back end, which encodes the requests to the JSON format used to query the data store. Let’s use a MongoDB example to show an array injection vulnerability—an attack similar to SQL injection in its technique and results.</p>
+
+<p><img src="/images/nosql2.jpg" alt="nosql injection" /></p>
+
+<p>PHP encodes arrays to JSON natively. So, for example, the array</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">array</span><span class="p">(</span><span class="err">‘</span><span class="nx">title</span><span class="err">’</span> <span class="o">=&gt;</span> <span class="err">‘</span><span class="nx">The</span> <span class="nx">Hobbit</span><span class="err">’</span><span class="p">,</span>   <span class="err">‘</span><span class="nx">author</span><span class="err">’</span> <span class="o">=&gt;</span> <span class="err">‘</span><span class="nx">J</span><span class="o">.</span><span class="nx">R</span><span class="o">.</span><span class="nx">R</span><span class="o">.</span> <span class="nx">Tolkien</span><span class="err">’</span><span class="p">);</span></code></pre></figure>
+
+<p>would be encoded by PHP to the following JSON:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="p">{</span><span class="err">“</span><span class="nx">title</span><span class="err">”</span><span class="o">:</span> <span class="err">“</span><span class="nx">The</span> <span class="nx">Hobbit</span><span class="err">”</span><span class="p">,</span> <span class="err">“</span><span class="nx">author</span><span class="err">”</span><span class="o">:</span>   <span class="err">“</span><span class="nx">J</span><span class="o">.</span><span class="nx">R</span><span class="o">.</span><span class="nx">R</span><span class="o">.</span> <span class="nx">Tolkien</span><span class="err">”</span><span class="p">}</span></code></pre></figure>
+
+<p>If a PHP application has a login mechanism in which the username and password are sent from the user’s browser via HTTP POST (the vulnerability is applicable to HTTP get as well), a typical post URL–encoded payload would look like this:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">username</span><span class="o">=</span><span class="nx">Tolkien</span><span class="o">&amp;</span><span class="nx">password</span><span class="o">=</span><span class="nx">hobbit</span></code></pre></figure>
+
+<p>The back-end PHP code to process it and query Mongo DB for the user would look like the following:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">db</span><span class="o">-&gt;</span><span class="na">logins</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="err">“</span><span class="nx">username</span><span class="err">”</span><span class="o">=&gt;</span><span class="nv">$_</span>   <span class="nx">POST</span><span class="p">[</span><span class="err">“</span><span class="nx">username</span><span class="err">”</span><span class="p">],</span>   <span class="err">“</span><span class="nx">password</span><span class="err">”</span><span class="o">=&gt;</span><span class="nv">$_POST</span><span class="p">[</span><span class="err">“</span><span class="nx">password</span><span class="err">”</span><span class="p">]));</span></code></pre></figure>
+
+<p>This makes perfect sense and is intuitively what the developer is likely to do, intending a query of</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">db</span><span class="o">.</span><span class="nx">logins</span><span class="o">.</span><span class="nx">find</span><span class="p">({</span> <span class="nx">username</span><span class="o">:</span> <span class="err">‘</span><span class="nx">tolkien</span><span class="err">’</span><span class="p">,</span>   <span class="nx">password</span><span class="o">:</span> <span class="err">‘</span><span class="nx">hobbit</span><span class="err">’</span><span class="p">})</span></code></pre></figure>
+
+<p>However, PHP has a built-in mechanism for associative arrays that lets attackers send the following malicious payload:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">username</span><span class="p">[</span><span class="nv">$ne</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span><span class="o">&amp;</span><span class="nx">password</span><span class="p">[</span><span class="nv">$ne</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span></code></pre></figure>
+
+<p>PHP translates this input into:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">array</span><span class="p">(</span><span class="err">“</span><span class="nx">username</span><span class="err">”</span> <span class="o">=&gt;</span> <span class="k">array</span><span class="p">(</span><span class="err">“$</span><span class="p">[</span><span class="nx">ne</span><span class="p">]</span> <span class="err">“</span> <span class="o">=&gt;</span>   <span class="mi">1</span><span class="p">),</span> <span class="err">“</span><span class="nx">password</span><span class="err">”</span> <span class="o">=&gt;</span>   <span class="k">array</span><span class="p">(</span><span class="err">“</span><span class="nv">$ne</span><span class="err">”</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">));,</span></code></pre></figure>
+
+<p>which is encoded into the MongoDB query</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">db</span><span class="o">.</span><span class="nx">logins</span><span class="o">.</span><span class="nx">find</span><span class="p">({</span> <span class="nx">username</span><span class="o">:</span> <span class="p">{</span><span class="nv">$ne</span><span class="o">:</span><span class="mi">1</span> <span class="p">},</span>   <span class="nx">password</span> <span class="p">{</span><span class="nv">$ne</span><span class="o">:</span> <span class="mi">1</span> <span class="p">})</span></code></pre></figure>
+
+<p>Because $ne is MongoDB’s not equals condition, it queries all entries in the logins collection for which the username is not equal to 1 and the password is not equal to 1. Thus, this query will return all users in the logins collection. In SQL terminology, this is equivalent to:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">SELECT</span> <span class="o">*</span> <span class="nx">FROM</span> <span class="nx">logins</span> <span class="nx">WHERE</span> <span class="nx">username</span> <span class="o">&lt;&gt;</span>   <span class="mi">1</span> <span class="nx">AND</span> <span class="nx">password</span> <span class="o">&lt;&gt;</span> <span class="mi">1</span></code></pre></figure>
+
+<p>In this scenario, the vulnerability gives attackers a way to log in to the application without valid credentials. In other variants, the vulnerability might lead to illegal data access or privileged actions performed by an unprivileged user. To mitigate this issue, we need to cast the parameters received from the request to the proper type, in this case, using the string</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">db</span><span class="o">-&gt;</span><span class="na">logins</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span>  <span class="k">array</span><span class="p">(</span><span class="err">“</span><span class="nx">username</span><span class="err">”</span><span class="o">=&gt;</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$_</span>    <span class="nx">POST</span><span class="p">[</span><span class="err">“</span><span class="nx">username</span><span class="err">”</span><span class="p">],</span>  <span class="err">“</span><span class="nx">password</span><span class="err">”</span><span class="o">=&gt;</span><span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$_</span>    <span class="nx">POST</span><span class="p">[</span><span class="err">“</span><span class="nx">password</span><span class="err">”</span><span class="p">]));</span></code></pre></figure>
+
+<h1 id="prevention">Prevention</h1>
+
+<p>if the attacker is able to have an object injected where a string is expected he can be able to forge a malicious MongoDB query.</p>
+
+<ul>
+  <li>Manual Data validation</li>
+  <li>Using a library</li>
+</ul>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span> <span class="s1">'parseTree.php'</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">control\ParseTree</span><span class="p">;</span>
+	<span class="nv">$stime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+   <span class="c1">// connect to mongodb</span>
+   <span class="nv">$m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">();</span>
+<span class="c1">//   echo "Connection to database successfully";</span>
+<span class="c1">//	$postedusername = $_REQUEST['username'];</span>
+<span class="c1">//	$postedpassword = $_REQUEST['password'];</span>
+	
+   <span class="c1">// select a database</span>
+   <span class="nv">$db</span> <span class="o">=</span> <span class="nv">$m</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">;</span>
+<span class="c1">//   echo "Database mydb selected";</span>
+   <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+<span class="c1">//   echo "Collection selected succsessfully";</span>
+   <span class="nv">$dbUsername</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+   <span class="nv">$dbPassword</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+   
+ <span class="c1">//   echo $postedusername;</span>
+ <span class="c1">//  echo $postedpassword; </span>
+   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+   		<span class="s1">'username'</span> <span class="o">=&gt;</span>  <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">],</span>
+   		<span class="s1">'password'</span> <span class="o">=&gt;</span>  <span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span>
+   		
+   <span class="p">);</span> 
+   <span class="nv">$cursor</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+<span class="cm">/*    $data = array(
+   		'username' =&gt; array('$ne' =&gt; 1),
+   		'password' =&gt; array('$ne' =&gt; 1)
+   		 
+   ); */</span>
+   <span class="nv">$string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+   <span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span>
+   
+<span class="c1">//   print_r($data);</span>
+   <span class="nv">$scope</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"user"</span> <span class="o">=&gt;</span> <span class="s2">"Carl"</span><span class="p">);</span>
+   <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="s2">"function(greeting, name) { return greeting+', '+name+'!'; }"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">"Good bye"</span><span class="p">,</span> <span class="s2">"Joe"</span><span class="p">));</span>
+   <span class="k">echo</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">'retval'</span><span class="p">];</span>
+<span class="c1">//   $db-&gt;execute("db.user.insert({'assdfdf':'dsaf'})");</span>
+ <span class="c1">//  $response = $db-&gt;execute("db.user.find({'username':'sunuyang'})");</span>
+ <span class="c1">//  print_r($response);</span>
+<span class="c1">//   echo $response['retval'];</span>
+<span class="c1">//    foreach ($data as $temp){</span>
+<span class="c1">//    	echo $temp;</span>
+<span class="c1">//    }</span>
+ <span class="c1">//  $cursor = $collection-&gt;find($data);</span>
+   
+   
+   <span class="nv">$count</span> <span class="o">=</span> <span class="nv">$cursor</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">();</span>
+   <span class="nv">$doc_failed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+   <span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"failed.html"</span><span class="p">);</span>
+   <span class="nv">$doc_succeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+   <span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"succeed.html"</span><span class="p">);</span>
+   <span class="nv">$doc_attacked</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+   <span class="nv">$doc_attacked</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"attacked.html"</span><span class="p">);</span>
+<span class="c1">//   echo $count;</span>
+   <span class="nv">$parseTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ParseTree</span><span class="p">();</span>
+	<span class="k">if</span><span class="p">(</span><span class="nv">$parseTree</span><span class="o">-&gt;</span><span class="na">parseTree</span><span class="p">(</span><span class="nv">$string</span><span class="p">)){</span>
+		<span class="k">echo</span> <span class="nv">$doc_attacked</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="k">if</span><span class="p">(</span><span class="nv">$count</span> <span class="o">&gt;</span><span class="mi">0</span> <span class="p">){</span>
+	
+		<span class="c1">//   	echo "&lt;h1&gt;login successed&lt;/h1&gt;"."&lt;/br&gt;";</span>
+		   	<span class="k">echo</span> <span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+		   	<span class="k">foreach</span> <span class="p">(</span><span class="nv">$cursor</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">){</span>
+		   			<span class="k">echo</span> <span class="s1">'username:'</span><span class="o">.</span><span class="nv">$user</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/br&gt;"</span><span class="p">;</span>
+		   			<span class="k">echo</span> <span class="s1">'password:'</span><span class="o">.</span><span class="nv">$user</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/br&gt;"</span><span class="p">;</span>
+		   		<span class="p">}</span>
+		   <span class="p">}</span>
+		   <span class="k">else</span><span class="p">{</span>
+		<span class="c1">//   	echo "&lt;h1&gt;not find&lt;/h1&gt;";</span>
+		   	<span class="k">echo</span> <span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+		   <span class="p">}</span>
+	<span class="p">}</span>
+   <span class="nv">$etime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+   <span class="nv">$total</span><span class="o">=</span><span class="nv">$etime</span><span class="o">-</span><span class="nv">$stime</span><span class="p">;</span>
+   <span class="nv">$str_total</span> <span class="o">=</span> <span class="nb">var_export</span><span class="p">(</span><span class="nv">$total</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span><span class="nb">substr_count</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="s2">"E"</span><span class="p">)){</span>
+   	<span class="nv">$float_total</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+   	<span class="nv">$total</span> <span class="o">=</span> <span class="nv">$float_total</span><span class="o">/</span><span class="mi">100000</span><span class="p">;</span>
+   	<span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span></code></pre></figure>
+
+<p>detected_login.php?username[$ne]=9a8942&amp;password[$ne]=bf86om</p>
+
+<h3 id="example-2">Example #2</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$stime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">();</span>
+<span class="nv">$db</span> <span class="o">=</span> <span class="nv">$m</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">;</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+  <span class="nv">$query_body</span> <span class="o">=</span><span class="s2">"
+		function q() {
+			var username = "</span><span class="o">.</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">"username"</span><span class="p">]</span><span class="o">.</span><span class="s2">";
+			var password = "</span><span class="o">.</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">"password"</span><span class="p">]</span><span class="o">.</span><span class="s2">";if(username == '1'&amp;&amp;password == '1') return true; else{ return false;}}
+"</span><span class="p">;</span>  
+  <span class="k">echo</span> <span class="nv">$query_body</span><span class="p">;</span>
+  <span class="c1">//username=1&amp;password=1;return true;}//</span>
+  
+  
+  
+<span class="c1">//$query_body = "function q() { var username = 1; var password = 1;return true;}//if(username == '1') </span>
+<span class="c1">//		return true;else{return false;}";</span>
+<span class="c1">//echo $query_body;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'$where'</span><span class="o">=&gt;</span><span class="nv">$query_body</span><span class="p">));</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">();</span>
+<span class="nv">$doc_failed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+<span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"failed.html"</span><span class="p">);</span>
+<span class="nv">$doc_succeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+<span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"succeed.html"</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$count</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="c1">//	echo "&lt;h1&gt;username or password is wrong!&lt;/h1&gt;";</span>
+	<span class="k">echo</span> <span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nv">$etime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$total</span><span class="o">=</span><span class="nv">$etime</span><span class="o">-</span><span class="nv">$stime</span><span class="p">;</span>
+<span class="nv">$str_total</span> <span class="o">=</span> <span class="nb">var_export</span><span class="p">(</span><span class="nv">$total</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">substr_count</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="s2">"E"</span><span class="p">)){</span>
+	<span class="nv">$float_total</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+	<span class="nv">$total</span> <span class="o">=</span> <span class="nv">$float_total</span><span class="o">/</span><span class="mi">100000</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span></code></pre></figure>
+
+<p>login_1.php?username=1&amp;password=2;var date = new Date(); var curDate = null; do { curDate = new Date(); } while((Math.abs(date.getTime()-curDate.getTime()))/100 &lt; 20); return true;}//</p>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<p>use string type</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">include_once</span> <span class="s1">'parseTree.php'</span><span class="p">;</span>
+<span class="kn">use</span> <span class="nn">control\ParseTree</span><span class="p">;</span>
+	<span class="nv">$stime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+   <span class="c1">// connect to mongodb</span>
+   <span class="nv">$m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">();</span>
+<span class="c1">//   echo "Connection to database successfully";</span>
+<span class="c1">//	$postedusername = $_REQUEST['username'];</span>
+<span class="c1">//	$postedpassword = $_REQUEST['password'];</span>
+	
+   <span class="c1">// select a database</span>
+   <span class="nv">$db</span> <span class="o">=</span> <span class="nv">$m</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">;</span>
+<span class="c1">//   echo "Database mydb selected";</span>
+   <span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+<span class="c1">//   echo "Collection selected succsessfully";</span>
+   <span class="nv">$dbUsername</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+   <span class="nv">$dbPassword</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+   
+ <span class="c1">//   echo $postedusername;</span>
+ <span class="c1">//  echo $postedpassword; </span>
+   <span class="nv">$data</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+   		<span class="s1">'username'</span> <span class="o">=&gt;</span>  <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'username'</span><span class="p">],</span>
+   		<span class="s1">'password'</span> <span class="o">=&gt;</span>  <span class="p">(</span><span class="nx">string</span><span class="p">)</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span>
+   		
+   <span class="p">);</span> 
+   <span class="nv">$cursor</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+<span class="cm">/*    $data = array(
+   		'username' =&gt; array('$ne' =&gt; 1),
+   		'password' =&gt; array('$ne' =&gt; 1)
+   		 
+   ); */</span>
+   <span class="nv">$string</span> <span class="o">=</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">);</span>
+   <span class="k">echo</span> <span class="nv">$string</span><span class="p">;</span>
+   
+<span class="c1">//   print_r($data);</span>
+   <span class="nv">$scope</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span><span class="s2">"user"</span> <span class="o">=&gt;</span> <span class="s2">"Carl"</span><span class="p">);</span>
+   <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">(</span><span class="s2">"function(greeting, name) { return greeting+', '+name+'!'; }"</span><span class="p">,</span> <span class="k">array</span><span class="p">(</span><span class="s2">"Good bye"</span><span class="p">,</span> <span class="s2">"Joe"</span><span class="p">));</span>
+   <span class="k">echo</span> <span class="nv">$response</span><span class="p">[</span><span class="s1">'retval'</span><span class="p">];</span>
+<span class="c1">//   $db-&gt;execute("db.user.insert({'assdfdf':'dsaf'})");</span>
+ <span class="c1">//  $response = $db-&gt;execute("db.user.find({'username':'sunuyang'})");</span>
+ <span class="c1">//  print_r($response);</span>
+<span class="c1">//   echo $response['retval'];</span>
+<span class="c1">//    foreach ($data as $temp){</span>
+<span class="c1">//    	echo $temp;</span>
+<span class="c1">//    }</span>
+ <span class="c1">//  $cursor = $collection-&gt;find($data);</span>
+   
+   
+   <span class="nv">$count</span> <span class="o">=</span> <span class="nv">$cursor</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">();</span>
+   <span class="nv">$doc_failed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+   <span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"failed.html"</span><span class="p">);</span>
+   <span class="nv">$doc_succeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+   <span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"succeed.html"</span><span class="p">);</span>
+   <span class="nv">$doc_attacked</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+   <span class="nv">$doc_attacked</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"attacked.html"</span><span class="p">);</span>
+<span class="c1">//   echo $count;</span>
+   <span class="nv">$parseTree</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ParseTree</span><span class="p">();</span>
+	<span class="k">if</span><span class="p">(</span><span class="nv">$parseTree</span><span class="o">-&gt;</span><span class="na">parseTree</span><span class="p">(</span><span class="nv">$string</span><span class="p">)){</span>
+		<span class="k">echo</span> <span class="nv">$doc_attacked</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+	<span class="p">}</span>
+	<span class="k">else</span>
+	<span class="p">{</span>
+		<span class="k">if</span><span class="p">(</span><span class="nv">$count</span> <span class="o">&gt;</span><span class="mi">0</span> <span class="p">){</span>
+	
+		<span class="c1">//   	echo "&lt;h1&gt;login successed&lt;/h1&gt;"."&lt;/br&gt;";</span>
+		   	<span class="k">echo</span> <span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+		   	<span class="k">foreach</span> <span class="p">(</span><span class="nv">$cursor</span> <span class="k">as</span> <span class="nv">$user</span><span class="p">){</span>
+		   			<span class="k">echo</span> <span class="s1">'username:'</span><span class="o">.</span><span class="nv">$user</span><span class="p">[</span><span class="s1">'username'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/br&gt;"</span><span class="p">;</span>
+		   			<span class="k">echo</span> <span class="s1">'password:'</span><span class="o">.</span><span class="nv">$user</span><span class="p">[</span><span class="s1">'password'</span><span class="p">]</span><span class="o">.</span><span class="s2">"&lt;/br&gt;"</span><span class="p">;</span>
+		   		<span class="p">}</span>
+		   <span class="p">}</span>
+		   <span class="k">else</span><span class="p">{</span>
+		<span class="c1">//   	echo "&lt;h1&gt;not find&lt;/h1&gt;";</span>
+		   	<span class="k">echo</span> <span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+		   <span class="p">}</span>
+	<span class="p">}</span>
+   <span class="nv">$etime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+   <span class="nv">$total</span><span class="o">=</span><span class="nv">$etime</span><span class="o">-</span><span class="nv">$stime</span><span class="p">;</span>
+   <span class="nv">$str_total</span> <span class="o">=</span> <span class="nb">var_export</span><span class="p">(</span><span class="nv">$total</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+   <span class="k">if</span><span class="p">(</span><span class="nb">substr_count</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="s2">"E"</span><span class="p">)){</span>
+   	<span class="nv">$float_total</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+   	<span class="nv">$total</span> <span class="o">=</span> <span class="nv">$float_total</span><span class="o">/</span><span class="mi">100000</span><span class="p">;</span>
+   	<span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span>
+   <span class="p">}</span> <span class="k">else</span> <span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span></code></pre></figure>
+
+<h3 id="method-2">Method #2</h3>
+
+<p>use addslashes function</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nv">$stime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$m</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">MongoClient</span><span class="p">();</span>
+<span class="nv">$db</span> <span class="o">=</span> <span class="nv">$m</span><span class="o">-&gt;</span><span class="na">test</span><span class="p">;</span>
+<span class="nv">$collection</span> <span class="o">=</span> <span class="nv">$db</span><span class="o">-&gt;</span><span class="na">users</span><span class="p">;</span>
+  <span class="nv">$query_body</span> <span class="o">=</span><span class="s2">"
+		function q() {
+			var username = "</span><span class="o">.</span><span class="nb">addslashes</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">"username"</span><span class="p">])</span><span class="o">.</span><span class="s2">";
+			var password = "</span><span class="o">.</span><span class="nb">addslashes</span><span class="p">(</span><span class="nv">$_REQUEST</span><span class="p">[</span><span class="s2">"password"</span><span class="p">])</span><span class="o">.</span><span class="s2">";if(username == '1'&amp;&amp;password == '1') return true; else{ return false;}}
+"</span><span class="p">;</span>  
+  <span class="k">echo</span> <span class="nv">$query_body</span><span class="p">;</span>
+  <span class="c1">//username=1&amp;password=1;return true;}//</span>
+  
+  
+  
+<span class="c1">//$query_body = "function q() { var username = 1; var password = 1;return true;}//if(username == '1') </span>
+<span class="c1">//		return true;else{return false;}";</span>
+<span class="c1">//echo $query_body;</span>
+<span class="nv">$result</span> <span class="o">=</span> <span class="nv">$collection</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">'$where'</span><span class="o">=&gt;</span><span class="nv">$query_body</span><span class="p">));</span>
+<span class="nv">$count</span> <span class="o">=</span> <span class="nv">$result</span><span class="o">-&gt;</span><span class="na">count</span><span class="p">();</span>
+<span class="nv">$doc_failed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+<span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"failed.html"</span><span class="p">);</span>
+<span class="nv">$doc_succeed</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">DOMDocument</span><span class="p">();</span>
+<span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">loadHTMLFile</span><span class="p">(</span><span class="s2">"succeed.html"</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nv">$count</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">){</span>
+	<span class="k">echo</span> <span class="nv">$doc_succeed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="k">else</span><span class="p">{</span>
+<span class="c1">//	echo "&lt;h1&gt;username or password is wrong!&lt;/h1&gt;";</span>
+	<span class="k">echo</span> <span class="nv">$doc_failed</span><span class="o">-&gt;</span><span class="na">saveHTML</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nv">$etime</span><span class="o">=</span><span class="nb">microtime</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<span class="nv">$total</span><span class="o">=</span><span class="nv">$etime</span><span class="o">-</span><span class="nv">$stime</span><span class="p">;</span>
+<span class="nv">$str_total</span> <span class="o">=</span> <span class="nb">var_export</span><span class="p">(</span><span class="nv">$total</span><span class="p">,</span> <span class="k">TRUE</span><span class="p">);</span>
+<span class="k">if</span><span class="p">(</span><span class="nb">substr_count</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="s2">"E"</span><span class="p">)){</span>
+	<span class="nv">$float_total</span> <span class="o">=</span> <span class="nb">floatval</span><span class="p">(</span><span class="nb">substr</span><span class="p">(</span><span class="nv">$str_total</span><span class="p">,</span><span class="mi">5</span><span class="p">));</span>
+	<span class="nv">$total</span> <span class="o">=</span> <span class="nv">$float_total</span><span class="o">/</span><span class="mi">100000</span><span class="p">;</span>
+	<span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span>
+<span class="p">}</span> <span class="k">else</span> <span class="k">echo</span> <span class="nv">$total</span><span class="o">.</span><span class="s1">'seconds'</span><span class="p">;</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase.N1QL</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">N1QlInjection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainForm</span> <span class="p">:</span> <span class="n">Form</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">MainForm</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">InitializeComponent</span><span class="p">();</span>
+
+            <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnCommentUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtComment</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe' /* 21st century only */"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">RunQuery</span><span class="p">(</span><span class="kt">string</span> <span class="n">query</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\nRunning..."</span><span class="p">;</span>
+            <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+            <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">bucket</span> <span class="p">=</span> <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">GetBucket</span><span class="p">(</span><span class="s">"beer-sample"</span><span class="p">);</span>
+
+                <span class="kt">var</span> <span class="n">queryRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryRequest</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+                
+                <span class="k">if</span> <span class="p">(</span><span class="n">parameters</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">queryRequest</span><span class="p">.</span><span class="nf">AddNamedParameter</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+                <span class="p">};</span>
+
+                <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span>
+                    <span class="n">bucket</span><span class="p">.</span><span class="n">QueryAsync</span><span class="p">&lt;</span><span class="kt">dynamic</span><span class="p">&gt;(</span><span class="n">queryRequest</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">result</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Errors</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Message</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Exception</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                            <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="s">"Unknown Error"</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Rows</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">var</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+                    <span class="n">sb</span><span class="p">.</span><span class="nf">AppendFormat</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1} rows returned\r\n\r\n"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+
+                    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">row</span> <span class="k">in</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+                    <span class="p">}</span>
+
+                    <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\n0 row returned"</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+                <span class="p">.</span><span class="nf">ContinueWith</span><span class="p">(</span><span class="n">task</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="nf">BeginInvoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span>
+                    <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">IsFaulted</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                                <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                    <span class="p">}));</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="example-2-1">Example #2</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase.N1QL</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">N1QlInjection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainForm</span> <span class="p">:</span> <span class="n">Form</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">MainForm</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">InitializeComponent</span><span class="p">();</span>
+
+            <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnCommentUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtComment</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe' /* 21st century only */"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnIdentifierUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT "</span> <span class="p">+</span> <span class="n">edtIdentifier</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">" FROM `beer-sample` "</span> <span class="p">+</span> 
+                     <span class="s">"WHERE type = 'beer' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">RunQuery</span><span class="p">(</span><span class="kt">string</span> <span class="n">query</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\nRunning..."</span><span class="p">;</span>
+            <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+            <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">bucket</span> <span class="p">=</span> <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">GetBucket</span><span class="p">(</span><span class="s">"beer-sample"</span><span class="p">);</span>
+
+                <span class="kt">var</span> <span class="n">queryRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryRequest</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+                
+                <span class="k">if</span> <span class="p">(</span><span class="n">parameters</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">queryRequest</span><span class="p">.</span><span class="nf">AddNamedParameter</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+                <span class="p">};</span>
+
+                <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span>
+                    <span class="n">bucket</span><span class="p">.</span><span class="n">QueryAsync</span><span class="p">&lt;</span><span class="kt">dynamic</span><span class="p">&gt;(</span><span class="n">queryRequest</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">result</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Errors</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Message</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Exception</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                            <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="s">"Unknown Error"</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Rows</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">var</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+                    <span class="n">sb</span><span class="p">.</span><span class="nf">AppendFormat</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1} rows returned\r\n\r\n"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+
+                    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">row</span> <span class="k">in</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+                    <span class="p">}</span>
+
+                    <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\n0 row returned"</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+                <span class="p">.</span><span class="nf">ContinueWith</span><span class="p">(</span><span class="n">task</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="nf">BeginInvoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span>
+                    <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">IsFaulted</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                                <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                    <span class="p">}));</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="solutions-1">Solutions</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase.N1QL</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">N1QlInjection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainForm</span> <span class="p">:</span> <span class="n">Form</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">MainForm</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">InitializeComponent</span><span class="p">();</span>
+
+            <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereSafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"'"</span><span class="p">,</span> <span class="s">"''"</span><span class="p">)</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereSafeParam_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;()</span>
+            <span class="p">{</span>
+                <span class="p">{</span> <span class="s">"$name"</span><span class="p">,</span> <span class="s">"%"</span> <span class="p">+</span> <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%"</span> <span class="p">}</span>
+            <span class="p">};</span>
+
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE $name "</span> <span class="p">+</span>
+                     <span class="s">"AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">,</span> <span class="n">parameters</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnCommentUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtComment</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe' /* 21st century only */"</span><span class="p">);</span>
+        <span class="p">}</span>
+        
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnCommentSafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtComment</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"'"</span><span class="p">,</span> <span class="s">"''"</span><span class="p">)</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span> <span class="c1">// 21st century only</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">RunQuery</span><span class="p">(</span><span class="kt">string</span> <span class="n">query</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\nRunning..."</span><span class="p">;</span>
+            <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+            <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">bucket</span> <span class="p">=</span> <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">GetBucket</span><span class="p">(</span><span class="s">"beer-sample"</span><span class="p">);</span>
+
+                <span class="kt">var</span> <span class="n">queryRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryRequest</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+                
+                <span class="k">if</span> <span class="p">(</span><span class="n">parameters</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">queryRequest</span><span class="p">.</span><span class="nf">AddNamedParameter</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+                <span class="p">};</span>
+
+                <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span>
+                    <span class="n">bucket</span><span class="p">.</span><span class="n">QueryAsync</span><span class="p">&lt;</span><span class="kt">dynamic</span><span class="p">&gt;(</span><span class="n">queryRequest</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">result</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Errors</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Message</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Exception</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                            <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="s">"Unknown Error"</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Rows</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">var</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+                    <span class="n">sb</span><span class="p">.</span><span class="nf">AppendFormat</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1} rows returned\r\n\r\n"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+
+                    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">row</span> <span class="k">in</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+                    <span class="p">}</span>
+
+                    <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\n0 row returned"</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+                <span class="p">.</span><span class="nf">ContinueWith</span><span class="p">(</span><span class="n">task</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="nf">BeginInvoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span>
+                    <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">IsFaulted</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                                <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                    <span class="p">}));</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h3 id="method-2-1">Method #2</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">using</span> <span class="nn">System</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Collections.Generic</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.ComponentModel</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Data</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Drawing</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Linq</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Text</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Threading.Tasks</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">System.Windows.Forms</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase</span><span class="p">;</span>
+<span class="k">using</span> <span class="nn">Couchbase.N1QL</span><span class="p">;</span>
+
+<span class="k">namespace</span> <span class="nn">N1QlInjection</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">partial</span> <span class="k">class</span> <span class="nc">MainForm</span> <span class="p">:</span> <span class="n">Form</span>
+    <span class="p">{</span>
+        <span class="k">public</span> <span class="nf">MainForm</span><span class="p">()</span>
+        <span class="p">{</span>
+            <span class="nf">InitializeComponent</span><span class="p">();</span>
+
+            <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">Initialize</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereSafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"'"</span><span class="p">,</span> <span class="s">"''"</span><span class="p">)</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnWhereSafeParam_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="kt">var</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">new</span> <span class="n">Dictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span> <span class="kt">object</span><span class="p">&gt;()</span>
+            <span class="p">{</span>
+                <span class="p">{</span> <span class="s">"$name"</span><span class="p">,</span> <span class="s">"%"</span> <span class="p">+</span> <span class="n">edtWhere</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%"</span> <span class="p">}</span>
+            <span class="p">};</span>
+
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE $name "</span> <span class="p">+</span>
+                     <span class="s">"AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">,</span> <span class="n">parameters</span><span class="p">);</span>
+
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnCommentUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtComment</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe' /* 21st century only */"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnCommentSafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT * FROM `beer-sample` WHERE type = 'beer' AND name LIKE '%"</span> <span class="p">+</span>
+                     <span class="n">edtComment</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"'"</span><span class="p">,</span> <span class="s">"''"</span><span class="p">)</span> <span class="p">+</span> <span class="s">"%' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span> <span class="c1">// 21st century only</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnIdentifierUnsafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT "</span> <span class="p">+</span> <span class="n">edtIdentifier</span><span class="p">.</span><span class="n">Text</span> <span class="p">+</span> <span class="s">" FROM `beer-sample` "</span> <span class="p">+</span> 
+                     <span class="s">"WHERE type = 'beer' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">btnIdentifierSafe_Click</span><span class="p">(</span><span class="kt">object</span> <span class="n">sender</span><span class="p">,</span> <span class="n">EventArgs</span> <span class="n">e</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="nf">RunQuery</span><span class="p">(</span><span class="s">"SELECT `"</span> <span class="p">+</span> <span class="n">edtIdentifier</span><span class="p">.</span><span class="n">Text</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="s">"`"</span><span class="p">,</span> <span class="s">"``"</span><span class="p">)</span> <span class="p">+</span> <span class="s">"` FROM `beer-sample` "</span> <span class="p">+</span>
+                     <span class="s">"WHERE type = 'beer' AND brewery_id = '21st_amendment_brewery_cafe'"</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="k">private</span> <span class="k">void</span> <span class="nf">RunQuery</span><span class="p">(</span><span class="kt">string</span> <span class="n">query</span><span class="p">,</span> <span class="n">IDictionary</span><span class="p">&lt;</span><span class="kt">string</span><span class="p">,</span><span class="kt">object</span><span class="p">&gt;</span> <span class="n">parameters</span> <span class="p">=</span> <span class="k">null</span><span class="p">)</span>
+        <span class="p">{</span>
+            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\nRunning..."</span><span class="p">;</span>
+            <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">false</span><span class="p">;</span>
+
+            <span class="n">Task</span><span class="p">.</span><span class="nf">Run</span><span class="p">(</span><span class="k">async</span> <span class="p">()</span> <span class="p">=&gt;</span>
+            <span class="p">{</span>
+                <span class="kt">var</span> <span class="n">bucket</span> <span class="p">=</span> <span class="n">ClusterHelper</span><span class="p">.</span><span class="nf">GetBucket</span><span class="p">(</span><span class="s">"beer-sample"</span><span class="p">);</span>
+
+                <span class="kt">var</span> <span class="n">queryRequest</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">QueryRequest</span><span class="p">(</span><span class="n">query</span><span class="p">);</span>
+                
+                <span class="k">if</span> <span class="p">(</span><span class="n">parameters</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="n">queryRequest</span><span class="p">.</span><span class="nf">AddNamedParameter</span><span class="p">(</span><span class="n">parameters</span><span class="p">.</span><span class="nf">ToArray</span><span class="p">());</span>
+                <span class="p">};</span>
+
+                <span class="kt">var</span> <span class="n">result</span> <span class="p">=</span> <span class="k">await</span>
+                    <span class="n">bucket</span><span class="p">.</span><span class="n">QueryAsync</span><span class="p">&lt;</span><span class="kt">dynamic</span><span class="p">&gt;(</span><span class="n">queryRequest</span><span class="p">);</span>
+                <span class="k">if</span> <span class="p">(!</span><span class="n">result</span><span class="p">.</span><span class="n">Success</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Errors</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="n">Count</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="n">result</span><span class="p">.</span><span class="n">Errors</span><span class="p">.</span><span class="nf">First</span><span class="p">().</span><span class="n">Message</span><span class="p">;</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Exception</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                            <span class="n">result</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                    <span class="p">}</span>
+                    <span class="k">else</span>
+                    <span class="p">{</span>
+                        <span class="k">return</span> <span class="s">"Unknown Error"</span><span class="p">;</span>
+                    <span class="p">}</span>
+                <span class="p">}</span>
+                <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">result</span><span class="p">.</span><span class="n">Rows</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span>
+                <span class="p">{</span>
+                    <span class="kt">var</span> <span class="n">sb</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">StringBuilder</span><span class="p">();</span>
+                    <span class="n">sb</span><span class="p">.</span><span class="nf">AppendFormat</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1} rows returned\r\n\r\n"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">.</span><span class="n">Count</span><span class="p">);</span>
+
+                    <span class="k">foreach</span> <span class="p">(</span><span class="kt">var</span> <span class="n">row</span> <span class="k">in</span> <span class="n">result</span><span class="p">.</span><span class="n">Rows</span><span class="p">)</span>
+                    <span class="p">{</span>
+                        <span class="n">sb</span><span class="p">.</span><span class="nf">AppendLine</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="nf">ToString</span><span class="p">());</span>
+                    <span class="p">}</span>
+
+                    <span class="k">return</span> <span class="n">sb</span><span class="p">.</span><span class="nf">ToString</span><span class="p">();</span>
+                <span class="p">}</span>
+                <span class="k">else</span>
+                <span class="p">{</span>
+                    <span class="k">return</span> <span class="n">query</span> <span class="p">+</span> <span class="s">"\r\n\r\n0 row returned"</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">})</span>
+                <span class="p">.</span><span class="nf">ContinueWith</span><span class="p">(</span><span class="n">task</span> <span class="p">=&gt;</span>
+                <span class="p">{</span>
+                    <span class="nf">BeginInvoke</span><span class="p">(</span><span class="k">new</span> <span class="nf">Action</span><span class="p">(()</span> <span class="p">=&gt;</span>
+                    <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="n">task</span><span class="p">.</span><span class="n">IsFaulted</span><span class="p">)</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="kt">string</span><span class="p">.</span><span class="nf">Format</span><span class="p">(</span><span class="s">"{0}\r\n\r\n{1}\r\n{2}"</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">Message</span><span class="p">,</span>
+                                <span class="n">task</span><span class="p">.</span><span class="n">Exception</span><span class="p">.</span><span class="n">StackTrace</span><span class="p">);</span>
+                        <span class="p">}</span>
+                        <span class="k">else</span>
+                        <span class="p">{</span>
+                            <span class="n">edtResults</span><span class="p">.</span><span class="n">Text</span> <span class="p">=</span> <span class="n">task</span><span class="p">.</span><span class="n">Result</span><span class="p">;</span>
+                        <span class="p">}</span>
+
+                        <span class="n">tabControl</span><span class="p">.</span><span class="n">Enabled</span> <span class="p">=</span> <span class="k">true</span><span class="p">;</span>
+                    <span class="p">}));</span>
+                <span class="p">});</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">nosql.injection.demo.model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.mongodb.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mongodb.util.JSON</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.UnknownHostException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NoSQLDatabase</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">DBCollection</span> <span class="n">characters</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">NoSQLDatabase</span> <span class="n">instance</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">NoSQLDatabase</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NoSQLDatabase</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">InjectionResult</span> <span class="nf">insecureFindByName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+
+        <span class="nc">InjectionResult</span> <span class="n">injectionResult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InjectionResult</span><span class="o">();</span>
+
+        <span class="nc">String</span> <span class="n">stringQuery</span> <span class="o">=</span> <span class="s">"{ 'name' : '"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">"'}"</span><span class="o">;</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setStringQuery</span><span class="o">(</span><span class="n">stringQuery</span><span class="o">);</span>
+
+        <span class="nc">DBObject</span> <span class="n">databaseQuery</span> <span class="o">=</span> <span class="o">(</span><span class="nc">DBObject</span><span class="o">)</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">stringQuery</span><span class="o">);</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setDatabaseQuery</span><span class="o">(</span><span class="n">databaseQuery</span><span class="o">);</span>
+
+        <span class="nc">DBCursor</span> <span class="n">result</span> <span class="o">=</span> <span class="n">characters</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">databaseQuery</span><span class="o">);</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setResult</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">injectionResult</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="nf">NoSQLDatabase</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+
+        <span class="c1">// More details at http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-java-driver/</span>
+        <span class="nc">MongoClient</span> <span class="n">mongoClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MongoClient</span><span class="o">();</span>
+
+        <span class="no">DB</span> <span class="n">gameOfThronesDatabase</span> <span class="o">=</span> <span class="n">mongoClient</span><span class="o">.</span><span class="na">getDB</span><span class="o">(</span><span class="s">"GameOfThrones"</span><span class="o">);</span>
+        <span class="n">gameOfThronesDatabase</span><span class="o">.</span><span class="na">dropDatabase</span><span class="o">();</span>
+
+        <span class="n">characters</span> <span class="o">=</span> <span class="n">gameOfThronesDatabase</span><span class="o">.</span><span class="na">getCollection</span><span class="o">(</span><span class="s">"characters"</span><span class="o">);</span>
+        <span class="n">seedData</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">seedData</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">BasicDBObject</span> <span class="n">robb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">1</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Robb"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Stark"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Kingslayer"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">sansa</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">2</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Sansa"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Stark"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Kingslayer"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">tyrion</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">3</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Tyrion"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">jaime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">4</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Jaime"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">cersei</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">5</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Cersei"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">tywin</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">6</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Tywin"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">robb</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">sansa</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">tyrion</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">jaime</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">cersei</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">tywin</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="solutions-2">Solutions</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">nosql.injection.demo.model</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">com.mongodb.*</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.mongodb.util.JSON</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.net.UnknownHostException</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">NoSQLDatabase</span> <span class="o">{</span>
+
+    <span class="kd">private</span> <span class="nc">DBCollection</span> <span class="n">characters</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="nc">NoSQLDatabase</span> <span class="n">instance</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kd">static</span> <span class="nc">NoSQLDatabase</span> <span class="nf">getInstance</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">instance</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">instance</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">NoSQLDatabase</span><span class="o">();</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">instance</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="nc">InjectionResult</span> <span class="nf">insecureFindByName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+
+        <span class="nc">InjectionResult</span> <span class="n">injectionResult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InjectionResult</span><span class="o">();</span>
+
+        <span class="nc">String</span> <span class="n">stringQuery</span> <span class="o">=</span> <span class="s">"{ 'name' : '"</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">"'}"</span><span class="o">;</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setStringQuery</span><span class="o">(</span><span class="n">stringQuery</span><span class="o">);</span>
+
+        <span class="nc">DBObject</span> <span class="n">databaseQuery</span> <span class="o">=</span> <span class="o">(</span><span class="nc">DBObject</span><span class="o">)</span> <span class="no">JSON</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="n">stringQuery</span><span class="o">);</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setDatabaseQuery</span><span class="o">(</span><span class="n">databaseQuery</span><span class="o">);</span>
+
+        <span class="nc">DBCursor</span> <span class="n">result</span> <span class="o">=</span> <span class="n">characters</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">databaseQuery</span><span class="o">);</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setResult</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">injectionResult</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+    <span class="kd">public</span> <span class="nc">InjectionResult</span> <span class="nf">secureFindByName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+
+        <span class="nc">InjectionResult</span> <span class="n">injectionResult</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">InjectionResult</span><span class="o">();</span>
+
+        <span class="nc">BasicDBObject</span> <span class="n">databaseQuery</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="n">name</span><span class="o">);</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setDatabaseQuery</span><span class="o">(</span><span class="n">databaseQuery</span><span class="o">);</span>
+
+        <span class="nc">DBCursor</span> <span class="n">result</span> <span class="o">=</span> <span class="n">characters</span><span class="o">.</span><span class="na">find</span><span class="o">(</span><span class="n">databaseQuery</span><span class="o">);</span>
+        <span class="n">injectionResult</span><span class="o">.</span><span class="na">setResult</span><span class="o">(</span><span class="n">result</span><span class="o">);</span>
+
+        <span class="k">return</span> <span class="n">injectionResult</span><span class="o">;</span>
+    <span class="o">}</span>
+
+
+
+    <span class="kd">private</span> <span class="nf">NoSQLDatabase</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">UnknownHostException</span> <span class="o">{</span>
+
+        <span class="c1">// More details at http://docs.mongodb.org/ecosystem/tutorial/getting-started-with-java-driver/</span>
+        <span class="nc">MongoClient</span> <span class="n">mongoClient</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MongoClient</span><span class="o">();</span>
+
+        <span class="no">DB</span> <span class="n">gameOfThronesDatabase</span> <span class="o">=</span> <span class="n">mongoClient</span><span class="o">.</span><span class="na">getDB</span><span class="o">(</span><span class="s">"GameOfThrones"</span><span class="o">);</span>
+        <span class="n">gameOfThronesDatabase</span><span class="o">.</span><span class="na">dropDatabase</span><span class="o">();</span>
+
+        <span class="n">characters</span> <span class="o">=</span> <span class="n">gameOfThronesDatabase</span><span class="o">.</span><span class="na">getCollection</span><span class="o">(</span><span class="s">"characters"</span><span class="o">);</span>
+        <span class="n">seedData</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">seedData</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">BasicDBObject</span> <span class="n">robb</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">1</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Robb"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Stark"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Kingslayer"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">sansa</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">2</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Sansa"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Stark"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Kingslayer"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">tyrion</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">3</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Tyrion"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">jaime</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">4</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Jaime"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">cersei</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">5</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Cersei"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="nc">BasicDBObject</span> <span class="n">tywin</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BasicDBObject</span><span class="o">(</span><span class="s">"_id"</span><span class="o">,</span> <span class="mi">6</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"name"</span><span class="o">,</span> <span class="s">"Tywin"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"surname"</span><span class="o">,</span> <span class="s">"Lannister"</span><span class="o">).</span><span class="na">append</span><span class="o">(</span><span class="s">"address"</span><span class="o">,</span> <span class="s">"Casterly Rock"</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">robb</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">sansa</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">tyrion</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">jaime</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">cersei</span><span class="o">);</span>
+        <span class="n">characters</span><span class="o">.</span><span class="na">insert</span><span class="o">(</span><span class="n">tywin</span><span class="o">);</span>
+    <span class="o">}</span>
+
+<span class="o">}</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                nosql <span>(1)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                injection <span>(4)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Server_Side_Request_Forgery(SSRF).html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Insecure_Deserialization.html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+

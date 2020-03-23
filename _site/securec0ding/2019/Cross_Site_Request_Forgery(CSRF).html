@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>rdsec</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/bootstrap.min.js"></script>
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css">
+    <![endif]-->
+    <!--[if lt IE 9]>
+       <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+       <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    <![endif]-->
+    <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+    <link href="/assets/css/styles.css" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+<div class="container-fluid">
+   <div class="row row-centered">
+
+        <div class="col-md-8 col-centered" style="
+    margin-bottom: -26px;">
+       <div class="navbar navbar-custom" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img class="navbar-logo" src="/assets/images/blue.png" /></a>
+            </div> 
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+               
+                <ul class="nav navbar-nav">
+                    
+                    
+                    <li class="top-menu">
+                    
+                    <a link="rel no-openner" href="/web">Web</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/mobile">Mobile</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/network">Network</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/os">OS</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a href="/hardware">Hardware</a></li>
+                     
+                    <li class="top-meenu activee">
+                    
+                    <a href="/securec0ding">Secure C0ding</a></li>
+                    
+                    <li class="top-menu">
+                    
+                    <a target="_blank" href="https://www.linkedin.com/in/rezaduty">About</a></li>
+
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+        
+       
+        
+    </div>
+
+
+
+
+         <div class="row row-centered">
+        <div class="col-xs-1 col-centered"></div>
+                <div class="col-md-7 col-centered">
+<div class="well article">
+        <h2><a href="/securec0ding/2019/Cross_Site_Request_Forgery(CSRF).html">Cross-Site Request Forgery (CSRF) Prevention(PHP,ASP.NET,JAVA)</a></h2>
+        <span class="post-date">
+            
+            December-17-2019
+        </span><br>
+        
+
+<style>
+#share-buttons {display: inline-block; vertical-align: middle; }
+#share-buttons:after {content: ""; display: block; clear: both;}
+#share-buttons > div {
+    position: relative;
+    text-align: left; 
+    height: 36px; 
+    width: 32px; 
+    float: left; 
+    text-align: center;
+}
+#share-buttons > div > svg {height: 16px; fill: #d5d5d5; margin-top: 10px;}
+#share-buttons > div:hover {cursor: pointer;}
+#share-buttons > div.facebook:hover > svg {fill: #3B5998;}
+#share-buttons > div.twitter:hover > svg {fill: #55ACEE;}
+#share-buttons > div.linkedin:hover > svg {fill: #0077b5;}
+#share-buttons > div.pinterest:hover > svg {fill: #CB2027;}
+#share-buttons > div.gplus:hover > svg {fill: #dd4b39;}
+#share-buttons > div.mail:hover > svg {fill: #7D7D7D;}
+#share-buttons > div.instagram:hover > svg {fill: #C73B92;}
+#share-buttons > div.facebook > svg {height: 18px; margin-top: 9px;}
+#share-buttons > div.twitter > svg {height: 20px; margin-top: 8px;}
+#share-buttons > div.linkedin > svg {height: 19px; margin-top: 7px;}
+#share-buttons > div.pinterest > svg {height: 20px; margin-top: 9px;}
+#share-buttons > div.gplus > svg {height: 17px; margin-top: 9px; position: relative; left: 1px;}
+#share-buttons > div.mail > svg {height: 14px; margin-top: 11px;}
+</style>
+
+<span style="color: silver;">Share on: </span><div id="share-buttons">
+    <div class="facebook" title="Share this on Facebook" onclick="window.open('http://www.facebook.com/share.php?u=http://localhost:4000/securec0ding/2019/Cross_Site_Request_Forgery(CSRF).html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1343 12v264h-157q-86 0-116 36t-30 108v189h293l-39 296h-254v759h-306v-759h-255v-296h255v-218q0-186 104-288.5t277-102.5q147 0 228 12z"/></svg></div>
+    <div class="twitter" title="Share this on Twitter" onclick="window.open('http://twitter.com/home?status=http://localhost:4000/securec0ding/2019/Cross_Site_Request_Forgery(CSRF).html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1684 408q-67 98-162 167 1 14 1 42 0 130-38 259.5t-115.5 248.5-184.5 210.5-258 146-323 54.5q-271 0-496-145 35 4 78 4 225 0 401-138-105-2-188-64.5t-114-159.5q33 5 61 5 43 0 85-11-112-23-185.5-111.5t-73.5-205.5v-4q68 38 146 41-66-44-105-115t-39-154q0-88 44-163 121 149 294.5 238.5t371.5 99.5q-8-38-8-74 0-134 94.5-228.5t228.5-94.5q140 0 236 102 109-21 205-78-37 115-142 178 93-10 186-50z"/></svg></div>
+    <div class="linkedin" title="Share this on Linkedin" onclick="window.open('https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/securec0ding/2019/Cross_Site_Request_Forgery(CSRF).html&title=&summary=&source=');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M477 625v991h-330v-991h330zm21-306q1 73-50.5 122t-135.5 49h-2q-82 0-132-49t-50-122q0-74 51.5-122.5t134.5-48.5 133 48.5 51 122.5zm1166 729v568h-329v-530q0-105-40.5-164.5t-126.5-59.5q-63 0-105.5 34.5t-63.5 85.5q-11 30-11 81v553h-329q2-399 2-647t-1-296l-1-48h329v144h-2q20-32 41-56t56.5-52 87-43.5 114.5-15.5q171 0 275 113.5t104 332.5z"/></svg></div>
+    
+    <div class="gplus" title="Share this on Google Plus" onclick="window.open('https://plus.google.com/share?url=http://localhost:4000/securec0ding/2019/Cross_Site_Request_Forgery(CSRF).html');"><svg viewBox="0 0 2304 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1437 913q0 208-87 370.5t-248 254-369 91.5q-149 0-285-58t-234-156-156-234-58-285 58-285 156-234 234-156 285-58q286 0 491 192l-199 191q-117-113-292-113-123 0-227.5 62t-165.5 168.5-61 232.5 61 232.5 165.5 168.5 227.5 62q83 0 152.5-23t114.5-57.5 78.5-78.5 49-83 21.5-74h-416v-252h692q12 63 12 122zm867-122v210h-209v209h-210v-209h-209v-210h209v-209h210v209h209z"/></svg></div>
+    <div class="mail" title="Share this through Email" onclick="window.open('mailto:?&body=http://localhost:4000/securec0ding/2019/Cross_Site_Request_Forgery(CSRF).html');"><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1792 710v794q0 66-47 113t-113 47h-1472q-66 0-113-47t-47-113v-794q44 49 101 87 362 246 497 345 57 42 92.5 65.5t94.5 48 110 24.5h2q51 0 110-24.5t94.5-48 92.5-65.5q170-123 498-345 57-39 100-87zm0-294q0 79-49 151t-122 123q-376 261-468 325-10 7-42.5 30.5t-54 38-52 32.5-57.5 27-50 9h-2q-23 0-50-9t-57.5-27-52-32.5-54-38-42.5-30.5q-91-64-262-182.5t-205-142.5q-62-42-117-115.5t-55-136.5q0-78 41.5-130t118.5-52h1472q65 0 112.5 47t47.5 113z"/></svg></div>
+</div>
+        <hr style="border-top:1px solid #28323C;"/>
+    
+    <div class="post-content">
+    <h1 id="what-is-cross-site-request-forgery-csrf-">What is Cross-Site Request Forgery (CSRF) ?</h1>
+
+<p><img src="/images/csrf.png" alt="csrf" /></p>
+
+<p>Cross-site request forgery (also known as CSRF) is a web security vulnerability that allows an attacker to induce users to perform actions that they do not intend to perform. It allows an attacker to partly circumvent the same origin policy, which is designed to prevent different websites from interfering with each other.</p>
+
+<h3 id="get-scenario">GET scenario</h3>
+
+<p>If the application was designed to primarily use GET requests to transfer parameters and execute actions, the money transfer operation might be reduced to a request like:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">GET</span> <span class="nx">http</span><span class="o">://</span><span class="nx">bank</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">transfer</span><span class="o">.</span><span class="k">do</span><span class="o">?</span><span class="nx">acct</span><span class="o">=</span><span class="nx">BOB</span><span class="o">&amp;</span><span class="nx">amount</span><span class="o">=</span><span class="mi">100</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span></code></pre></figure>
+
+<p>Maria now decides to exploit this web application vulnerability using Alice as her victim. Maria first constructs the following exploit URL which will transfer $100,000 from Alice’s account to her account. She takes the original command URL and replaces the beneficiary name with herself, raising the transfer amount significantly at the same time:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">http</span><span class="o">://</span><span class="nx">bank</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">transfer</span><span class="o">.</span><span class="k">do</span><span class="o">?</span><span class="nx">acct</span><span class="o">=</span><span class="nx">MARIA</span><span class="o">&amp;</span><span class="nx">amount</span><span class="o">=</span><span class="mi">100000</span></code></pre></figure>
+
+<p>The social engineering aspect of the attack tricks Alice into loading this URL when she’s logged into the bank application. This is usually done with one of the following techniques:</p>
+
+<ul>
+  <li>sending an unsolicited email with HTML content</li>
+  <li>planting an exploit URL or script on pages that are likely to be visited by the victim while they are also doing online banking</li>
+</ul>
+
+<p>The exploit URL can be disguised as an ordinary link, encouraging the victim to click it:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://bank.com/transfer.do?acct=MARIA&amp;amount=100000"</span><span class="nt">&gt;</span>View my Pictures!<span class="nt">&lt;/a&gt;</span></code></pre></figure>
+
+<p>Or as a 0x0 fake image:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://bank.com/transfer.do?acct=MARIA&amp;amount=100000"</span> <span class="na">width=</span><span class="s">"0"</span> <span class="na">height=</span><span class="s">"0"</span> <span class="na">border=</span><span class="s">"0"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<p>If this image tag were included in the email, Alice wouldn’t see anything. However, the browser will still submit the request to bank.com without any visual indication that the transfer has taken place.</p>
+
+<p>A real life example of CSRF attack on an application using GET was a uTorrent exploit from 2008 that was used on a mass scale to download malware</p>
+
+<h3 id="post-scenario">POST scenario</h3>
+
+<p>The only difference between GET and POST attacks is how the attack is being executed by the victim. Let’s assume the bank now uses POST and the vulnerable request looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">POST</span> <span class="nx">http</span><span class="o">://</span><span class="nx">bank</span><span class="o">.</span><span class="nx">com</span><span class="o">/</span><span class="nx">transfer</span><span class="o">.</span><span class="k">do</span> <span class="nx">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+
+<span class="nx">acct</span><span class="o">=</span><span class="nx">BOB</span><span class="o">&amp;</span><span class="nx">amount</span><span class="o">=</span><span class="mi">100</span></code></pre></figure>
+
+<p>Such a request cannot be delivered using standard A or IMG tags, but can be delivered using a FORM tag:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"&lt;nowiki&gt;http://bank.com/transfer.do&lt;/nowiki&gt;"</span> <span class="na">method=</span><span class="s">"POST"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"acct"</span> <span class="na">value=</span><span class="s">"MARIA"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"amount"</span> <span class="na">value=</span><span class="s">"100000"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"View my pictures"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<h1 id="prevention">Prevention</h1>
+
+<p>The most common method to prevent Cross-Site Request Forgery (CSRF) attacks is to append CSRF tokens to each request and associate them with the user’s session. Such tokens should at a minimum be unique per user session, but can also be unique per request. By including a challenge token with each request, the developer can ensure that the request is valid and not coming from a source other than the user.</p>
+
+<h2 id="php">PHP</h2>
+
+<h3 id="example-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span> 
+    <span class="nt">&lt;title&gt;</span>PHP CSRF Vulnerable<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"index.php"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">accept-charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"foo"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"csrf_token"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="s">"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<h2 id="solution">Solution</h2>
+
+<h3 id="method-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// See: http://blog.ircmaxell.com/2013/02/preventing-csrf-attacks.html</span>
+<span class="c1">// Start a session (which should use cookies over HTTP only).</span>
+<span class="nb">session_start</span><span class="p">();</span>
+<span class="c1">// Create a new CSRF token.</span>
+<span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">]))</span> <span class="p">{</span>
+    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">]</span> <span class="o">=</span> <span class="nb">base64_encode</span><span class="p">(</span><span class="nb">openssl_random_pseudo_bytes</span><span class="p">(</span><span class="mi">32</span><span class="p">));</span>
+<span class="p">}</span>
+<span class="c1">// Check a POST is valid.</span>
+<span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">]</span> <span class="o">===</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">])</span> <span class="p">{</span>
+    <span class="c1">// POST data is valid.</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span>
+
+<span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span> <span class="nt">/&gt;</span> 
+    <span class="nt">&lt;title&gt;</span>PHP CSRF Protection<span class="nt">&lt;/title&gt;</span>
+
+    <span class="nt">&lt;script&gt;</span>
+    <span class="nb">window</span><span class="p">.</span><span class="nx">csrf</span> <span class="o">=</span> <span class="p">{</span> <span class="na">csrf_token</span><span class="p">:</span> <span class="dl">'</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="dl">'</span> <span class="p">};</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">ajaxSetup</span><span class="p">({</span>
+        <span class="na">data</span><span class="p">:</span> <span class="nb">window</span><span class="p">.</span><span class="nx">csrf</span>
+    <span class="p">});</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// CSRF token is now automatically merged in AJAX request data.</span>
+        <span class="nx">$</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="dl">'</span><span class="s1">/awesome/ajax/url</span><span class="dl">'</span><span class="p">,</span> <span class="p">{</span> <span class="na">foo</span><span class="p">:</span> <span class="dl">'</span><span class="s1">bar</span><span class="dl">'</span> <span class="p">},</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"index.php"</span> <span class="na">method=</span><span class="s">"post"</span> <span class="na">accept-charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">name=</span><span class="s">"foo"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"csrf_token"</span> <span class="na">value=</span><span class="s">"</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">'csrf_token'</span><span class="p">];</span> <span class="cp">?&gt;</span><span class="s">"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Submit"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/form&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span></code></pre></figure>
+
+<h2 id="aspnet">ASP.NET</h2>
+
+<h3 id="example-1-1">Example #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="p">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="p">=</span><span class="s">"http://example.com/api/account"</span> <span class="n">method</span><span class="p">=</span><span class="s">"post"</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="p">=</span><span class="s">"hidden"</span> <span class="n">name</span><span class="p">=</span><span class="s">"Transaction"</span> <span class="k">value</span><span class="p">=</span><span class="s">"withdraw"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="p">=</span><span class="s">"hidden"</span> <span class="n">name</span><span class="p">=</span><span class="s">"Amount"</span> <span class="k">value</span><span class="p">=</span><span class="s">"1000000"</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="k">value</span><span class="p">=</span><span class="s">"Click Me"</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="n">form</span><span class="p">&gt;</span></code></pre></figure>
+
+<h2 id="solutions">Solutions</h2>
+
+<h3 id="method-1-1">Method #1</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="p">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="p">=</span><span class="s">"http://example.com/api/account"</span> <span class="n">method</span><span class="p">=</span><span class="s">"post"</span><span class="p">&gt;</span>
+    <span class="n">@Html</span><span class="p">.</span><span class="nf">AntiForgeryToken</span><span class="p">()</span>
+    <span class="p">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="p">=</span><span class="s">"hidden"</span> <span class="n">name</span><span class="p">=</span><span class="s">"Transaction"</span> <span class="k">value</span><span class="p">=</span><span class="s">"withdraw"</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="p">=</span><span class="s">"hidden"</span> <span class="n">name</span><span class="p">=</span><span class="s">"Amount"</span> <span class="k">value</span><span class="p">=</span><span class="s">"1000000"</span> <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="p">=</span><span class="s">"submit"</span> <span class="k">value</span><span class="p">=</span><span class="s">"Click Me"</span><span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="n">form</span><span class="p">&gt;</span></code></pre></figure>
+
+<h3 id="method-2">Method #2</h3>
+
+<figure class="highlight"><pre><code class="language-c#" data-lang="c#"><span class="k">using</span> <span class="nn">System.Web.Script.Serialization</span><span class="p">;</span>
+
+<span class="k">public</span> <span class="k">class</span> <span class="nc">ExampleClass</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="n">T</span> <span class="n">Deserialize</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="kt">string</span> <span class="n">str</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="n">JavaScriptSerializer</span> <span class="n">s</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">JavaScriptSerializer</span><span class="p">();</span>
+        <span class="k">return</span> <span class="n">s</span><span class="p">.</span><span class="n">Deserialize</span><span class="p">&lt;</span><span class="n">T</span><span class="p">&gt;(</span><span class="n">str</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="java">JAVA</h2>
+
+<h3 id="example-1-2">Example #1</h3>
+
+<p>index.html</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">org.t246osslab.easybuggy.vulnerabilities</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Locale</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.annotation.WebServlet</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpSession</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.apache.commons.lang.StringUtils</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.directory.shared.ldap.entry.ModificationOperation</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.directory.shared.ldap.entry.client.ClientModification</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.directory.shared.ldap.entry.client.DefaultClientAttribute</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.directory.shared.ldap.message.ModifyRequestImpl</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.apache.directory.shared.ldap.name.LdapDN</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.t246osslab.easybuggy.core.dao.EmbeddedADS</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.t246osslab.easybuggy.core.servlets.AbstractServlet</span><span class="o">;</span>
+
+<span class="nd">@SuppressWarnings</span><span class="o">(</span><span class="s">"serial"</span><span class="o">)</span>
+<span class="nd">@WebServlet</span><span class="o">(</span><span class="n">urlPatterns</span> <span class="o">=</span> <span class="o">{</span> <span class="s">"/admins/csrf"</span> <span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CSRFServlet</span> <span class="kd">extends</span> <span class="nc">AbstractServlet</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doGet</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">res</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">Locale</span> <span class="n">locale</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getLocale</span><span class="o">();</span>
+
+        <span class="nc">StringBuilder</span> <span class="n">bodyHtml</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;form action=\"/admins/csrf\" method=\"post\"&gt;"</span><span class="o">);</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">getMsg</span><span class="o">(</span><span class="s">"msg.enter.passwd"</span><span class="o">,</span> <span class="n">locale</span><span class="o">));</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;br&gt;&lt;br&gt;"</span><span class="o">);</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">getMsg</span><span class="o">(</span><span class="s">"label.password"</span><span class="o">,</span> <span class="n">locale</span><span class="o">)</span> <span class="o">+</span> <span class="s">": "</span><span class="o">);</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;input type=\"password\" name=\"password\" size=\"30\" maxlength=\"30\" autocomplete=\"off\"&gt;"</span><span class="o">);</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;br&gt;&lt;br&gt;"</span><span class="o">);</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;input type=\"submit\" value=\""</span> <span class="o">+</span> <span class="n">getMsg</span><span class="o">(</span><span class="s">"label.submit"</span><span class="o">,</span> <span class="n">locale</span><span class="o">)</span> <span class="o">+</span> <span class="s">"\"&gt;"</span><span class="o">);</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;br&gt;&lt;br&gt;"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">errorMessage</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">req</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"errorMessage"</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">errorMessage</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">errorMessage</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">getInfoMsg</span><span class="o">(</span><span class="s">"msg.note.csrf"</span><span class="o">,</span> <span class="n">locale</span><span class="o">));</span>
+        <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;/form&gt;"</span><span class="o">);</span>
+        <span class="n">responseToClient</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">,</span> <span class="n">getMsg</span><span class="o">(</span><span class="s">"title.csrf.page"</span><span class="o">,</span> <span class="n">locale</span><span class="o">),</span> <span class="n">bodyHtml</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">doPost</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">req</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">res</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span><span class="o">,</span> <span class="nc">IOException</span> <span class="o">{</span>
+        <span class="nc">Locale</span> <span class="n">locale</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getLocale</span><span class="o">();</span>
+        <span class="nc">HttpSession</span> <span class="n">session</span> <span class="o">=</span> <span class="n">req</span><span class="o">.</span><span class="na">getSession</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">session</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">res</span><span class="o">.</span><span class="na">sendRedirect</span><span class="o">(</span><span class="s">"/"</span><span class="o">);</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="nc">String</span> <span class="n">userid</span> <span class="o">=</span> <span class="o">(</span><span class="nc">String</span><span class="o">)</span> <span class="n">session</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"userid"</span><span class="o">);</span>
+        <span class="nc">String</span> <span class="n">password</span> <span class="o">=</span> <span class="nc">StringUtils</span><span class="o">.</span><span class="na">trim</span><span class="o">(</span><span class="n">req</span><span class="o">.</span><span class="na">getParameter</span><span class="o">(</span><span class="s">"password"</span><span class="o">));</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="nc">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">userid</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="nc">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">password</span><span class="o">)</span> <span class="o">&amp;&amp;</span> <span class="n">password</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="nc">DefaultClientAttribute</span> <span class="n">entryAttribute</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DefaultClientAttribute</span><span class="o">(</span><span class="s">"userPassword"</span><span class="o">,</span> <span class="n">encodeForLDAP</span><span class="o">(</span><span class="n">password</span><span class="o">.</span><span class="na">trim</span><span class="o">()));</span>
+                <span class="nc">ClientModification</span> <span class="n">clientModification</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClientModification</span><span class="o">();</span>
+                <span class="n">clientModification</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="n">entryAttribute</span><span class="o">);</span>
+                <span class="n">clientModification</span><span class="o">.</span><span class="na">setOperation</span><span class="o">(</span><span class="nc">ModificationOperation</span><span class="o">.</span><span class="na">REPLACE_ATTRIBUTE</span><span class="o">);</span>
+                <span class="nc">ModifyRequestImpl</span> <span class="n">modifyRequest</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ModifyRequestImpl</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+                <span class="n">modifyRequest</span><span class="o">.</span><span class="na">setName</span><span class="o">(</span><span class="k">new</span> <span class="nc">LdapDN</span><span class="o">(</span><span class="s">"uid="</span> <span class="o">+</span> <span class="n">encodeForLDAP</span><span class="o">(</span><span class="n">userid</span><span class="o">.</span><span class="na">trim</span><span class="o">())</span> <span class="o">+</span> <span class="s">",ou=people,dc=t246osslab,dc=org"</span><span class="o">));</span>
+                <span class="n">modifyRequest</span><span class="o">.</span><span class="na">addModification</span><span class="o">(</span><span class="n">clientModification</span><span class="o">);</span>
+                <span class="nc">EmbeddedADS</span><span class="o">.</span><span class="na">getAdminSession</span><span class="o">().</span><span class="na">modify</span><span class="o">(</span><span class="n">modifyRequest</span><span class="o">);</span>
+
+                <span class="nc">StringBuilder</span> <span class="n">bodyHtml</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">StringBuilder</span><span class="o">();</span>
+                <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;form&gt;"</span><span class="o">);</span>
+                <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="n">getMsg</span><span class="o">(</span><span class="s">"msg.passwd.changed"</span><span class="o">,</span> <span class="n">locale</span><span class="o">));</span>
+                <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;br&gt;&lt;br&gt;"</span><span class="o">);</span>
+                <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;a href=\"/admins/main\"&gt;"</span> <span class="o">+</span> <span class="n">getMsg</span><span class="o">(</span><span class="s">"label.goto.admin.page"</span><span class="o">,</span> <span class="n">locale</span><span class="o">)</span> <span class="o">+</span> <span class="s">"&lt;/a&gt;"</span><span class="o">);</span>
+                <span class="n">bodyHtml</span><span class="o">.</span><span class="na">append</span><span class="o">(</span><span class="s">"&lt;/form&gt;"</span><span class="o">);</span>
+                <span class="n">responseToClient</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">,</span> <span class="n">getMsg</span><span class="o">(</span><span class="s">"title.csrf.page"</span><span class="o">,</span> <span class="n">locale</span><span class="o">),</span> <span class="n">bodyHtml</span><span class="o">.</span><span class="na">toString</span><span class="o">());</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"Exception occurs: "</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+                <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"errorMessage"</span><span class="o">,</span> <span class="n">getErrMsg</span><span class="o">(</span><span class="s">"msg.passwd.change.failed"</span><span class="o">,</span> <span class="n">locale</span><span class="o">));</span>
+                <span class="n">doGet</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="k">if</span> <span class="o">(</span><span class="nc">StringUtils</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">password</span><span class="o">)</span> <span class="o">||</span> <span class="n">password</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"errorMessage"</span><span class="o">,</span> <span class="n">getErrMsg</span><span class="o">(</span><span class="s">"msg.passwd.is.too.short"</span><span class="o">,</span> <span class="n">locale</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="n">req</span><span class="o">.</span><span class="na">setAttribute</span><span class="o">(</span><span class="s">"errorMessage"</span><span class="o">,</span> <span class="n">getErrMsg</span><span class="o">(</span><span class="s">"msg.unknown.exception.occur"</span><span class="o">,</span>
+                        <span class="k">new</span> <span class="nc">String</span><span class="o">[]</span> <span class="o">{</span> <span class="s">"userid: "</span> <span class="o">+</span> <span class="n">userid</span> <span class="o">},</span> <span class="n">locale</span><span class="o">));</span>
+            <span class="o">}</span>
+            <span class="n">doGet</span><span class="o">(</span><span class="n">req</span><span class="o">,</span> <span class="n">res</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+<h2 id="solution-1">Solution</h2>
+
+<h3 id="method-1-2">Method #1</h3>
+
+<p>form.html</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="o">&lt;!</span><span class="no">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s">"en"</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s">"UTF-8"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="no">POC</span> <span class="no">CSRF</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+    <span class="o">&lt;!--</span> <span class="nc">Latest</span> <span class="n">compiled</span> <span class="n">and</span> <span class="n">minified</span> <span class="no">CSS</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</span> <span class="n">integrity</span><span class="o">=</span><span class="s">"sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"</span> <span class="n">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span><span class="o">&gt;</span>
+
+    <span class="o">&lt;!--</span> <span class="nc">Optional</span> <span class="n">theme</span> <span class="o">--&gt;</span>
+    <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="n">href</span><span class="o">=</span><span class="s">"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"</span> <span class="n">integrity</span><span class="o">=</span><span class="s">"sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"</span> <span class="n">crossorigin</span><span class="o">=</span><span class="s">"anonymous"</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">button</span> <span class="n">type</span><span class="o">=</span><span class="s">"button"</span> <span class="n">id</span><span class="o">=</span><span class="s">"requestAction"</span> <span class="kd">class</span><span class="err">="</span><span class="nc">btn</span> <span class="n">btn</span><span class="o">-</span><span class="n">lg</span> <span class="n">btn</span><span class="o">-</span><span class="n">success</span><span class="s">"&gt;Send request&lt;/button&gt;
+        &lt;hr class="</span><span class="n">half</span><span class="o">-</span><span class="n">rule</span><span class="s">"/&gt;
+        &lt;div class="</span><span class="n">panel</span> <span class="n">panel</span><span class="o">-</span><span class="n">primary</span><span class="s">"&gt;
+            &lt;div class="</span><span class="n">panel</span><span class="o">-</span><span class="n">heading</span><span class="s">"&gt;
+                &lt;h3 class="</span><span class="n">panel</span><span class="o">-</span><span class="n">title</span><span class="s">"&gt;Requests history&lt;/h3&gt;
+            &lt;/div&gt;
+            &lt;div class="</span><span class="n">panel</span><span class="o">-</span><span class="n">body</span><span class="s">" id="</span><span class="n">renderingZone</span><span class="s">"&gt;&lt;/div&gt;
+        &lt;/div&gt;
+
+
+        &lt;!--
+        Load custom code after that the DOM loading is fully finished
+        See http://stackoverflow.com/a/9899701
+        --&gt;
+        &lt;script type="</span><span class="n">text</span><span class="o">/</span><span class="n">javascript</span><span class="s">"&gt;
+//Variable used to share access to the current CSRF token dictionary
+//in which KEY is the backend service name and the VALUE is the current CSRF token to use
+var CSRF_TOKENS = {};
+
+//Panel of possible HTTP request type and backend services (used for the demo)
+var METHODS_SET = ["</span><span class="no">GET</span><span class="s">", "</span><span class="no">POST</span><span class="s">", "</span><span class="no">DELETE</span><span class="s">", "</span><span class="no">PUT</span><span class="s">"];
+var BACKEND_SERVICES_SET = ["</span><span class="n">setUser</span><span class="s">", "</span><span class="n">setProfile</span><span class="s">", "</span><span class="n">updateAccount</span><span class="s">", "</span><span class="n">lockAccount</span><span class="s">", "</span><span class="n">initBalance</span><span class="s">", "</span><span class="n">resetPassword</span><span class="s">"];
+
+//Send a random request to a backend service for which a CSRF token is mandatory
+function sendRequest(){
+    //Select a method
+    var methodIndex = Math.floor(Math.random() * ((METHODS_SET.length) - 0)) + 0;
+    var method = METHODS_SET[methodIndex];
+    //Select a backend service
+    var backendServiceIndex = Math.floor(Math.random() * ((BACKEND_SERVICES_SET.length) - 0)) + 0;
+    var backendService = BACKEND_SERVICES_SET[backendServiceIndex];
+    //Prepare asynchronous Ajax request
+    var req = new XMLHttpRequest();
+    req.open(method, "</span><span class="o">/</span><span class="n">backend</span><span class="o">/</span><span class="s">" + backendService + "</span><span class="o">?</span><span class="n">param</span><span class="o">=</span><span class="s">" + new Date().getTime(), true);
+    if(CSRF_TOKENS[backendService] != null){
+        req.setRequestHeader("</span><span class="no">X</span><span class="o">-</span><span class="no">TOKEN</span><span class="s">", CSRF_TOKENS[backendService]);
+    }
+    req.addEventListener("</span><span class="n">error</span><span class="s">", function(evt){ console.error("</span><span class="nc">Request</span> <span class="n">meet</span> <span class="n">an</span> <span class="nl">error:</span> <span class="s">" + req.statusText) });
+    req.addEventListener("</span><span class="n">abort</span><span class="s">", function(evt){ console.error("</span><span class="nc">Request</span> <span class="nl">aborted:</span> <span class="s">" + req.statusText) });
+    req.addEventListener("</span><span class="n">load</span><span class="s">", function(evt){
+        if (req.readyState === 4 &amp;&amp; req.status === 204) {
+            CSRF_TOKENS[backendService] = req.getResponseHeader("</span><span class="no">X</span><span class="o">-</span><span class="no">TOKEN</span><span class="s">");
+            var content = document.getElementById("</span><span class="n">renderingZone</span><span class="s">").innerHTML;
+            content += "</span><span class="o">&lt;</span><span class="n">b</span><span class="o">&gt;</span><span class="no">CSRF</span> <span class="n">token</span> <span class="n">initialized</span> <span class="k">for</span> <span class="n">the</span> <span class="n">backend</span> <span class="n">service</span> <span class="err">'</span><span class="s">" + backendService + "</span><span class="err">'</span><span class="o">&lt;/</span><span class="n">b</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="s">";
+            document.getElementById("</span><span class="n">renderingZone</span><span class="s">").innerHTML = content;
+        }else if (req.readyState === 4 &amp;&amp; req.status === 200) {
+            CSRF_TOKENS[backendService] = req.getResponseHeader("</span><span class="no">X</span><span class="o">-</span><span class="no">TOKEN</span><span class="s">");
+            var data = JSON.parse(req.responseText);
+            var item = "</span><span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="nl">Method:</span> <span class="s">" + data.Method +  "</span> <span class="o">-</span> <span class="nl">RequestURI:</span> <span class="s">" + data.RequestURI + "</span> <span class="o">-</span> <span class="nl">QueryString:</span> <span class="s">" + data.QueryString + "</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;</span><span class="n">br</span><span class="o">&gt;</span><span class="s">";
+            var content = document.getElementById("</span><span class="n">renderingZone</span><span class="s">").innerHTML;
+            content += item;
+            document.getElementById("</span><span class="n">renderingZone</span><span class="s">").innerHTML = content;
+        }
+    });
+    //Send request
+    req.send(null);
+}
+
+//Send a request every 1 sec from 4 scheduler
+document.getElementById("</span><span class="n">requestAction</span><span class="err">"</span><span class="o">).</span><span class="na">onclick</span> <span class="o">=</span> <span class="n">sendRequest</span><span class="o">;</span>
+<span class="n">setInterval</span><span class="o">(</span><span class="n">sendRequest</span><span class="o">,</span> <span class="mi">1285</span><span class="o">);</span>
+<span class="n">setInterval</span><span class="o">(</span><span class="n">sendRequest</span><span class="o">,</span> <span class="mi">1456</span><span class="o">);</span>
+<span class="n">setInterval</span><span class="o">(</span><span class="n">sendRequest</span><span class="o">,</span> <span class="mi">1148</span><span class="o">);</span>
+<span class="n">setInterval</span><span class="o">(</span><span class="n">sendRequest</span><span class="o">,</span> <span class="mi">1085</span><span class="o">);</span>            
+<span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>CSRFValidationFilter.java</p>
+
+<figure class="highlight"><pre><code class="language-java" data-lang="java"><span class="kn">package</span> <span class="nn">eu.righettod.poccsrf.filter</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.LoggerFactory</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">javax.servlet.Filter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.FilterChain</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.FilterConfig</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.ServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.annotation.WebFilter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.Cookie</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletRequest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponse</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.servlet.http.HttpServletResponseWrapper</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.xml.bind.DatatypeConverter</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.IOException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.MalformedURLException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.net.URL</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.security.SecureRandom</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Arrays</span><span class="o">;</span>
+
+<span class="cm">/**
+ * Filter in charge of validating each incoming HTTP request about Headers and CSRF token.
+ * It is called for all requests to backend destination.
+ *
+ * We use the approach in which:
+ * - The CSRF token is changed after each valid HTTP exchange
+ * - The custom Header name for the CSRF token transmission is fixed
+ * - A CSRF token is associated to a backend service URI in order to enable the support for multiple parallel Ajax request from the same application
+ * - The CSRF cookie name is the backend service name prefixed with a fixed prefix
+ *
+ * Here for the POC we show the "access denied" reason in the response but in production code only return a generic message !!!
+ *
+ * @see "https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet"
+ * @see "https://wiki.mozilla.org/Security/Origin"
+ * @see "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie"
+ * @see "https://chloe.re/2016/04/13/goodbye-csrf-samesite-to-the-rescue/"
+ */</span>
+<span class="nd">@WebFilter</span><span class="o">(</span><span class="s">"/backend/*"</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CSRFValidationFilter</span> <span class="kd">implements</span> <span class="nc">Filter</span> <span class="o">{</span>
+
+    <span class="cm">/**
+     * JVM param name used to define the target origin
+     */</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">TARGET_ORIGIN_JVM_PARAM_NAME</span> <span class="o">=</span> <span class="s">"target.origin"</span><span class="o">;</span>
+
+    <span class="cm">/**
+     * Name of the custom HTTP header used to transmit the CSRF token and also to prefix the CSRF cookie for the expected backend service
+     */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">String</span> <span class="no">CSRF_TOKEN_NAME</span> <span class="o">=</span> <span class="s">"X-TOKEN"</span><span class="o">;</span>
+
+    <span class="cm">/**
+     * Logger
+     */</span>
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="nc">Logger</span> <span class="no">LOG</span> <span class="o">=</span> <span class="nc">LoggerFactory</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="nc">CSRFValidationFilter</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+
+    <span class="cm">/**
+     * Application expected deployment domain: named "Target Origin" in OWASP CSRF article
+     */</span>
+    <span class="kd">private</span> <span class="no">URL</span> <span class="n">targetOrigin</span><span class="o">;</span>
+
+    <span class="cm">/***
+     * Secure generator
+     */</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="nc">SecureRandom</span> <span class="n">secureRandom</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SecureRandom</span><span class="o">();</span>
+
+
+    <span class="cm">/**
+     * {@inheritDoc}
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">doFilter</span><span class="o">(</span><span class="nc">ServletRequest</span> <span class="n">request</span><span class="o">,</span> <span class="nc">ServletResponse</span> <span class="n">response</span><span class="o">,</span> <span class="nc">FilterChain</span> <span class="n">chain</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">IOException</span><span class="o">,</span> <span class="nc">ServletException</span> <span class="o">{</span>
+        <span class="nc">HttpServletRequest</span> <span class="n">httpReq</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpServletRequest</span><span class="o">)</span> <span class="n">request</span><span class="o">;</span>
+        <span class="nc">HttpServletResponse</span> <span class="n">httpResp</span> <span class="o">=</span> <span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">)</span> <span class="n">response</span><span class="o">;</span>
+        <span class="nc">String</span> <span class="n">accessDeniedReason</span><span class="o">;</span>
+
+        <span class="cm">/* STEP 1: Verifying Same Origin with Standard Headers */</span>
+        <span class="c1">//Try to get the source from the "Origin" header</span>
+        <span class="nc">String</span> <span class="n">source</span> <span class="o">=</span> <span class="n">httpReq</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">"Origin"</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">source</span><span class="o">))</span> <span class="o">{</span>
+            <span class="c1">//If empty then fallback on "Referer" header</span>
+            <span class="n">source</span> <span class="o">=</span> <span class="n">httpReq</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="s">"Referer"</span><span class="o">);</span>
+            <span class="c1">//If this one is empty too then we trace the event and we block the request (recommendation of the article)...</span>
+            <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">source</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">accessDeniedReason</span> <span class="o">=</span> <span class="s">"CSRFValidationFilter: ORIGIN and REFERER request headers are both absent/empty so we block the request !"</span><span class="o">;</span>
+                <span class="no">LOG</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="n">accessDeniedReason</span><span class="o">);</span>
+                <span class="n">httpResp</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_FORBIDDEN</span><span class="o">,</span> <span class="n">accessDeniedReason</span><span class="o">);</span>
+                <span class="k">return</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+
+        <span class="c1">//Compare the source against the expected target origin</span>
+        <span class="no">URL</span> <span class="n">sourceURL</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="n">source</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(!</span><span class="k">this</span><span class="o">.</span><span class="na">targetOrigin</span><span class="o">.</span><span class="na">getProtocol</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">sourceURL</span><span class="o">.</span><span class="na">getProtocol</span><span class="o">())</span> <span class="o">||</span> <span class="o">!</span><span class="k">this</span><span class="o">.</span><span class="na">targetOrigin</span><span class="o">.</span><span class="na">getHost</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">sourceURL</span><span class="o">.</span><span class="na">getHost</span><span class="o">())</span> <span class="o">||</span> <span class="k">this</span><span class="o">.</span><span class="na">targetOrigin</span><span class="o">.</span><span class="na">getPort</span><span class="o">()</span> <span class="o">!=</span> <span class="n">sourceURL</span><span class="o">.</span><span class="na">getPort</span><span class="o">())</span> <span class="o">{</span>
+            <span class="c1">//One the part do not match so we trace the event and we block the request</span>
+            <span class="n">accessDeniedReason</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"CSRFValidationFilter: Protocol/Host/Port do not fully matches so we block the request! (%s != %s) "</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">targetOrigin</span><span class="o">,</span> <span class="n">sourceURL</span><span class="o">);</span>
+            <span class="no">LOG</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="n">accessDeniedReason</span><span class="o">);</span>
+            <span class="n">httpResp</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_FORBIDDEN</span><span class="o">,</span> <span class="n">accessDeniedReason</span><span class="o">);</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+
+        <span class="cm">/* STEP 2: Verifying CSRF token using "Double Submit Cookie" approach */</span>
+        <span class="c1">//If CSRF token cookie is absent from the request then we provide one in response but we stop the process at this stage.</span>
+        <span class="c1">//Using this way we implement the first providing of token</span>
+        <span class="nc">Cookie</span> <span class="n">tokenCookie</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">httpReq</span><span class="o">.</span><span class="na">getCookies</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">String</span> <span class="n">csrfCookieExpectedName</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">determineCookieName</span><span class="o">(</span><span class="n">httpReq</span><span class="o">);</span>
+            <span class="n">tokenCookie</span> <span class="o">=</span> <span class="nc">Arrays</span><span class="o">.</span><span class="na">stream</span><span class="o">(</span><span class="n">httpReq</span><span class="o">.</span><span class="na">getCookies</span><span class="o">()).</span><span class="na">filter</span><span class="o">(</span><span class="n">c</span> <span class="o">-&gt;</span> <span class="n">c</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">csrfCookieExpectedName</span><span class="o">)).</span><span class="na">findFirst</span><span class="o">().</span><span class="na">orElse</span><span class="o">(</span><span class="kc">null</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">tokenCookie</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="k">this</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">tokenCookie</span><span class="o">.</span><span class="na">getValue</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="no">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"CSRFValidationFilter: CSRF cookie absent or value is null/empty so we provide one and return an HTTP NO_CONTENT response !"</span><span class="o">);</span>
+            <span class="c1">//Add the CSRF token cookie and header</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">addTokenCookieAndHeader</span><span class="o">(</span><span class="n">httpReq</span><span class="o">,</span> <span class="n">httpResp</span><span class="o">);</span>
+            <span class="c1">//Set response state to "204 No Content" in order to allow the requester to clearly identify an initial response providing the initial CSRF token</span>
+            <span class="n">httpResp</span><span class="o">.</span><span class="na">setStatus</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_NO_CONTENT</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="c1">//If the cookie is present then we pass to validation phase</span>
+            <span class="c1">//Get token from the custom HTTP header (part under control of the requester)</span>
+            <span class="nc">String</span> <span class="n">tokenFromHeader</span> <span class="o">=</span> <span class="n">httpReq</span><span class="o">.</span><span class="na">getHeader</span><span class="o">(</span><span class="no">CSRF_TOKEN_NAME</span><span class="o">);</span>
+            <span class="c1">//If empty then we trace the event and we block the request</span>
+            <span class="k">if</span> <span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">isBlank</span><span class="o">(</span><span class="n">tokenFromHeader</span><span class="o">))</span> <span class="o">{</span>
+                <span class="n">accessDeniedReason</span> <span class="o">=</span> <span class="s">"CSRFValidationFilter: Token provided via HTTP Header is absent/empty so we block the request !"</span><span class="o">;</span>
+                <span class="no">LOG</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="n">accessDeniedReason</span><span class="o">);</span>
+                <span class="n">httpResp</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_FORBIDDEN</span><span class="o">,</span> <span class="n">accessDeniedReason</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="k">if</span> <span class="o">(!</span><span class="n">tokenFromHeader</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="n">tokenCookie</span><span class="o">.</span><span class="na">getValue</span><span class="o">()))</span> <span class="o">{</span>
+                <span class="c1">//Verify that token from header and one from cookie are the same</span>
+                <span class="c1">//Here is not the case so we trace the event and we block the request</span>
+                <span class="n">accessDeniedReason</span> <span class="o">=</span> <span class="s">"CSRFValidationFilter: Token provided via HTTP Header and via Cookie are not equals so we block the request !"</span><span class="o">;</span>
+                <span class="no">LOG</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="n">accessDeniedReason</span><span class="o">);</span>
+                <span class="n">httpResp</span><span class="o">.</span><span class="na">sendError</span><span class="o">(</span><span class="nc">HttpServletResponse</span><span class="o">.</span><span class="na">SC_FORBIDDEN</span><span class="o">,</span> <span class="n">accessDeniedReason</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="c1">//Verify that token from header and one from cookie matches</span>
+                <span class="c1">//Here is the case so we let the request reach the target component (ServiceServlet, jsp...) and add a new token when we get back the bucket</span>
+                <span class="nc">HttpServletResponseWrapper</span> <span class="n">httpRespWrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HttpServletResponseWrapper</span><span class="o">(</span><span class="n">httpResp</span><span class="o">);</span>
+                <span class="n">chain</span><span class="o">.</span><span class="na">doFilter</span><span class="o">(</span><span class="n">request</span><span class="o">,</span> <span class="n">httpRespWrapper</span><span class="o">);</span>
+                <span class="c1">//Add the CSRF token cookie and header</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">addTokenCookieAndHeader</span><span class="o">(</span><span class="n">httpReq</span><span class="o">,</span> <span class="n">httpRespWrapper</span><span class="o">);</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * {@inheritDoc}
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">init</span><span class="o">(</span><span class="nc">FilterConfig</span> <span class="n">filterConfig</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">ServletException</span> <span class="o">{</span>
+        <span class="c1">//To easier the configuration, we load the target expected origin from an JVM property</span>
+        <span class="c1">//Reconfiguration only require an application restart that is generally acceptable</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">this</span><span class="o">.</span><span class="na">targetOrigin</span> <span class="o">=</span> <span class="k">new</span> <span class="no">URL</span><span class="o">(</span><span class="nc">System</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="no">TARGET_ORIGIN_JVM_PARAM_NAME</span><span class="o">));</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">MalformedURLException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="no">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"Cannot init the filter !"</span><span class="o">,</span> <span class="n">e</span><span class="o">);</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">ServletException</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="no">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"CSRFValidationFilter: Filter init, set expected target origin to '{}'."</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">targetOrigin</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * {@inheritDoc}
+     */</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">destroy</span><span class="o">()</span> <span class="o">{</span>
+        <span class="no">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"CSRFValidationFilter: Filter shutdown"</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Check if a string is null or empty (including containing only spaces)
+     *
+     * @param s Source string
+     * @return TRUE if source string is null or empty (including containing only spaces)
+     */</span>
+    <span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">isBlank</span><span class="o">(</span><span class="nc">String</span> <span class="n">s</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">s</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">s</span><span class="o">.</span><span class="na">trim</span><span class="o">().</span><span class="na">isEmpty</span><span class="o">();</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Generate a new CSRF token
+     *
+     * @return The token a string
+     */</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="nf">generateToken</span><span class="o">()</span> <span class="o">{</span>
+        <span class="kt">byte</span><span class="o">[]</span> <span class="n">buffer</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">byte</span><span class="o">[</span><span class="mi">50</span><span class="o">];</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">secureRandom</span><span class="o">.</span><span class="na">nextBytes</span><span class="o">(</span><span class="n">buffer</span><span class="o">);</span>
+        <span class="k">return</span> <span class="nc">DatatypeConverter</span><span class="o">.</span><span class="na">printHexBinary</span><span class="o">(</span><span class="n">buffer</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Determine the name of the CSRF cookie for the targeted backend service
+     *
+     * @param httpRequest Source HTTP request
+     * @return The name of the cookie as a string
+     */</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="nf">determineCookieName</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">httpRequest</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">backendServiceName</span> <span class="o">=</span> <span class="n">httpRequest</span><span class="o">.</span><span class="na">getRequestURI</span><span class="o">().</span><span class="na">replaceAll</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">"-"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="no">CSRF_TOKEN_NAME</span> <span class="o">+</span> <span class="s">"-"</span> <span class="o">+</span> <span class="n">backendServiceName</span><span class="o">;</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * Add the CSRF token cookie and header to the provided HTTP response object
+     *
+     * @param httpRequest  Source HTTP request
+     * @param httpResponse HTTP response object to update
+     */</span>
+    <span class="kd">private</span> <span class="kt">void</span> <span class="nf">addTokenCookieAndHeader</span><span class="o">(</span><span class="nc">HttpServletRequest</span> <span class="n">httpRequest</span><span class="o">,</span> <span class="nc">HttpServletResponse</span> <span class="n">httpResponse</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">//Get new token</span>
+        <span class="nc">String</span> <span class="n">token</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">generateToken</span><span class="o">();</span>
+        <span class="c1">//Add cookie manually because the current Cookie class implementation do not support the "SameSite" attribute</span>
+        <span class="c1">//We let the adding of the "Secure" cookie attribute to the reverse proxy rewriting...</span>
+        <span class="c1">//Here we lock the cookie from JS access and we use the SameSite new attribute protection</span>
+        <span class="nc">String</span> <span class="n">cookieSpec</span> <span class="o">=</span> <span class="nc">String</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%s=%s; Path=%s; HttpOnly; SameSite=Strict"</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">determineCookieName</span><span class="o">(</span><span class="n">httpRequest</span><span class="o">),</span> <span class="n">token</span><span class="o">,</span> <span class="n">httpRequest</span><span class="o">.</span><span class="na">getRequestURI</span><span class="o">());</span>
+        <span class="n">httpResponse</span><span class="o">.</span><span class="na">addHeader</span><span class="o">(</span><span class="s">"Set-Cookie"</span><span class="o">,</span> <span class="n">cookieSpec</span><span class="o">);</span>
+        <span class="c1">//Add cookie header to give access to the token to the JS code</span>
+        <span class="n">httpResponse</span><span class="o">.</span><span class="na">setHeader</span><span class="o">(</span><span class="no">CSRF_TOKEN_NAME</span><span class="o">,</span> <span class="n">token</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></figure>
+
+
+    <hr style="border-top:1px solid #28323C;"/>
+
+    <!-- tags and categories under post -->
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-folder-open"></i></li>
+      
+      
+         
+            <li class="icon-style"><a href="/categories">
+                securec0ding <span>(14)</span>
+                
+            </a></li>
+        
+      
+    </ul>
+      
+
+    
+    <ul class="list-unstyled list-inline">
+      <li><i class="icon-tags"></i></li>
+      
+      
+         
+            <li class="icon-style">
+                <a href="/tags">
+                php <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                java <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                asp.net <span>(14)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                request <span>(4)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                forgery <span>(2)</span>
+                ,
+                </a>
+            </li>
+         
+            <li class="icon-style">
+                <a href="/tags">
+                csrf <span>(1)</span>
+                
+                </a>
+            </li>
+        
+      
+      
+    </ul>
+      
+
+    </div>
+    
+    <center><div class="pagination">
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Cross_Site_Scripting(XSS).html" class="next">Newer Post</a>
+            
+            
+            <a class="btn btn-default" href="/securec0ding/2019/Command_Injection.html" class="previous">Older Post</a>
+            
+        </div></center>
+</div>
+
+
+                        
+<div class="well article footerr">
+    <p>&copy;2020
+    </p>
+</div>
+
+<!-- 
+    
+
+    
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '', 'auto');
+    ga('send', 'pageview');
+  </script>
+
+ 
+-->
+
+</body>
+</html>
+
+                </div>
+               
+        <div class="col-xs-1 col-centered"></div>
+
+    </div>
+
+    
+</div>
+
+</div>
+
