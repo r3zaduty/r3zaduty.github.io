@@ -7,7 +7,7 @@ layout: default
 {% for category in sortedcategories %}
 {% assign categ = category[0] | split: " " %}
 {% for cat in categ %}
-   {% if cat == "hardware" %}
+   {% if cat == "other" %}
         <h2>{{ category[0] | capitalize }}</h2>
         <ul>
             {% assign pages_list = category[1] %}
