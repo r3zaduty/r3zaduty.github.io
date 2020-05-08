@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "SEC575 Notes"
+date:   2020-05-08 20:19:31 1576601251
+categories: mobile
+tags: mobile pentest sans
+description: sec575(gmob) course notes 
+---
+
+# What is SEC575?
+
+Imagine an attack surface that is spread across your organization and in the hands of every user. 
+
+It moves regularly from place to place, stores highly sensitive and critical data, and sports numerous 
+
+and different wireless technologies all ripe for attack. Unfortunately, such a surface already exists today: 
+
+mobile devices. These devices constitute the biggest attack surface in most organizations, yet these same organizations 
+
+often don't have the skills needed to assess them.
+
+[this notes](https://docs.google.com/document/d/1fIjyLs5DV4m6vFRhWgSirkK3qECbBC3GcUrILDTkwUk/edit?usp=sharing) summary of sec575
