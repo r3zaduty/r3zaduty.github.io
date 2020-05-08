@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "CEH v10 Notes"
+date:   2020-05-08 20:17:31 1576601251
+categories: network
+tags: ceh network ec-council
+description: ceh v10 course notes 
+---
+
+# What is CEH?
+
+The Certified Ethical Hacker (CEH) program is the most comprehensive ethical hacking course on the globe 
+
+to help information security professionals grasp the fundamentals of ethical hacking. 
+
+The course outcome helps you become a professional who systematically attempts to inspect network infrastructures 
+
+with the consent of its owner to find security vulnerabilities which a malicious hacker could potentially exploit. 
+
+The course helps you assess the security posture of an organization by identifying vulnerabilities in the network 
+
+and system infrastructure to determine if unauthorized access is possible. The CEH is the first of a series 
+
+of 3 comprehensive courses (CEH, ECSA and the APT course) to help a cyber security professional master penetration testing.
+
+[this notes](https://docs.google.com/document/d/1p-k-2BGgC60SKT95ntU8pbScZOSbNggzOGBWJgdUKdg/edit?usp=sharing) summary of ceh v10
