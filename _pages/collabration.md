@@ -110,10 +110,11 @@ we're proud to collaborate with leading companies in the cybersecurity field. Ou
 
 <h2>Terms & Conditions<h2>
 
-
+<p>
 All content on this site, including articles, graphics, and resources, is the intellectual property of Reza's Cybersecurity Hub or our sponsors. Use of this material without express permission is strictly prohibited.
 
 The information provided on this website is for educational purposes only. We make no warranties regarding the completeness, reliability, or accuracy of this information. Any action you take upon the information on this website is strictly at your own risk.
+</p>
 
 <h2>Get Started<h2>
 
