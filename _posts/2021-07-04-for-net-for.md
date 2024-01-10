@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Advance Network Pentest
+title: Advance Network FORENSICS
 date: 2021-07-04 17:39:00
 tags: formatting diagrams
 description: Note & Guide
