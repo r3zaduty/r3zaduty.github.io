@@ -1,12 +1,9 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - rezaduty
 
 github_repos:
-  - alshedivat/al-folio
-  - twbs/bootstrap
-  - jekyll/jekyll
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - jpswalsh/academicons
-  - mathjax/MathJax
+  - rezaduty/cybersecurity-career-path
+  - redteamrecipe/redteamrecipe.github.io
+  - redteamguides/redteamguides.github.io
+  - blueteamguides/blueteamguides.github.io
+  - devsecopsguides/devsecopsguides.github.io
