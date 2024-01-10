@@ -27,3 +27,6 @@ Compliance and regulations: Learn about compliance requirements and regulations 
 Incident response: Learn how to respond to security incidents quickly and effectively, minimizing the impact on your organization and customers.
 
 Our guides are written by experts in the field of DevSecOps, and are designed to be accessible to developers, security professionals, and operations teams at all levels of experience. Whether you are just getting started with DevSecOps or are looking to deepen your knowledge and skills, DevSecOpsGuides is the perfect resource for you.
+
+
+<a href="https://devsecopsguides.com">Link</a>

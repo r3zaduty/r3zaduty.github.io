@@ -9,3 +9,6 @@ giscus_comments: true
 ---
 
 "Blue Team Guides" isn’t merely a documentation; it is a meticulously crafted arsenal of knowledge, insights, and guidelines that is shaped to empower organizations in crafting, enhancing, and refining their cybersecurity defenses. It serves as a repository of defensive strategies, operating procedures, tool guides, and case studies, embodying the collective wisdom derived from seasoned cybersecurity professionals and numerous real-world operations.
+
+
+<a href="https://blueteamguides.com">Link</a>
