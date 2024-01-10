@@ -104,16 +104,21 @@ Email me: <a href="mailto:reza.rashidi.business@gmail.com">reza.rashidi.business
 
 <h2>Sponsor Placement</h2>
 
+<p>
 `Our Trusted Partners`
 we're proud to collaborate with leading companies in the cybersecurity field. Our sponsors are carefully selected for their commitment to excellence and innovation. Here, you'll find insights, tools, and solutions from the best in the industry.
+</p>
 
 
 <h2>Terms & Conditions<h2>
 
-
+<p>
 All content on this site, including articles, graphics, and resources, is the intellectual property of Reza's Cybersecurity Hub or our sponsors. Use of this material without express permission is strictly prohibited.
+</p>
 
+<p>
 The information provided on this website is for educational purposes only. We make no warranties regarding the completeness, reliability, or accuracy of this information. Any action you take upon the information on this website is strictly at your own risk.
+</p>
 
 <h2>Get Started<h2>
 
