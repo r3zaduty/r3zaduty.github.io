@@ -32,9 +32,14 @@ jobs:
           gem uninstall -aIx bundler
           gem uninstall -aIx uri
       
+      - name: Install specific version of uri gem
+        run: |
+          gem install uri -v 1.0.3
+
       - name: Install dependencies
         run: |
-          bundle install
+          bundle config set --local without 'development test'
+          bundle install --jobs 4 --retry 3
 
       - name: Update _config.yml ⚙️
         uses: fjogeleit/yaml-update-action@v0.13.1
