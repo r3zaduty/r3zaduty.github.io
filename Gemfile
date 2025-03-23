@@ -6,6 +6,8 @@ ruby '3.0.2'
 # Other gem dependencies
 gem 'jekyll', '~> 4.2.0'
 gem 'kramdown', '~> 2.5.1'
+gem 'uri', '~> 1.0.3'
+
 
 # Add other gems as necessary
 group :jekyll_plugins do
